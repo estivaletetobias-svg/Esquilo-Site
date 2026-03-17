@@ -15,8 +15,18 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 document.querySelectorAll('.reveal, .glass-card, .service-card').forEach(el => {
+    // Check if already in viewport
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+        el.classList.add('visible');
+    }
     observer.observe(el);
 });
+
+// Force visibility fallback after 2 seconds (safeguard)
+setTimeout(() => {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+}, 2000);
 
 // Cursor Glow Effect
 const cursorGlow = document.querySelector('.cursor-glow');
