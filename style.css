@@ -1161,6 +1161,15 @@ footer {
     margin: 0;
     max-width: 300px;
   }
+
+  /* Redução de títulos que quebram em telas pequenas */
+  .method-card h3, 
+  .service-card h3, 
+  .education-card h3 {
+    font-size: 1.4rem !important;
+    hyphens: auto;
+    word-break: break-word; /* Para garantir que não quebre o layout */
+  }
 }
 .developer-credit a {
   color: var(--primary);
