@@ -6,7 +6,7 @@
     <title>Serviços | Esquilo Wellness and Health</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -18,62 +18,117 @@
             </a>
             <div class="nav-links">
                 <a href="/">Home</a>
-                <a href="/metodo.html">Método</a>
-                <a href="/emagrecimento.html">Emagrecimento</a>
-                <a href="/avaliacao.html">Avaliação Metabólica</a>
+                <a href="/metodo.html">O Método</a>
+                <a href="/emagrecimento.html">Emagrecer</a>
                 <a href="/servicos.html">Serviços</a>
-                <a href="/conteudos.html">Conteúdos</a>
-                <a href="/ebooks.html">E-books</a>
-                <a href="/depoimentos.html">Depoimentos</a>
+                <a href="/conteudos.html">Conteúdo</a>
                 <a href="/contato.html">Contato</a>
+            </div>
+            <div class="header-actions desktop-only">
+                <a href="/contato.html" class="btn btn-primary btn-sm">Agendar Consulta</a>
             </div>
         </nav>
     </header>
 
-    <main style="padding-top: 120px;">
+    <main style="padding-top: 15rem;">
         <section class="section">
-            <div class="container text-center">
-                <h1 style="font-size: 5rem; color: var(--accent); margin-bottom: 2rem;">Serviços</h1>
-                <p style="font-size: 1.5rem; max-width: 900px; margin: 0 auto 6rem; color: var(--text-dim);">Destaque sua saúde e performance com o nível de exclusividade e ciência que você merece.</p>
+            <div class="container">
+                <h1 style="font-size: clamp(3rem, 10vw, 8rem); margin-bottom: 2rem;">SERVIÇOS DE <span class="highlight">ALTO NÍVEL</span></h1>
+                <p style="font-size: 1.5rem; max-width: 900px; margin-bottom: 8rem; opacity: 0.8; line-height: 1.2;">SOLUÇÕES PERSONALIZADAS PARA QUEM NÃO ACEITA RESULTADOS MEDÍOCRES. ATENDIMENTO EXCLUSIVO EM CADA ETAPA DA SUA JORNADA.</p>
                 
-                <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
-                    <div class="glass-card" style="text-align: left;">
-                        <h3 style="color: var(--accent);"><i data-lucide="video"></i> Consultoria Online</h3>
-                        <p>Plataforma de acompanhamento à distância com base em dados de saúde e performance.</p>
+                <div class="services-list-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 4rem;">
+                    <div class="glass-card" style="padding: 4rem;">
+                        <h2 style="color: var(--accent); margin-bottom: 2rem;">CONSULTORIA ONLINE</h2>
+                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; opacity: 0.8;">
+                            <li>• Acompanhamento via app exclusivo</li>
+                            <li>• Treinos baseados em exames</li>
+                            <li>• Feedback estratégico mensal</li>
+                        </ul>
                     </div>
-                    <div class="glass-card" style="text-align: left;">
-                        <h3 style="color: var(--accent);"><i data-lucide="user-check"></i> Consultoria Presencial</h3>
-                        <p>Atendimento exclusivo em clínica de performance focado em análise metabólica profunda.</p>
+                    <div class="glass-card" style="padding: 4rem;">
+                        <h2 style="color: var(--accent); margin-bottom: 2rem;">CONSULTORIA PRESENCIAL</h2>
+                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; opacity: 0.8;">
+                            <li>• Atendimento VIP em Florianópolis</li>
+                            <li>• Avaliação física detalhada</li>
+                            <li>• Ajustes técnicos em tempo real</li>
+                        </ul>
                     </div>
-                    <div class="glass-card" style="text-align: left;">
-                        <h3 style="color: var(--accent);"><i data-lucide="activity"></i> Personal Training</h3>
-                        <p>Atendimento individualizado com foco em fisiologia aplicada ao resultado real.</p>
+                    <div class="glass-card" style="padding: 4rem;">
+                        <h2 style="color: var(--accent); margin-bottom: 2rem;">PERSONAL TRAINING</h2>
+                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; opacity: 0.8;">
+                            <li>• Atenção 100% individualizada</li>
+                            <li>• Máxima segurança fisiológica</li>
+                            <li>• Foco total na sua meta</li>
+                        </ul>
                     </div>
-                    <div class="glass-card" style="text-align: left;">
-                        <h3 style="color: var(--accent);"><i data-lucide="microscope"></i> Análise de Exames</h3>
-                        <p>Interpretação detalhada de biomarcadores para guia de treino e performance.</p>
-                    </div>
-                    <div class="glass-card" style="text-align: left;">
-                        <h3 style="color: var(--accent);"><i data-lucide="heart"></i> Reabilitação Cardíaca</h3>
-                        <p>Segurança máxima para quem precisa treinar com foco no coração.</p>
-                    </div>
-                    <div class="glass-card" style="text-align: left;">
-                        <h3 style="color: var(--accent);"><i data-lucide="award"></i> Palestras e Cursos</h3>
-                        <p>Conteúdo científico e motivacional para empresas e profissionais de saúde.</p>
+                    <div class="glass-card" style="padding: 4rem;">
+                        <h2 style="color: var(--accent); margin-bottom: 2rem;">MINT (METABOLISMO INTEGRADO)</h2>
+                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; opacity: 0.8;">
+                            <li>• Foco total em saúde metabólica</li>
+                            <li>• Controle de diabetes e hipertensão</li>
+                            <li>• Longevidade ativa e funcional</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div style="margin-top: 6rem;">
-                   <a href="/contato.html" class="btn btn-primary">Fazer Uma Consulta</a>
+                <div style="margin-top: 8rem; text-align: center;">
+                    <a href="/contato.html" class="btn btn-primary btn-lg">Falar Sobre Atendimento Exclusivo</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer style="background: #000; padding: 4rem 0; margin-top: 6rem; border-top: 1px solid var(--border);">
-        <div class="container text-center">
-             <img src="/assets/images/logo-transparent.png" alt="Logo" style="height: 80px; margin-bottom: 2rem;">
-             <p>&copy; 2026 Método Esquilo Wellness and Health.</p>
+    <footer id="contato" style="background: #000; padding: 10rem 0 4rem; border-top: 1px solid var(--border);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: start; margin-bottom: 6rem;">
+                <div class="footer-brand">
+                    <img src="/assets/images/logo-transparent.png" alt="Logo" class="footer-logo-img">
+                    <p style="color: var(--text-dim); font-size: 1.1rem;">Metodologia baseada em ciência para saúde, longevidade e performance humana.</p>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem;">
+                    <div>
+                        <h4 style="color: var(--accent); margin-bottom: 2rem; text-transform: uppercase;">Menu</h4>
+                        <ul style="display: flex; flex-direction: column; gap: 1rem; list-style: none;">
+                            <li><a href="/metodo.html">O Método</a></li>
+                            <li><a href="/emagrecimento.html">Emagrecimento</a></li>
+                            <li><a href="/servicos.html">Serviços</a></li>
+                            <li><a href="/depoimentos.html">Depoimentos</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent); margin-bottom: 2rem; text-transform: uppercase;">Conteúdo</h4>
+                        <ul style="display: flex; flex-direction: column; gap: 1rem; list-style: none;">
+                            <li><a href="/conteudos.html">Esquilocast</a></li>
+                            <li><a href="/ebooks.html">E-books</a></li>
+                            <li><a href="https://www.instagram.com/esquilo.personal">Instagram</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent); margin-bottom: 2rem; text-transform: uppercase;">Contato</h4>
+                        <p style="margin-bottom: 0.5rem; opacity: 0.7;">esquilo@esquilopersonal.com</p>
+                        <p style="opacity: 0.7;">Florianópolis - SC</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-reveal-grid">
+                 <a href="https://www.instagram.com/esquilo.personal" class="reveal-item">
+                    <span class="reveal-label">Instagram</span>
+                    <span class="reveal-content">@esquilo.personal</span>
+                 </a>
+                 <a href="https://wa.me/5548999229071" class="reveal-item">
+                    <span class="reveal-label">WhatsApp</span>
+                    <span class="reveal-content">+55 48 99922-9071</span>
+                 </a>
+                 <a href="https://linkedin.com/in/esquilo-luciano-ghilardi-nacco-9069b216a" class="reveal-item">
+                    <span class="reveal-label">LinkedIn</span>
+                    <span class="reveal-content">Luciano G. Nacco</span>
+                 </a>
+            </div>
+
+            <div class="developer-credit" style="margin-top: 6rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim); font-size: 0.8rem;">
+                <p>&copy; 2026 Método Esquilo Wellness and Health. Desenvolvido por <a href="#" style="color: #fff; font-weight: 700;">Tobias Estivalete</a>.</p>
+            </div>
         </div>
     </footer>
     <script type="module" src="/main.js"></script>

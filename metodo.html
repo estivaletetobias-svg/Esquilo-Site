@@ -6,11 +6,11 @@
     <title>O Método | Esquilo Wellness and Health</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background: #000;">
     <header>
         <nav class="container">
             <a href="/" class="logo header-logo">
@@ -18,12 +18,10 @@
             </a>
             <div class="nav-links">
                 <a href="/">Home</a>
-                <a href="/metodo.html">Método</a>
-                <a href="/emagrecimento.html">Emagrecimento</a>
-                <a href="/avaliacao.html">Avaliação Metabólica</a>
+                <a href="/metodo.html">O Método</a>
+                <a href="/emagrecimento.html">Emagrecer</a>
                 <a href="/servicos.html">Serviços</a>
-                <a href="/ebooks.html">E-books</a>
-                <a href="/depoimentos.html">Depoimentos</a>
+                <a href="/conteudos.html">Conteúdo</a>
                 <a href="/contato.html">Contato</a>
             </div>
             <div class="header-actions desktop-only">
@@ -32,39 +30,86 @@
         </nav>
     </header>
 
-    <main style="padding-top: 120px;">
+    <main style="padding-top: 15rem;">
         <section class="section">
             <div class="container">
-                <h1 style="font-size: 5rem; color: var(--accent); margin-bottom: 2rem;">Método Esquilo Wellness and Health</h1>
-                <p style="font-size: 1.5rem; max-width: 900px; margin-bottom: 4rem;">Uma metodologia própria que une fisiologia do exercício, medicina preventiva e inteligência metabólica para resultados permanentes.</p>
+                <h1 style="font-size: clamp(3rem, 10vw, 8rem); margin-bottom: 2rem;">O <span class="highlight">MÉTODO</span> ESQUILO</h1>
+                <p style="font-size: 1.5rem; max-width: 900px; margin-bottom: 8rem; opacity: 0.8; line-height: 1.2;">UMA METODOLOGIA PRÓPRIA QUE UNE FISIOLOGIA DO EXERCÍCIO, MEDICINA PREVENTIVA E INTELIGÊNCIA METABÓLICA PARA RESULTADOS PERMANENTES.</p>
                 
-                <div class="glass-card" style="margin-bottom: 4rem;">
-                    <h2 style="color: var(--accent); margin-bottom: 2rem;">O que é o Método?</h2>
-                    <p>O Método Esquilo não é apenas um treino. É um sistema de gestão de saúde e performance humana. Baseado em evidências científicas, ele olha para o corpo como um sistema biológico complexo que precisa de estímulos precisos para funcionar em sua capacidade máxima.</p>
+                <div class="glass-card" style="margin-bottom: 6rem; padding: 4rem; border-left: 4px solid var(--accent);">
+                    <h2 style="color: var(--accent); margin-bottom: 2rem;">GESTÃO DE PERFORMANCE HUMANA</h2>
+                    <p style="font-size: 1.2rem; line-height: 1.6;">O Método Esquilo não é apenas um treino. É um sistema de gestão de saúde e performance humana. Baseado em evidências científicas, ele olha para o corpo como um sistema biológico complexo que precisa de estímulos precisos para funcionar em sua capacidade máxima.</p>
                 </div>
 
-                <div class="method-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    <div class="glass-card">
-                        <h3 style="color: var(--accent);">Para quem é?</h3>
-                        <p>Executivos, profissionais liberais e pessoas que buscam otimizar seu tempo e saúde com segurança total e base científica.</p>
+                <div class="method-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                    <div class="glass-card" style="padding: 3rem;">
+                        <h3 style="color: var(--accent); margin-bottom: 1.5rem;">PÚBLICO ALVO</h3>
+                        <p style="opacity: 0.8;">Executivos, profissionais liberais e pessoas que buscam otimizar seu tempo e saúde com segurança total e base científica.</p>
                     </div>
-                    <div class="glass-card">
-                        <h3 style="color: var(--accent);">Como funciona?</h3>
-                        <p>Através de uma jornada de 4 etapas: Diagnóstico (Avaliação), Planejamento, Execução Assistida e Ajustes Constantes.</p>
+                    <div class="glass-card" style="padding: 3rem;">
+                        <h3 style="color: var(--accent); margin-bottom: 1.5rem;">FLUXO DE TRABALHO</h3>
+                        <p style="opacity: 0.8;">Diagnóstico (Avaliação), Planejamento Estratégico, Execução Assistida e Reajustes Fisiológicos constantes.</p>
                     </div>
-                    <div class="glass-card">
-                        <h3 style="color: var(--accent);">Ciência Aplicada</h3>
-                        <p>Utilizamos dados de exames laboratoriais, testes cardiológicos e análise de composição corporal (DEXA) para guiar cada repetição.</p>
+                    <div class="glass-card" style="padding: 3rem;">
+                        <h3 style="color: var(--accent); margin-bottom: 1.5rem;">CIÊNCIA APLICADA</h3>
+                        <p style="opacity: 0.8;">Dados de exames laboratoriais, testes cardiológicos e análise de composição corporal (DEXA) para guiar cada estímulo.</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer style="background: #000; padding: 4rem 0; margin-top: 6rem; border-top: 1px solid var(--border);">
-        <div class="container text-center">
-             <img src="/assets/images/logo-transparent.png" alt="Logo" style="height: 80px; margin-bottom: 2rem;">
-             <p>&copy; 2026 Método Esquilo Wellness and Health.</p>
+    <footer id="contato" style="background: #000; padding: 10rem 0 4rem; border-top: 1px solid var(--border);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: start; margin-bottom: 6rem;">
+                <div class="footer-brand">
+                    <img src="/assets/images/logo-transparent.png" alt="Logo" class="footer-logo-img">
+                    <p style="color: var(--text-dim); font-size: 1.1rem;">Metodologia baseada em ciência para saúde, longevidade e performance humana.</p>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem;">
+                    <div>
+                        <h4 style="color: var(--accent); margin-bottom: 2rem; text-transform: uppercase;">Menu</h4>
+                        <ul style="display: flex; flex-direction: column; gap: 1rem; list-style: none;">
+                            <li><a href="/metodo.html">O Método</a></li>
+                            <li><a href="/emagrecimento.html">Emagrecimento</a></li>
+                            <li><a href="/servicos.html">Serviços</a></li>
+                            <li><a href="/depoimentos.html">Depoimentos</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent); margin-bottom: 2rem; text-transform: uppercase;">Conteúdo</h4>
+                        <ul style="display: flex; flex-direction: column; gap: 1rem; list-style: none;">
+                            <li><a href="/conteudos.html">Esquilocast</a></li>
+                            <li><a href="/ebooks.html">E-books</a></li>
+                            <li><a href="https://www.instagram.com/esquilo.personal">Instagram</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent); margin-bottom: 2rem; text-transform: uppercase;">Contato</h4>
+                        <p style="margin-bottom: 0.5rem; opacity: 0.7;">esquilo@esquilopersonal.com</p>
+                        <p style="opacity: 0.7;">Florianópolis - SC</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-reveal-grid">
+                 <a href="https://www.instagram.com/esquilo.personal" class="reveal-item">
+                    <span class="reveal-label">Instagram</span>
+                    <span class="reveal-content">@esquilo.personal</span>
+                 </a>
+                 <a href="https://wa.me/5548999229071" class="reveal-item">
+                    <span class="reveal-label">WhatsApp</span>
+                    <span class="reveal-content">+55 48 99922-9071</span>
+                 </a>
+                 <a href="https://linkedin.com/in/esquilo-luciano-ghilardi-nacco-9069b216a" class="reveal-item">
+                    <span class="reveal-label">LinkedIn</span>
+                    <span class="reveal-content">Luciano G. Nacco</span>
+                 </a>
+            </div>
+
+            <div class="developer-credit" style="margin-top: 6rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim); font-size: 0.8rem;">
+                <p>&copy; 2026 Método Esquilo Wellness and Health. Desenvolvido por <a href="#" style="color: #fff; font-weight: 700;">Tobias Estivalete</a>.</p>
+            </div>
         </div>
     </footer>
     <script type="module" src="/main.js"></script>
