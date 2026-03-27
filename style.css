@@ -1098,11 +1098,17 @@ footer {
     width: auto !important;
   }
 
-  .logo-container {
-    display: none !important;
+  .mobile-menu-toggle {
+    display: flex !important;
+    padding: 10px;
+    z-index: 1100;
   }
 
-  .desktop-only { display: none !important; }
+  .header-logo-img {
+    height: 55px !important;
+  }
+
+
 
   /* Navigation Links Wrapper */
   .nav-links {
@@ -1139,23 +1145,65 @@ footer {
     color: var(--primary);
   }
 
-  .section { padding: 6rem 0; }
-  h1 { font-size: 2.2rem !important; line-height: 1.1; }
-  .hero h1 { font-size: 2.2rem; }
-  .section-header h2 { font-size: 2rem; }
+  .section { padding: 4rem 1.5rem; }
   
+  h1 { font-size: 1.8rem !important; line-height: 1.1; margin-bottom: 1.5rem !important; }
+  h2 { font-size: 1.6rem !important; line-height: 1.2; margin-bottom: 2rem !important; }
+  
+  .hero h1 { font-size: 2rem; }
+  .section-header h2 { font-size: 1.8rem !important; }
+  .section-header p { font-size: 1rem !important; max-width: 100%; }
+
+  
+  /* Grid Overrides for Mobile */
+  .hero-grid, .authority-grid, .services-grid, .results-grid, .ebook-product-card {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    text-align: center !important;
+  }
+
+  .authority-image, .hero-image-placeholder {
+    order: -1;
+    max-width: 300px;
+    margin: 0 auto 2rem;
+  }
+
+  .hero-content h1, .authority-content h2 {
+    font-size: 2.2rem !important;
+    text-align: center;
+  }
+  
+  .hero-content p, .authority-content p {
+    font-size: 1.1rem !important;
+    text-align: center;
+    margin-bottom: 3rem !important;
+  }
+
+  /* Ebook Card Mobile */
+  .ebook-product-card {
+    display: flex !important;
+    flex-direction: column;
+  }
+  .ebook-image {
+    height: 250px;
+  }
+  .ebook-info {
+    padding: 2.5rem !important;
+  }
+
   /* Horizontal Scrolling Carousels */
-  .method-grid, .results-grid, .steps-grid, .problem-grid {
+  .method-grid, .steps-grid, .problem-grid {
     display: flex !important;
     overflow-x: auto !important;
     scroll-snap-type: x mandatory;
     gap: 1.5rem;
-    padding: 1rem 2.5rem 3rem !important; 
-    margin: 0 -2.5rem; 
+    padding: 1rem 1.5rem 3rem !important; 
+    margin: 0 -1.5rem; 
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    width: calc(100% + 5rem);
+    width: auto;
   }
+
 
   .method-grid::-webkit-scrollbar, 
   .results-grid::-webkit-scrollbar, 
@@ -1206,8 +1254,21 @@ footer {
 
   /* Mobile Footer Refinement */
   .footer-top {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 2rem 0 !important;
+  }
+
+  /* Override inline-styles for footer grid */
+  footer .container > div[style*="grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+
+  footer .container div[style*="grid-template-columns: repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
     text-align: center;
   }
 
@@ -1215,22 +1276,33 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem !important;
+    width: 100%;
   }
 
+
   .footer-logo-img {
-    height: 150px !important; /* Extremely visible on mobile too */
+    height: 100px !important;
     width: auto !important;
     margin-bottom: 2rem;
   }
 
+
+  footer p, footer li a, footer .reveal-item {
+    font-size: 0.9rem !important;
+    word-break: break-all;
+  }
+
   .footer-quote {
+    font-size: 1rem !important;
+    line-height: 1.4;
     border-left: none;
     border-top: 2px solid var(--primary);
     padding: 1.5rem 0 0;
-    margin: 0;
-    max-width: 300px;
+    margin: 0 auto;
+    max-width: 250px;
   }
+
 
   /* Redução de títulos que quebram em telas pequenas */
   .method-card h3, 
