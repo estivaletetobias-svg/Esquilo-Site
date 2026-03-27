@@ -1145,8 +1145,9 @@ footer {
     color: var(--primary);
   }
 
-  main { padding-top: 4.5rem !important; }
-  .section { padding: 3rem 1.5rem !important; }
+  header { padding: 0.5rem 0 !important; }
+  main { padding-top: 3rem !important; }
+  .section { padding: 2.5rem 1.5rem !important; }
   
   h1 { font-size: 1.8rem !important; line-height: 1.1; margin-bottom: 1rem !important; }
   h2 { font-size: 1.6rem !important; line-height: 1.2; margin-bottom: 1.5rem !important; }
@@ -1292,20 +1293,29 @@ footer {
   }
 
 
-  footer p, footer li a, footer .reveal-item {
-    font-size: 0.9rem !important;
-    word-break: break-all;
+  .developer-credit p {
+    font-size: 0.65rem !important;
+    white-space: nowrap;
+    letter-spacing: normal;
+  }
+  
+  .reveal-item i {
+    display: block !important;
+    width: 22px !important;
+    height: 22px !important;
+    margin-right: 1.2rem;
+    color: var(--accent);
+    opacity: 1 !important;
   }
 
-  .footer-quote {
-    font-size: 1rem !important;
-    line-height: 1.4;
-    border-left: none;
-    border-top: 2px solid var(--primary);
-    padding: 1.5rem 0 0;
-    margin: 0 auto;
-    max-width: 250px;
+  .reveal-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 1.5rem 2rem !important;
+    text-align: left !important;
   }
+
 
 
   /* Redução de títulos que quebram em telas pequenas */
