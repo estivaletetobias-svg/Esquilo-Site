@@ -31,7 +31,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -40,8 +40,6 @@
 </head>
 <body>
     <div class="bg-layers">
-        <div class="bg-mesh"></div>
-        <div class="bg-grid"></div>
         <div class="bg-noise"></div>
     </div>
     
@@ -52,23 +50,24 @@
             <button class="mobile-menu-toggle" aria-label="Menu">
                 <i data-lucide="menu"></i>
             </button>
-            <div class="logo-signature-center">
-                <span class="logo-signature">LUCIANO NACCO</span>
-            </div>
             <a href="/" class="logo header-logo">
                 <img src="/assets/images/logo-transparent.png" alt="Luciano Ghilardi Nacco Logo" class="header-logo-img">
             </a>
             <div class="nav-links">
-                <a href="/#metodo">Método</a>
-                <a href="/#especialista">O Especialista</a>
-                <a href="/#servicos">Serviços</a>
-                <a href="/#resultados">Resultados</a>
-                <a href="/#contato">Contato</a>
-                <a href="https://wa.me/5548999229071" class="btn btn-cta btn-mobile-only">Agendar Avaliação</a>
+                <a href="/">Home</a>
+                <a href="/metodo.html">Método</a>
+                <a href="/emagrecimento.html">Emagrecimento</a>
+                <a href="/avaliacao.html">Avaliação Metabólica</a>
+                <a href="/servicos.html">Serviços</a>
+                <a href="/conteudos.html">Conteúdos</a>
+                <a href="/ebooks.html">E-books</a>
+                <a href="/depoimentos.html">Depoimentos</a>
+                <a href="/contato.html">Contato</a>
             </div>
             <div class="header-actions desktop-only">
-                <a href="https://wa.me/5548999229071" class="btn btn-cta btn-sm">
-                    <span class="full-text">Agendar Avaliação</span>
+                <a href="/contato.html" class="btn btn-primary btn-sm">Agendar Consulta</a>
+                <a href="https://wa.me/5548999229071" class="btn btn-outline btn-sm btn-whatsapp" style="margin-left: 10px;">
+                    <i data-lucide="message-circle" style="width: 16px; height: 16px;"></i> WhatsApp
                 </a>
             </div>
         </nav>
@@ -78,363 +77,193 @@
         <!-- HERO -->
         <section class="hero reveal">
             <div class="hero-bg">
-                <img src="/assets/images/hero_bg.png" alt="Desenho técnico de fisiologia muscular representando a base científica do treinamento" style="opacity: 0.8;">
+                <img src="/assets/images/hero_bg.png" alt="Desenho técnico de fisiologia muscular representando a base científica do treinamento" style="opacity: 0.1;">
             </div>
             <div class="container hero-grid">
                 <div class="hero-content">
-                    <span class="hero-badge">Esquilo Wellness and Health</span>
-                    <h1 class="text-gradient">Treinamento baseado em ciência para transformar sua saúde, metabolismo e performance.</h1>
-                    <p>Uma abordagem baseada em fisiologia do exercício, análise metabólica e acompanhamento individual para resultados reais e sustentáveis.</p>
+                    <span class="hero-badge" style="color: var(--accent); border-color: var(--accent);">Autoridade em Saúde Metabólica</span>
+                    <h1 style="font-size: clamp(3.5rem, 8vw, 6rem); margin-bottom: 1.5rem;">Método Esquilo Wellness and Health</h1>
+                    <p style="font-size: 1.4rem; line-height: 1.4; color: var(--text); margin-bottom: 3rem; max-width: 800px;">Transformando saúde metabólica, emagrecimento e performance através da ciência do exercício e da medicina preventiva.</p>
                     <div class="hero-btns">
-                        <a href="https://wa.me/5548999229071" class="btn btn-primary">Agendar Avaliação</a>
+                        <a href="/contato.html" class="btn btn-primary">Agendar Consulta</a>
                         <a href="https://wa.me/5548999229071" class="btn btn-outline btn-whatsapp">
                             <i data-lucide="message-circle"></i> Falar no WhatsApp
                         </a>
                     </div>
                 </div>
                 <div class="hero-image-container">
-                    <img id="hero-image" src="/assets/images/esquilo-hero-new.png" alt="Luciano Ghilardi Nacco (Esquilo) - Fisiologista do Exercício e Personal Trainer" class="hero-photo" fetchpriority="high" decoding="async">
+                    <img id="hero-image" src="/assets/images/esquilo-hero-new.png" alt="Luciano Ghilardi Nacco (Esquilo) - Fisiologista do Exercício" class="hero-photo" fetchpriority="high" decoding="async">
                 </div>
             </div>
         </section>
 
-        <!-- PROBLEMA + IDENTIFICAÇÃO -->
+        <!-- ISSO É PARA VOCÊ? -->
         <section class="section reveal" style="background: var(--surface);">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="text-gradient">Isso é para você?</h2>
-                    <p>O método Esquilo Wellness and Health foi desenhado para quem busca resultados de elite através da ciência.</p>
+                <div class="section-header" style="text-align: left; margin-bottom: 4rem;">
+                    <h2 style="font-size: 4rem; color: var(--accent);">Isso é para você?</h2>
                 </div>
-                <div class="problem-grid">
+                <div class="problem-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
                     <div class="glass-card problem-item">
-                        <i data-lucide="check-circle" style="color: var(--primary);"></i>
-                        <p>Sente que treina, treina e <strong>não vê evolução real</strong> no corpo ou nos exames.</p>
+                        <p>Tem <strong>exames alterados</strong> e busca uma solução científica.</p>
                     </div>
                     <div class="glass-card problem-item">
-                        <i data-lucide="check-circle" style="color: var(--primary);"></i>
-                        <p>Precisa <strong>emagrecer</strong> de forma definitiva e saudável.</p>
+                        <p>Está <strong>acima do peso</strong> e não consegue resultados sustentáveis.</p>
                     </div>
                     <div class="glass-card problem-item">
-                        <i data-lucide="check-circle" style="color: var(--primary);"></i>
-                        <p>Busca melhorar <strong>exames de sangue</strong> e saúde metabólica.</p>
+                        <p>Tem <strong>dificuldade para emagrecer</strong> apesar do esforço.</p>
                     </div>
                     <div class="glass-card problem-item">
-                        <i data-lucide="check-circle" style="color: var(--primary);"></i>
-                        <p>Já tentou de tudo e procura uma <strong>estratégia profissional</strong> baseada em ciência.</p>
+                        <p>Tem <strong>diabetes</strong> ou pré-diabetes e precisa de controle fisiológico.</p>
                     </div>
                     <div class="glass-card problem-item">
-                        <i data-lucide="check-circle" style="color: var(--primary);"></i>
-                        <p>Deseja <strong>longevidade</strong> com autonomia física e mental.</p>
+                        <p>Tem <strong>hipertensão</strong> e busca segurança no exercício.</p>
                     </div>
                     <div class="glass-card problem-item">
-                        <i data-lucide="check-circle" style="color: var(--primary);"></i>
-                        <p>Precisa de <strong>reabilitação</strong> cardíaca ou metabólica com segurança.</p>
+                        <p>Quer melhorar sua <strong>saúde metabólica</strong> geral.</p>
+                    </div>
+                    <div class="glass-card problem-item">
+                        <p>Busca melhorar o <strong>condicionamento</strong> e a performance física.</p>
+                    </div>
+                    <div class="glass-card problem-item">
+                        <p>Tem <strong>mais de 40 ou 45 anos</strong> e quer longevidade ativa.</p>
+                    </div>
+                    <div class="glass-card problem-item">
+                        <p>Já tentou emagrecer várias vezes e <strong>não conseguiu manter</strong> os resultados.</p>
                     </div>
                 </div>
-                <p class="text-center" style="margin-top: 2.5rem; color: var(--text-dim); font-weight: 600;">Se você se identificou com alguma dessas situações, o Método Esquilo pode ser para você.</p>
+                <p class="text-center" style="margin-top: 3.5rem; font-size: 1.5rem; color: var(--accent); font-family: var(--font-display); font-weight: 700;">Se você se identificou com alguma dessas situações, o Método Esquilo Wellness and Health é para você.</p>
             </div>
         </section>
 
-        <!-- QUEBRA DE PADRÃO -->
-        <section class="section reveal">
-            <div class="container text-center">
-                <div class="differentiation-box">
-                    <h2 class="text-gradient">A maioria dos treinos não falha por falta de esforço.</h2>
-                    <p style="font-size: 1.5rem; color: var(--text-dim); margin: 2rem 0;">Falha por falta de <strong>estratégia baseada em ciência</strong>.</p>
-                    <p>Enquanto o mercado comum foca apenas em "suar a camisa", nós focamos na sua <strong>fisiologia, metabolismo e medicina preventiva</strong>.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- AUTORIDADE -->
+        <!-- CONHEÇA O ESPECIALISTA -->
         <section id="especialista" class="section authority reveal">
-            <div class="watermark" style="bottom: 10%; left: -5%;">Authority</div>
             <div class="container">
                 <div class="authority-grid">
                     <div class="authority-image">
                         <img src="/assets/images/esquilo-authority-new.png" alt="Luciano Ghilardi Nacco (Esquilo) em atendimento profissional" loading="lazy">
                     </div>
                     <div class="authority-content">
-                        <h2 class="text-gradient">Conheça o especialista</h2>
-                        <p><strong>Luciano Ghilardi Nacco (Esquilo)</strong> é fisiologista do exercício e especialista em saúde metabólica e performance humana.</p>
-                        <p>Seu trabalho combina ciência do exercício, medicina preventiva e metodologias personalizadas para ajudar cada cliente a alcançar saúde, longevidade e alta performance.</p>
+                        <h2 style="color: var(--accent); font-size: 4rem;">Conheça o especialista</h2>
+                        <p style="font-size: 1.4rem; color: var(--text); margin-bottom: 1.5rem;"><strong>Luciano Ghilardi Nacco (Esquilo)</strong> é fisiologista do exercício e membro da equipe de check-up do Hospital Baía Sul.</p>
+                        <p>Especialista em saúde metabólica, emagrecimento, reabilitação cardíaca, hipertensão, diabetes e performance humana.</p>
+                        <p>Seu trabalho combina ciência do exercício, medicina preventiva e metodologias personalizadas para ajudar cada cliente a conquistar saúde, longevidade e um físico que devolve confiança e eleva a autoestima.</p>
                         
-                        <div class="credentials">
-                            <h4 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 1.25rem;">Autoridade Profissional:</h4>
-                            <div class="credential-item">
-                                <i data-lucide="award"></i>
-                                <span>Mais de 30 anos de experiência com treinamento e fisiologia do exercício</span>
-                            </div>
-                            <div class="credential-item">
-                                <i data-lucide="stethoscope"></i>
-                                <span>Especialista em reabilitação cardíaca, diabetes e hipertensão</span>
-                            </div>
-                            <div class="credential-item">
-                                <i data-lucide="activity"></i>
-                                <span>Atuação com emagrecimento, saúde metabólica e performance</span>
-                            </div>
-                            <div class="credential-item">
-                                <i data-lucide="users"></i>
-                                <span>Integração com médicos, nutricionistas e fisioterapeutas</span>
-                            </div>
-                            <div class="credential-item">
-                                <i data-lucide="database"></i>
-                                <span>Atendimento individualizado baseado em exames e dados fisiológicos</span>
-                            </div>
-                            
-                            <div class="credential-item clickable-location" style="border: 1px solid var(--border-accent); padding: 0.75rem 1.25rem; border-radius: 12px; background: rgba(0, 229, 255, 0.05); margin-top: 1.5rem; width: fit-content; transition: var(--transition);">
-                                <i data-lucide="map-pin" style="color: var(--primary);"></i>
-                                <a href="/personal-trainer-florianopolis" style="color: var(--primary); text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 0.5rem;">
-                                    Personal Trainer em Florianópolis - SC
-                                    <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
-                                </a>
-                            </div>
+                        <div class="credentials" style="margin-top: 3rem;">
+                           <div class="glass-card" style="padding: 2rem; border-left: 4px solid var(--accent);">
+                               <h3 style="font-size: 2.5rem; color: var(--accent); margin-bottom: 0.5rem;">+10.000</h3>
+                               <p style="text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;">Vidas Transformadas</p>
+                           </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- O MÉTODO -->
-        <section id="metodo" class="section method reveal">
-            <div class="watermark" style="top: 10%; right: -5%;">Methodology</div>
+        <!-- COMO POSSO AJUDAR VOCÊ -->
+        <section id="servicos" class="section reveal" style="background: var(--bg);">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="text-gradient">Esquilo Wellness and Health</h2>
-                    <p>Um método estruturado baseado em fisiologia do exercício, medicina preventiva e ciência da performance humana.</p>
+                <div class="section-header" style="text-align: left; margin-bottom: 4rem;">
+                    <h2 style="font-size: 4rem; color: var(--accent);">Como posso ajudar você</h2>
                 </div>
-
-                <div class="method-grid">
-                    <div class="glass-card method-card">
-                        <h3>Metabolic Health</h3>
-                        <p>Foco na otimização dos processos celulares e metabólicos para queima de gordura e saúde sistêmica.</p>
-                        <ul>
-                            <li>Análise de exames de sangue</li>
-                            <li>Equilíbrio hormonal via treino</li>
-                            <li>Otimização energética</li>
-                        </ul>
+                <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                    <div class="glass-card service-card">
+                        <h3>Consultoria Online</h3>
+                        <p>Acompanhamento estratégico à distância com base em dados.</p>
                     </div>
-                    <div class="glass-card method-card">
-                        <h3>Body Transformation</h3>
-                        <p>Ciência aplicada à estética e composição corporal para resultados visíveis e funcionais.</p>
-                        <ul>
-                            <li>Emagrecimento sustentável</li>
-                            <li>Hipertrofia personalizada</li>
-                            <li>Melhora da autoestima</li>
-                        </ul>
+                    <div class="glass-card service-card">
+                        <h3>Consultoria Presencial</h3>
+                        <p>Atendimento exclusivo e detalhado para sua performance.</p>
                     </div>
-                    <div class="glass-card method-card">
-                        <h3>Human Performance</h3>
-                        <p>Alta performance para executivos, profissionais e atletas que buscam o seu limite.</p>
-                        <ul>
-                            <li>Biohacking e longevidade</li>
-                            <li>Testes de esforço</li>
-                            <li>Anamnese detalhada</li>
-                        </ul>
+                    <div class="glass-card service-card">
+                        <h3>Personal Training</h3>
+                        <p>Treinamento individualizado com foco em fisiologia.</p>
                     </div>
-                </div>
-
-                <!-- COMO FUNCIONA NA PRÁTICA -->
-                <div class="how-it-works reveal" style="margin-top: 6rem;">
-                    <div class="section-header">
-                        <h2 class="text-gradient">Como funciona na prática</h2>
+                    <div class="glass-card service-card">
+                        <h3>Análise de Exames</h3>
+                        <p>Interpretação detalhada para otimização metabólica.</p>
                     </div>
-                    <div class="steps-grid">
-                        <div class="step-item">
-                            <span class="step-number">01</span>
-                            <h4>Avaliação Inicial</h4>
-                            <p>Anamnese detalhada, avaliação física e definição de objetivos.</p>
-                        </div>
-                        <div class="step-item">
-                            <span class="step-number">02</span>
-                            <h4>Análise de Dados</h4>
-                            <p>Estudo de exames de sangue, testes de esforço e indicadores metabólicos.</p>
-                        </div>
-                        <div class="step-item">
-                            <span class="step-number">03</span>
-                            <h4>Planejamento</h4>
-                            <p>Estratégia de treino personalizada baseada na sua fisiologia e objetivos.</p>
-                        </div>
-                        <div class="step-item">
-                            <span class="step-number">04</span>
-                            <h4>Acompanhamento</h4>
-                            <p>Monitoramento contínuo, ajustes estratégicos e suporte direto.</p>
-                        </div>
+                    <div class="glass-card service-card">
+                        <h3>Avaliação Metabólica</h3>
+                        <p>Testes precisos de saúde e performance.</p>
+                    </div>
+                    <div class="glass-card service-card">
+                        <h3>Palestras</h3>
+                        <p>Conteúdo de alto impacto sobre saúde e ciência.</p>
+                    </div>
+                    <div class="glass-card service-card">
+                        <h3>Cursos</h3>
+                        <p>Formação para quem busca domínio sobre o próprio corpo.</p>
+                    </div>
+                    <div class="glass-card service-card">
+                        <h3>E-books e Materiais</h3>
+                        <p>Conhecimento prático e científico em suas mãos.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- RESULTADOS -->
-        <section id="resultados" class="section reveal">
-            <div class="watermark" style="top: 15%; right: -2%;">Results</div>
+        <!-- DEPOIMENTOS -->
+        <section id="depoimentos" class="section reveal" style="background: var(--surface);">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="text-gradient">Resultados Reais</h2>
-                    <p>Depoimentos e transformações que comprovam a eficácia da abordagem científica.</p>
+                <div class="section-header" style="text-align: center; margin-bottom: 6rem;">
+                    <h2 style="font-size: 4rem; color: var(--accent);">Depoimentos</h2>
                 </div>
                 <div class="results-grid">
                     <div class="glass-card testimonial-card">
-                        <div class="testimonial-scroll">
-                            <img src="/assets/images/testimonial-1.jpg" alt="Resultado de evolução corporal de cliente do Método Esquilo" loading="lazy">
-                        </div>
-                        <div class="testimonial-caption">
-                            <p>"Um profissional que trabalha com a sua fisiologia única."</p>
-                        </div>
+                        <i data-lucide="quote" style="color: var(--accent); margin-bottom: 1.5rem;"></i>
+                        <p style="font-style: italic; font-size: 1.1rem; margin-bottom: 2rem;">“O teu treino faz toda diferença! Desafia, motiva e traz resultado, minhas gordurinhas indesejáveis já estão desaparecendo e dando lugar aos músculos que tanto eu queria, obrigada por construir um treino que se adequou às minhas necessidades. Parabéns pelo profissionalismo.”</p>
+                        <span style="font-weight: 700; color: var(--accent);">— Fabrícia</span>
                     </div>
                     <div class="glass-card testimonial-card">
-                        <div class="testimonial-scroll">
-                            <img src="/assets/images/testimonial-2.jpg" alt="Depoimento e evolução de cliente pós-treinamento com Personal Trainer" loading="lazy">
-                        </div>
-                        <div class="testimonial-caption">
-                            <p>"Resultados reais de quem entende o que o meu corpo precisava."</p>
-                        </div>
-                    </div>
-                    <div class="glass-card testimonial-card">
-                        <div class="testimonial-content" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; height: 100%; justify-content: center;">
-                            <i data-lucide="quote" style="color: var(--primary); opacity: 0.3; width: 40px; height: 40px;"></i>
-                            <p style="font-style: italic; color: var(--text-dim); line-height: 1.6; font-size: 1.1rem; margin: 0;">"Cheguei até o profissional Luciano, mais conhecido como Esquilo, quando precisei de alguém com conhecimentos específicos para treinar um paciente pós-operado do coração. Este era o meu caso.<br><br>A indicação foi certeira.<br><br>Após 3 anos de treinos e acompanhamento dedicado, percebo uma evolução constante e reconheço o quanto ele contribuiu para minha saúde e qualidade de vida.<br><br>Sou muito grato e o parabenizo pelo profissionalismo."</p>
-                            <span style="font-weight: 700; color: var(--primary); align-self: flex-end; font-size: 1.2rem;">— Rosemar</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SERVIÇOS -->
-        <section id="servicos" class="section reveal">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="text-gradient">Como posso ajudar você</h2>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon"><i data-lucide="users"></i></div>
-                        <h3>Personal Training</h3>
-                        <p>Treinamento presencial personalizado em Florianópolis, focado em seus objetivos específicos.</p>
-                        <a href="/personal-trainer-florianopolis" class="btn btn-outline btn-sm" style="margin-top: 1.5rem;">Ver detalhes em Florianópolis</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i data-lucide="activity"></i></div>
-                        <h3>Avaliação Metabólica</h3>
-                        <p>Diagnóstico completo de saúde e performance física através de testes e análises científicas.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTEÚDO -->
-        <section class="section reveal" style="background: var(--surface);">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="text-gradient">Expandindo Horizontes</h2>
-                    <p>O conhecimento é a base da transformação. Explore nossos materiais educativos e mergulhe no universo da alta performance.</p>
-                </div>
-                <div class="content-grid-youtube">
-                    <div class="glass-card education-card youtube-featured">
-                        <div class="youtube-embed-container">
-                            <iframe 
-                                src="https://www.youtube.com/embed/5aZ6CRjRFlw?si=LzTCe7173Yw4VZwM" 
-                                title="Esquilocast - Fisiologia e Performance"
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                        <div class="education-body">
-                            <h3>Esquilocast Podcast</h3>
-                            <p>Conversas e conteúdos sobre fisiologia do exercício, metabolismo, longevidade, emagrecimento e performance humana, com aplicação prática e base científica.</p>
-                            <a href="https://youtube.com/@esquilocastpodcast?si=Sg2HIWpDQ_Viu_F2" target="_blank" class="btn btn-outline" style="margin-top: 1rem;">
-                                <i data-lucide="youtube"></i> Visitar Canal no YouTube
-                            </a>
-                        </div>
-                    </div>
-                    <div class="glass-card education-card">
-                        <div class="education-icon"><i data-lucide="instagram"></i></div>
-                        <div class="education-body">
-                            <h3>Mastery Feed</h3>
-                            <p>Acompanhe os bastidores da elite. Insights diários, análise de exames e ciência aplicada diretamente no seu feed do Instagram.</p>
-                            <a href="https://www.instagram.com/esquilo.personal?igsh=MWNwZnQxem9hYmN6dQ==" target="_blank" class="btn btn-outline">
-                                <i data-lucide="external-link"></i> Siga no Instagram
-                            </a>
-                        </div>
+                        <i data-lucide="quote" style="color: var(--accent); margin-bottom: 1.5rem;"></i>
+                        <p style="font-style: italic; font-size: 1.1rem; margin-bottom: 2rem;">“Meu querido profi e amigo Squilo é um grande ser humano. Professor muito qualificado. Está sempre atento para garantir que o movimento esteja sendo feito corretamente. Quando vou ao cardiologista e perguntam se faço exercício físico e com quem... eles dizem: está em boas mãos. Pode confiar. Eu assino embaixo.”</p>
+                        <span style="font-weight: 700; color: var(--accent);">— Rosania</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA FINAL -->
-        <section class="section cta-section">
+        <section class="section reveal">
             <div class="container">
-                <div class="glass-card cta-card text-center" style="text-align: center; padding: 4rem;">
-                    <h2 class="text-gradient" style="font-size: 3rem; margin-bottom: 1.5rem;">Pronto para transformar sua saúde, metabolismo e performance com acompanhamento profissional?</h2>
-                    <p style="font-size: 1.25rem; color: var(--text-dim); margin-bottom: 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-                        Agende uma avaliação inicial e descubra como o Método Esquilo pode ajudar você a alcançar resultados reais, seguros e sustentáveis.
-                    </p>
-                    <a href="https://wa.me/5548999229071" class="btn btn-primary btn-lg">FALAR NO WHATSAPP</a>
+                <div class="glass-card text-center" style="padding: 6rem 3rem; border: 2px solid var(--accent);">
+                    <h2 style="font-size: 3.5rem; margin-bottom: 2rem;">Pronto para transformar sua saúde, metabolismo e performance com acompanhamento profissional?</h2>
+                    <div class="hero-btns" style="justify-content: center;">
+                        <a href="/contato.html" class="btn btn-primary">Agendar Consulta</a>
+                        <a href="https://wa.me/5548999229071" class="btn btn-outline btn-whatsapp">
+                            <i data-lucide="message-circle"></i> Falar no WhatsApp
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer id="contato">
-        <div class="giant-watermark">ESQUILO</div>
+    <footer id="contato" style="background: #000; padding: 6rem 0; border-top: 1px solid var(--border);">
         <div class="container">
-            <div class="footer-top">
+            <div class="footer-top" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem;">
                 <div class="footer-brand">
-                    <a href="/" class="footer-logo">
-                        <img src="/assets/images/logo-transparent.png" alt="Logo" class="footer-logo-img">
-                    </a>
-                    <blockquote class="footer-quote">
-                        "Eu proporciono experiências e transformações em saúde e performance de forma profissional."
-                    </blockquote>
+                    <img src="/assets/images/logo-transparent.png" alt="Logo" style="height: 100px; margin-bottom: 2rem;">
+                    <p style="color: var(--text-dim);">Metodologia baseada em ciência para saúde, longevidade e performance.</p>
                 </div>
-                
-                <div class="footer-links">
-                    <h4>Mapa do Site</h4>
-                    <ul>
-                        <li><a href="#metodo">O Método</a></li>
-                        <li><a href="#especialista">A Autoridade</a></li>
-                        <li><a href="#servicos">Especialidades</a></li>
-                        <li><a href="/personal-trainer-florianopolis">Florianópolis Prime</a></li>
-                    </ul>
+                <div>
+                  <h4 style="color: var(--accent); margin-bottom: 2rem; text-transform: uppercase;">Menu</h4>
+                  <ul style="display: flex; flex-direction: column; gap: 1rem;">
+                    <li><a href="/metodo.html">Método</a></li>
+                    <li><a href="/emagrecimento.html">Emagrecimento</a></li>
+                    <li><a href="/avaliacao.html">Avaliação Metabólica</a></li>
+                    <li><a href="/ebooks.html">E-books e Cursos</a></li>
+                  </ul>
                 </div>
-
-                <div class="footer-contact">
-                    <h4>Conexões Digitais</h4>
-                    <div class="social-reveal-grid">
-                        <a href="mailto:esquilopersonal@gmail.com" class="reveal-item">
-                            <i data-lucide="mail"></i>
-                            <span class="reveal-label">E-mail</span>
-                            <span class="reveal-content">esquilopersonal@gmail.com</span>
-                        </a>
-                        <a href="https://wa.me/5548999229071" class="reveal-item">
-                            <i data-lucide="message-circle"></i>
-                            <span class="reveal-label">WhatsApp</span>
-                            <span class="reveal-content">48 99922-9071</span>
-                        </a>
-                        <a href="https://www.instagram.com/esquilo.personal?igsh=MWNwZnQxem9hYmN6dQ==" target="_blank" class="reveal-item">
-                            <i data-lucide="instagram"></i>
-                            <span class="reveal-label">Instagram</span>
-                            <span class="reveal-content">@esquilo.personal</span>
-                        </a>
-                        <a href="https://youtube.com/@esquilocastpodcast?si=Sg2HIWpDQ_Viu_F2" target="_blank" class="reveal-item">
-                            <i data-lucide="youtube"></i>
-                            <span class="reveal-label">YouTube</span>
-                            <span class="reveal-content">Esquilocast</span>
-                        </a>
-                        <a href="https://linkedin.com/in/esquilo-luciano-ghilardi-nacco-9069b216a" target="_blank" class="reveal-item">
-                            <i data-lucide="linkedin"></i>
-                            <span class="reveal-label">LinkedIn</span>
-                            <span class="reveal-content">Luciano Nacco</span>
-                        </a>
-                    </div>
+                <div>
+                    <h4 style="color: var(--accent); margin-bottom: 2rem; text-transform: uppercase;">Contato</h4>
+                    <p>esquilo@esquilopersonal.com</p>
+                    <p>Florianópolis - SC</p>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 Luciano Ghilardi Nacco. Todos os direitos reservados.</p>
-                <p class="developer-credit">Authority Engine™ desenvolvido por <a href="http://www.tobiasestivalete.com.br" target="_blank" rel="noopener" class="highlight">Tobias Estivalete</a></p>
+            <div style="margin-top: 6rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim);">
+                <p>&copy; 2026 Método Esquilo Wellness and Health. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
