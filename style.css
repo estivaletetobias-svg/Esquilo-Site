@@ -1297,14 +1297,19 @@ footer {
 
 
   .developer-credit p {
-    font-size: 0.7rem !important;
-    display: flex !important;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
+    font-size: 0.75rem !important;
+    display: block !important;
+    text-align: center;
     width: 100% !important;
+    line-height: 1.4 !important;
+    white-space: normal !important;
   }
+  
+  .developer-credit a {
+    white-space: nowrap !important;
+    display: inline-block;
+  }
+
   
   .reveal-item svg {
     display: block !important;
@@ -1329,6 +1334,23 @@ footer {
 
 
 
+  /* Fix for Final CTA Card on Mobile */
+  .section div[style*="padding: 6rem 3rem"],
+  .cta-card, 
+  .glass-card[style*="padding: 4rem"] {
+    padding: 2rem 1.5rem !important;
+  }
+
+  .section div[style*="padding: 6rem 3rem"] h2,
+  .cta-card h2,
+  .glass-card[style*="padding: 4rem"] h2 {
+    font-size: 1.6rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 2rem !important;
+    padding: 0 !important;
+  }
+
+
   /* Redução de títulos que quebram em telas pequenas */
   .method-card h3, 
   .service-card h3, 
@@ -1338,6 +1360,7 @@ footer {
     word-break: break-word; /* Para garantir que não quebre o layout */
   }
 }
+
 .developer-credit a {
   color: var(--primary);
   text-decoration: none;
