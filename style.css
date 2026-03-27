@@ -1192,7 +1192,7 @@ footer {
   }
 
   /* Horizontal Scrolling Carousels */
-  .method-grid, .steps-grid, .problem-grid {
+  .method-grid, .steps-grid, .problem-grid, .services-grid, .results-grid {
     display: flex !important;
     overflow-x: auto !important;
     scroll-snap-type: x mandatory;
@@ -1205,6 +1205,7 @@ footer {
   }
 
 
+
   .method-grid::-webkit-scrollbar, 
   .results-grid::-webkit-scrollbar, 
   .steps-grid::-webkit-scrollbar,
@@ -1212,11 +1213,12 @@ footer {
     display: none;
   }
 
-  .method-grid > *, .results-grid > *, .steps-grid > *, .problem-grid > * {
+  .method-grid > *, .steps-grid > *, .problem-grid > *, .services-grid > *, .results-grid > * {
     flex: 0 0 82%;
     scroll-snap-align: start;
     margin: 0 !important;
   }
+
 
   /* Specific adjustments for problem cards */
   .problem-item p {
