@@ -1145,16 +1145,19 @@ footer {
     color: var(--primary);
   }
 
-  header { padding: 0.5rem 0 !important; }
-  main { padding-top: 3rem !important; }
+  header { padding: 0.75rem 0 !important; }
+  main { padding-top: 3.5rem !important; }
   .section { padding: 2.5rem 1.5rem !important; }
   
-  h1 { font-size: 1.8rem !important; line-height: 1.1; margin-bottom: 1rem !important; }
-  h2 { font-size: 1.6rem !important; line-height: 1.2; margin-bottom: 1.5rem !important; }
-
+  .hero { 
+    padding-top: 1rem !important; 
+    padding-bottom: 2rem !important; 
+    min-height: auto !important; 
+  }
   
   .hero h1 { font-size: 2rem; }
   .section-header h2 { font-size: 1.8rem !important; }
+
   .section-header p { font-size: 1rem !important; max-width: 100%; }
 
   
@@ -1441,8 +1444,9 @@ footer {
 @media (max-width: 968px) {
     .hero-grid {
         grid-template-columns: 1fr;
-        padding-top: 5rem;
+        padding-top: 1rem;
     }
+
     
     .hero-image-container, .hero-image-placeholder {
         order: -1;
