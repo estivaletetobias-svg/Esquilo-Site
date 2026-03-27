@@ -1294,18 +1294,21 @@ footer {
 
 
   .developer-credit p {
-    font-size: 0.65rem !important;
-    white-space: nowrap;
-    letter-spacing: normal;
+    font-size: 0.7rem !important;
+    display: flex !important;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 100% !important;
   }
   
-  .reveal-item i {
+  .reveal-item svg {
     display: block !important;
     width: 22px !important;
     height: 22px !important;
     margin-right: 1.2rem;
-    color: var(--accent);
-    opacity: 1 !important;
+    flex-shrink: 0;
   }
 
   .reveal-item {
@@ -1315,6 +1318,11 @@ footer {
     padding: 1.5rem 2rem !important;
     text-align: left !important;
   }
+  
+  footer {
+    padding-bottom: 8rem !important;
+  }
+
 
 
 
