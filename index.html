@@ -55,20 +55,14 @@
             </a>
             <div class="nav-links">
                 <a href="/">Home</a>
-                <a href="/metodo.html">Método</a>
-                <a href="/emagrecimento.html">Emagrecimento</a>
-                <a href="/avaliacao.html">Avaliação Metabólica</a>
+                <a href="/metodo.html">O Método</a>
+                <a href="/emagrecimento.html">Emagrecer</a>
                 <a href="/servicos.html">Serviços</a>
-                <a href="/conteudos.html">Conteúdos</a>
-                <a href="/ebooks.html">E-books</a>
-                <a href="/depoimentos.html">Depoimentos</a>
+                <a href="/conteudos.html">Conteúdo</a>
                 <a href="/contato.html">Contato</a>
             </div>
             <div class="header-actions desktop-only">
                 <a href="/contato.html" class="btn btn-primary btn-sm">Agendar Consulta</a>
-                <a href="https://wa.me/5548999229071" class="btn btn-outline btn-sm btn-whatsapp" style="margin-left: 10px;">
-                    <i data-lucide="message-circle" style="width: 16px; height: 16px;"></i> WhatsApp
-                </a>
             </div>
         </nav>
     </header>
@@ -82,8 +76,8 @@
             <div class="container hero-grid">
                 <div class="hero-content">
                     <span class="hero-badge" style="color: var(--accent); border-color: var(--accent);">Autoridade em Saúde Metabólica</span>
-                    <h1 style="font-size: clamp(3.5rem, 8vw, 6rem); margin-bottom: 1.5rem;">Método Esquilo Wellness and Health</h1>
-                    <p style="font-size: 1.4rem; line-height: 1.4; color: var(--text); margin-bottom: 3rem; max-width: 800px;">Transformando saúde metabólica, emagrecimento e performance através da ciência do exercício e da medicina preventiva.</p>
+                    <h1 style="margin-bottom: 1.5rem;">MÉTODO <span class="highlight highlight-large">ESQUILO</span> <br>WELLNESS & HEALTH</h1>
+                    <p style="font-size: 1.25rem; color: #fff; opacity: 0.8; margin-bottom: 3.5rem; max-width: 650px; line-height: 1.2;">TRANSFORMANDO SAÚDE METABÓLICA E PERFORMANCE HUMANA ATRAVÉS DA CIÊNCIA DO EXERCÍCIO.</p>
                     <div class="hero-btns">
                         <a href="/contato.html" class="btn btn-primary">Agendar Consulta</a>
                         <a href="https://wa.me/5548999229071" class="btn btn-outline btn-whatsapp">
@@ -209,16 +203,22 @@
                 <div class="section-header" style="text-align: center; margin-bottom: 6rem;">
                     <h2 style="font-size: 4rem; color: var(--accent);">Depoimentos</h2>
                 </div>
-                <div class="results-grid">
+                <div class="results-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
                     <div class="glass-card testimonial-card">
-                        <i data-lucide="quote" style="color: var(--accent); margin-bottom: 1.5rem;"></i>
-                        <p style="font-style: italic; font-size: 1.1rem; margin-bottom: 2rem;">“O teu treino faz toda diferença! Desafia, motiva e traz resultado, minhas gordurinhas indesejáveis já estão desaparecendo e dando lugar aos músculos que tanto eu queria, obrigada por construir um treino que se adequou às minhas necessidades. Parabéns pelo profissionalismo.”</p>
+                        <i data-lucide="quote" style="color: var(--accent); margin-bottom: 1rem;"></i>
+                        <p style="font-style: italic; font-size: 1rem; margin-bottom: 1.5rem;">“O teu treino faz toda diferença! Desafia, motiva e traz resultado, minhas gordurinhas indesejáveis já estão desaparecendo.”</p>
                         <span style="font-weight: 700; color: var(--accent);">— Fabrícia</span>
                     </div>
                     <div class="glass-card testimonial-card">
-                        <i data-lucide="quote" style="color: var(--accent); margin-bottom: 1.5rem;"></i>
-                        <p style="font-style: italic; font-size: 1.1rem; margin-bottom: 2rem;">“Meu querido profi e amigo Squilo é um grande ser humano. Professor muito qualificado. Está sempre atento para garantir que o movimento esteja sendo feito corretamente. Quando vou ao cardiologista e perguntam se faço exercício físico e com quem... eles dizem: está em boas mãos. Pode confiar. Eu assino embaixo.”</p>
+                        <i data-lucide="quote" style="color: var(--accent); margin-bottom: 1rem;"></i>
+                        <p style="font-style: italic; font-size: 1rem; margin-bottom: 1.5rem;">“Qualificado. Cardiologistas dizem: está em boas mãos. Eu assino embaixo.”</p>
                         <span style="font-weight: 700; color: var(--accent);">— Rosania</span>
+                    </div>
+                    <div class="glass-card testimonial-card" style="padding: 0; overflow: hidden;">
+                        <img src="/assets/images/testimonial-1.jpg" alt="Resultado Luciano Esquilo" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="glass-card testimonial-card" style="padding: 0; overflow: hidden;">
+                        <img src="/assets/images/testimonial-2.jpg" alt="Transformação Luciano Esquilo" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -240,30 +240,57 @@
         </section>
     </main>
 
-    <footer id="contato" style="background: #000; padding: 6rem 0; border-top: 1px solid var(--border);">
+    <footer id="contato" style="background: #000; padding: 10rem 0 4rem; border-top: 1px solid var(--border);">
         <div class="container">
-            <div class="footer-top" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem;">
+            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: start; margin-bottom: 6rem;">
                 <div class="footer-brand">
-                    <img src="/assets/images/logo-transparent.png" alt="Logo" style="height: 100px; margin-bottom: 2rem;">
-                    <p style="color: var(--text-dim);">Metodologia baseada em ciência para saúde, longevidade e performance.</p>
+                    <img src="/assets/images/logo-transparent.png" alt="Logo" class="footer-logo-img">
+                    <p style="color: var(--text-dim); font-size: 1.1rem;">Metodologia baseada em ciência para saúde, longevidade e performance humana.</p>
                 </div>
-                <div>
-                  <h4 style="color: var(--accent); margin-bottom: 2rem; text-transform: uppercase;">Menu</h4>
-                  <ul style="display: flex; flex-direction: column; gap: 1rem;">
-                    <li><a href="/metodo.html">Método</a></li>
-                    <li><a href="/emagrecimento.html">Emagrecimento</a></li>
-                    <li><a href="/avaliacao.html">Avaliação Metabólica</a></li>
-                    <li><a href="/ebooks.html">E-books e Cursos</a></li>
-                  </ul>
-                </div>
-                <div>
-                    <h4 style="color: var(--accent); margin-bottom: 2rem; text-transform: uppercase;">Contato</h4>
-                    <p>esquilo@esquilopersonal.com</p>
-                    <p>Florianópolis - SC</p>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem;">
+                    <div>
+                        <h4 style="color: var(--accent); margin-bottom: 2rem; text-transform: uppercase;">Menu</h4>
+                        <ul style="display: flex; flex-direction: column; gap: 1rem; list-style: none;">
+                            <li><a href="/metodo.html">O Método</a></li>
+                            <li><a href="/emagrecimento.html">Emagrecimento</a></li>
+                            <li><a href="/servicos.html">Serviços</a></li>
+                            <li><a href="/depoimentos.html">Depoimentos</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent); margin-bottom: 2rem; text-transform: uppercase;">Conteúdo</h4>
+                        <ul style="display: flex; flex-direction: column; gap: 1rem; list-style: none;">
+                            <li><a href="/conteudos.html">Esquilocast</a></li>
+                            <li><a href="/ebooks.html">E-books</a></li>
+                            <li><a href="https://www.instagram.com/esquilo.personal">Instagram</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent); margin-bottom: 2rem; text-transform: uppercase;">Contato</h4>
+                        <p style="margin-bottom: 0.5rem; opacity: 0.7;">esquilo@esquilopersonal.com</p>
+                        <p style="opacity: 0.7;">Florianópolis - SC</p>
+                    </div>
                 </div>
             </div>
-            <div style="margin-top: 6rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim);">
-                <p>&copy; 2026 Método Esquilo Wellness and Health. Todos os direitos reservados.</p>
+
+            <!-- Social Grid Reveal -->
+            <div class="social-reveal-grid">
+                 <a href="https://www.instagram.com/esquilo.personal" class="reveal-item">
+                    <span class="reveal-label">Instagram</span>
+                    <span class="reveal-content">@esquilo.personal</span>
+                 </a>
+                 <a href="https://wa.me/5548999229071" class="reveal-item">
+                    <span class="reveal-label">WhatsApp</span>
+                    <span class="reveal-content">+55 48 99922-9071</span>
+                 </a>
+                 <a href="https://linkedin.com/in/esquilo-luciano-ghilardi-nacco-9069b216a" class="reveal-item">
+                    <span class="reveal-label">LinkedIn</span>
+                    <span class="reveal-content">Luciano G. Nacco</span>
+                 </a>
+            </div>
+
+            <div class="developer-credit" style="margin-top: 6rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim); font-size: 0.8rem;">
+                <p>&copy; 2026 Método Esquilo Wellness and Health. Desenvolvido por <a href="#" style="color: #fff; font-weight: 700;">Tobias Estivalete</a>.</p>
             </div>
         </div>
     </footer>
