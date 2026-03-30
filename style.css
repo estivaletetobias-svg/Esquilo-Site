@@ -379,6 +379,10 @@ nav.container {
   }
 }
 
+.header-whatsapp-mobile {
+  display: none;
+}
+
 .header-actions {
   display: flex;
   align-items: center;
@@ -1085,27 +1089,36 @@ footer {
 
   .logo {
     display: flex !important;
+    order: 2 !important;
+    justify-content: center !important;
+    flex: 1 !important;
+  }
+
+  .header-whatsapp-mobile {
+    display: flex !important;
     order: 3 !important;
     width: 40px !important;
     height: 40px !important;
-    justify-content: flex-end !important;
     align-items: center;
-    background: transparent !important;
+    justify-content: flex-end;
+    color: #25D366;
+    transition: var(--transition);
   }
 
-  .header-logo-img {
-    height: 40px !important; /* Smaller but clean on mobile */
-    width: auto !important;
+  .header-whatsapp-mobile i {
+    width: 24px;
+    height: 24px;
   }
 
-  .mobile-menu-toggle {
+  .header-whatsapp-mobile:hover {
+    transform: scale(1.1);
+    color: #fff;
+  }
+
+  nav.container {
     display: flex !important;
-    padding: 10px;
-    z-index: 1100;
-  }
-
-  .header-logo-img {
-    height: 55px !important;
+    justify-content: space-between !important;
+    width: 100% !important;
   }
 
 
