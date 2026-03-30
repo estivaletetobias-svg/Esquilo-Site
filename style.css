@@ -1457,9 +1457,14 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.6) 100%);
+    background: radial-gradient(circle, transparent 70%, rgba(0,0,0,0.4) 100%);
     pointer-events: none;
     z-index: 2;
+    transition: opacity 0.5s ease;
+}
+
+.hero-image-placeholder.no-vignette::after {
+    opacity: 0;
 }
 
 .hero-photo {
