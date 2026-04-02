@@ -100,3 +100,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+// Expandable cards logic
+document.querySelectorAll('.problem-item.expandable').forEach(card => {
+    card.addEventListener('click', () => {
+        const isActive = card.classList.contains('active');
+        
+        // Optional: Close other cards (uncomment if you want accordion style)
+        /*
+        document.querySelectorAll('.problem-item.expandable').forEach(other => {
+            other.classList.remove('active');
+        });
+        */
+        
+        if (!isActive) {
+            card.classList.add('active');
+        } else {
+            card.classList.remove('active');
+        }
+    });
+});
