@@ -117,7 +117,7 @@
         .sub-num { color: var(--accent); font-weight: 900; font-size: 1rem; margin-top: 2px; }
 
         /* --- Global & Mobile --- */
-        .top-status { position: fixed; top: 0; left: 0; width: 100%; background: var(--accent); color: #000; text-align: center; padding: 6px 0; font-size: 0.6rem; font-weight: 900; z-index: 3000; letter-spacing: 4px; }
+        .top-status { position: fixed; top: 0; left: 0; width: 100%; background: var(--accent); color: #000; text-align: center; padding-top: max(8px, env(safe-area-inset-top)); padding-bottom: 8px; font-size: 0.65rem; font-weight: 900; z-index: 3000; letter-spacing: 2px; }
         .mob-menu { display: none; position: fixed; bottom: 2rem; right: 2rem; width: 68px; height: 68px; background: var(--primary); color: #000; border-radius: 50%; z-index: 2100; border: none; align-items: center; justify-content: center; box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
 
         ul, ol { margin: 0; padding-left: 1.5rem; }
@@ -137,18 +137,25 @@
     </style>
 </head>
 <body oncontextmenu="return false;">
-    <div class="top-status">RESTRITO — PROTOCOLO EXCLUSIVO ANNA — MÉTODO ESQUILO © 2026</div>
+    <div class="top-status">
+        <span style="opacity:0.8;">OLÁ,</span> <strong style="font-size:0.75rem;">ANNA</strong> <span style="opacity:0.4; margin:0 10px;">|</span> PROTOCOLO EXCLUSIVO © 2026
+    </div>
 
     <button class="mob-menu" id="mobToggle"><i data-lucide="menu"></i></button>
 
     <aside class="sidebar" id="sidebar">
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2.5rem;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
             <div class="logo" style="margin: 0;"><img src="/assets/images/logo-transparent.png" alt="Esquilo" style="margin-bottom: 0;"></div>
             <a href="/" title="Acesse o meu site completo" style="color: var(--text-secondary); text-decoration: none; font-size: 0.65rem; text-transform: uppercase; font-weight: 800; display: flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.6rem; border: 1px solid var(--border); border-radius: 6px; transition: 0.2s;" onmouseover="this.style.color='#000'; this.style.backgroundColor='var(--primary)'; this.style.borderColor='var(--primary)';" onmouseout="this.style.color='var(--text-secondary)'; this.style.backgroundColor='transparent'; this.style.borderColor='var(--border)';">
                 Site Completo <i data-lucide="arrow-right" style="width: 12px; height: 12px;"></i>
             </a>
         </div>
         
+        <div style="margin-bottom: 2rem; padding: 1.5rem; background: rgba(204,255,0,0.05); border-radius: 12px; border: 1px solid var(--primary); text-align: center;">
+            <p style="color: var(--primary); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin: 0 0 0.2rem 0; letter-spacing: 2px;">Paciente Exclusiva</p>
+            <h2 style="color: #FFF; font-size: 1.8rem; margin: 0; font-family: var(--font-display); letter-spacing: 1px;">ANNA</h2>
+        </div>
+
         <nav class="nav-group"><span class="nav-label">Protocolo Técnico</span>
             <a href="#" class="nav-item active" data-target="peptideos"><i data-lucide="microscope"></i> Peptídeos & Fases</a>
         </nav>
@@ -236,7 +243,7 @@
                 </div>
                 <div class="rule-box">
                     <strong>FUNÇÕES:</strong>
-                    <ul style="margin-top:0.5rem; columns: 2;">
+                    <ul style="margin-top:0.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem;">
                         <li>✔ Reparo tecidual profundo</li>
                         <li>✔ Aumento de colágeno I e III</li>
                         <li>✔ Melhora da elasticidade da pele</li>
@@ -908,13 +915,13 @@
 
             <div class="data-card" style="border-color:var(--primary);">
                 <div class="card-title" style="color:var(--primary);">RESULTADO ESPERADO</div>
-                <div style="columns: 2; font-weight:600;">
-                    <p>✔ Redução da dor</p>
-                    <p>✔ Melhora do lipedema</p>
-                    <p>✔ Redução da acne</p>
-                    <p>✔ Cabelo mais forte</p>
-                    <p>✔ Sono profundo</p>
-                    <p>✔ Ganho de massa muscular</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; font-weight:600;">
+                    <p style="margin: 0;">✔ Redução da dor</p>
+                    <p style="margin: 0;">✔ Melhora do lipedema</p>
+                    <p style="margin: 0;">✔ Redução da acne</p>
+                    <p style="margin: 0;">✔ Cabelo mais forte</p>
+                    <p style="margin: 0;">✔ Sono profundo</p>
+                    <p style="margin: 0;">✔ Ganho de massa muscular</p>
                 </div>
             </div>
 
