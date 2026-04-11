@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protocolo Personalizado — Anna | Método Esquilo</title>
+    <title>Dashboard de Protocolo — Anna</title>
     
     <meta name="robots" content="noindex, nofollow">
     
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,20 +19,19 @@
             --primary: #CCFF00;
             --accent: #C5A059;
             --bg: #050505;
-            --surface: #0a0a0a;
+            --surface: #0f0f0f;
+            --surface-light: #181818;
+            --border: rgba(255, 255, 255, 0.08);
             --text: #ffffff;
-            --text-dim: rgba(255, 255, 255, 0.6);
-            --border: rgba(255, 255, 255, 0.1);
+            --text-dim: #a0a0a0;
             --font-main: 'Inter', sans-serif;
-            --font-display: 'Anton', sans-serif;
-            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            --sidebar-width: 280px;
         }
 
-        /* Bloqueios de Segurança */
         * {
+            box-sizing: border-box;
             user-select: none !important;
             -webkit-user-select: none !important;
-            -webkit-touch-callout: none !important;
         }
 
         body {
@@ -40,389 +39,651 @@
             color: var(--text);
             font-family: var(--font-main);
             margin: 0;
-            overflow-x: hidden;
-            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+            line-height: 1.5;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Background Layers */
-        .bg-mesh {
+        /* --- Sidebar --- */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            height: 100vh;
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(204, 255, 0, 0.03) 0%, transparent 50%);
-            z-index: -1;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
         }
 
-        /* Header */
-        header {
-            padding: 2rem 0;
-            border-bottom: 1px solid var(--border);
+        .sidebar-logo {
+            margin-bottom: 3rem;
             text-align: center;
         }
-        .logo-img { height: 40px; margin-bottom: 1rem; }
 
-        /* Protocol Nav */
-        .protocol-nav {
-            position: sticky;
-            top: 0;
-            background: rgba(5, 5, 5, 0.9);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-        .nav-inner {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            overflow-x: auto;
-            white-space: nowrap;
-            padding-bottom: 5px;
-        }
-        .nav-inner a {
+        .sidebar-logo img { height: 35px; }
+
+        .nav-group { margin-bottom: 2rem; }
+        .nav-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
             color: var(--text-dim);
+            letter-spacing: 0.1rem;
+            margin-bottom: 1rem;
+            display: block;
+            font-weight: 800;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 1rem;
+            color: var(--text);
             text-decoration: none;
-            font-size: 0.75rem;
-            font-weight: 700;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.2s;
+            margin-bottom: 0.2rem;
+        }
+
+        .nav-item i { width: 18px; color: var(--text-dim); }
+        .nav-item:hover { background: var(--surface-light); }
+        .nav-item.active { background: var(--primary); color: #000; font-weight: 700; }
+        .nav-item.active i { color: #000; }
+
+        /* --- Main Content --- */
+        .main-content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            padding: 0;
+            position: relative;
+        }
+
+        .content-section {
+            display: none;
+            padding: 4rem 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .content-section.active { display: block; animation: fadeIn 0.4s ease-out; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Section Header --- */
+        .section-header { margin-bottom: 3rem; }
+        .section-header h1 {
+            font-family: 'Anton', sans-serif;
+            font-size: 3rem;
+            margin: 0;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: var(--transition);
         }
-        .nav-inner a:hover { color: var(--primary); }
+        .section-header p { color: var(--text-dim); font-size: 1.1rem; margin-top: 0.5rem; }
 
-        /* Hero */
-        .hero {
-            padding: 8rem 0 4rem;
-            text-align: center;
-        }
-        .hero h1 {
-            font-family: var(--font-display);
-            font-size: clamp(3rem, 10vw, 6rem);
-            margin: 0;
-            line-height: 0.9;
-            color: var(--text);
-        }
-        .hero .highlight { color: var(--primary); }
-        .hero p { color: var(--text-dim); font-size: 1.2rem; margin-top: 2rem; }
-
-        /* Accordion */
-        .accordion { margin: 2rem 0; }
-        .accordion-item {
+        /* --- Technical Components --- */
+        .data-card {
             background: var(--surface);
             border: 1px solid var(--border);
-            margin-bottom: 1rem;
-            border-radius: 4px;
-            transition: var(--transition);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
         }
-        .accordion-header {
-            padding: 1.5rem;
+
+        .card-title {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            cursor: pointer;
-        }
-        .accordion-header h3 {
-            margin: 0;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-weight: 800;
             font-size: 1.1rem;
-            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        .accordion-icon { transition: transform 0.4s; color: var(--primary); }
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out, padding 0.5s ease;
-            padding: 0 1.5rem;
-            opacity: 0;
-        }
-        .accordion-item.active { border-color: var(--primary); }
-        .accordion-item.active .accordion-content {
-            max-height: 1000px;
-            padding: 1.5rem;
-            opacity: 1;
-            border-top: 1px solid var(--border);
-        }
-        .accordion-item.active .accordion-icon { transform: rotate(180deg); }
 
-        /* Technical Info */
-        .tech-grid {
+        .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            gap: 2rem;
+        }
+
+        .info-item label { display: block; font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; margin-bottom: 0.4rem; font-weight: 700; }
+        .info-item value { display: block; font-size: 1.1rem; font-weight: 700; color: var(--text); }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid var(--border);
+            padding-bottom: 3rem;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.6rem;
+            font-size: 0.65rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: rgba(204, 255, 0, 0.1);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* --- Nutrition Components --- */
+        .meal-card {
+            background: var(--surface-light);
+            border-left: 3px solid var(--accent);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .meal-time { font-size: 0.75rem; color: var(--accent); font-weight: 800; margin-bottom: 0.5rem; display: block; }
+        .meal-main { font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; }
+        .substitution-list {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.85rem;
+        }
+        .sub-item { margin-bottom: 0.5rem; color: var(--text-dim); display: flex; align-items: flex-start; gap: 0.5rem; }
+        .sub-item i { width: 14px; color: var(--accent); margin-top: 0.2rem; }
+
+        /* --- Training Table --- */
+        .training-table {
+            width: 100%;
+            border-collapse: collapse;
             margin-top: 1rem;
         }
-        .tech-card {
+        .training-table th, .training-table td {
+            text-align: left;
             padding: 1rem;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
-        .tech-card span { font-size: 0.65rem; color: var(--primary); text-transform: uppercase; font-weight: 800; display: block; margin-bottom: 0.3rem; }
-        .tech-card strong { font-size: 1.1rem; display: block; }
+        .training-table th { font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+        .training-table td { font-size: 0.95rem; font-weight: 500; }
+        .day-header { background: var(--surface); color: var(--primary); font-weight: 800; padding: 1.5rem 1rem !important; font-size: 1rem !important; }
 
-        /* Sections */
-        .section { padding: 4rem 0; }
-        .section-title {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--accent);
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 1.2rem 2.5rem;
+        /* --- Mobile Overlay --- */
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
             background: var(--primary);
             color: #000;
-            text-decoration: none;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-            margin-top: 2rem;
+            border-radius: 50%;
+            z-index: 2000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: none;
+            align-items: center;
+            justify-content: center;
         }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(204, 255, 0, 0.2); }
 
-        /* Footer */
-        footer {
-            padding: 4rem 0;
+        @media (max-width: 1024px) {
+            .sidebar { transform: translateX(-100%); transition: transform 0.3s; }
+            .sidebar.open { transform: translateX(0); }
+            .main-content { margin-left: 0; }
+            .content-section { padding: 3rem 1.5rem; }
+            .mobile-menu-btn { display: flex; }
+        }
+
+        /* Security Custom Cursor Notice */
+        .sec-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--accent);
+            color: #000;
             text-align: center;
-            border-top: 1px solid var(--border);
-            font-size: 0.7rem;
-            color: var(--text-dim);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Reveal Animation */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 4rem; }
-            .nav-inner { justify-content: flex-start; padding: 0 1rem; }
+            font-size: 0.6rem;
+            font-weight: 900;
+            padding: 2px 0;
+            z-index: 3000;
+            letter-spacing: 2px;
         }
     </style>
 </head>
 <body oncontextmenu="return false;">
-    <div class="bg-mesh"></div>
+    <div class="sec-banner">DOCUMENTO CONFIDENCIAL — ACESSO RESTRITO</div>
 
-    <header>
-        <div class="container">
-            <img src="/assets/images/logo-transparent.png" alt="Esquilo" class="logo-img">
-            <div style="font-size: 0.6rem; color: var(--primary); font-weight: 900; letter-spacing: 2px;">PROTOCOLO EXCLUSIVO</div>
+    <button class="mobile-menu-btn" id="mobileToggle">
+        <i data-lucide="menu"></i>
+    </button>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <img src="/assets/images/logo-transparent.png" alt="Esquilo">
         </div>
-    </header>
 
-    <nav class="protocol-nav">
-        <div class="container">
-            <div class="nav-inner">
-                <a href="#fluxo">Fluxo/Fases</a>
-                <a href="#peptideos">Peptídeos</a>
-                <a href="#nutricao">Nutrição</a>
-                <a href="#treino">Treino</a>
-            </div>
+        <div class="nav-group">
+            <span class="nav-label">Plataforma</span>
+            <a href="#" class="nav-item active" data-section="visao">
+                <i data-lucide="layout-dashboard"></i> Visão Geral
+            </a>
+            <a href="#" class="nav-item" data-section="fases">
+                <i data-lucide="calendar"></i> Cronograma 24 Sem.
+            </a>
         </div>
-    </nav>
 
-    <main>
-        <section class="hero reveal">
-            <div class="container">
-                <h1>PROTOCOLO <br><span class="highlight">ANNA</span></h1>
-                <p>Plano técnico personalizado para otimização metabólica e performance.</p>
+        <div class="nav-group">
+            <span class="nav-label">Protocolos Técnicos</span>
+            <a href="#" class="nav-item" data-section="peptideos">
+                <i data-lucide="dna"></i> Peptídeos & Suplementos
+            </a>
+            <a href="#" class="nav-item" data-section="dieta">
+                <i data-lucide="utensils"></i> Plano Alimentar
+            </a>
+            <a href="#" class="nav-item" data-section="treino">
+                <i data-lucide="dumbbell"></i> Programa de Treino
+            </a>
+        </div>
+
+        <div class="nav-group">
+            <span class="nav-label">Biohacking</span>
+            <a href="#" class="nav-item" data-section="habitos">
+                <i data-lucide="moon"></i> Sono & Hidratação
+            </a>
+            <a href="#" class="nav-item" data-section="regras">
+                <i data-lucide="shield-alert"></i> Regras Críticas
+            </a>
+        </div>
+
+        <div style="margin-top: auto;">
+            <a href="https://wa.me/5548999229071" class="nav-item" style="color: var(--primary);">
+                <i data-lucide="message-circle"></i> Suporte Direto
+            </a>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        
+        <!-- SECTION: VISAO GERAL -->
+        <section id="visao" class="content-section active">
+            <div class="section-header">
+                <div class="badge">Protocolo Anna</div>
+                <h1>Painel de Controle <br><span style="color:var(--primary)">Otimização 1.0</span></h1>
+                <p>Mapeamento metabólico e estruturação de performance personalizada.</p>
             </div>
-        </section>
 
-        <!-- SEÇÃO 01: FLUXO -->
-        <section id="fluxo" class="section reveal">
-            <div class="container">
-                <h2 class="section-title">01. Cronograma e Fluxo</h2>
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <h3>FASE 1: PREPARAÇÃO (SEM 1-4)</h3>
-                            <i data-lucide="chevron-down" class="accordion-icon"></i>
-                        </div>
-                        <div class="accordion-content">
-                            <p>Foco em sensibilização de receptores e controle glicêmico inicial.</p>
-                            <div class="tech-grid">
-                                <div class="tech-card"><span>Principal</span><strong>Retatrutida</strong></div>
-                                <div class="tech-card"><span>Dose</span><strong>1,0 mg / sem</strong></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <h3>FASE 2: ANABOLISMO (SEM 5-8)</h3>
-                            <i data-lucide="chevron-down" class="accordion-icon"></i>
-                        </div>
-                        <div class="accordion-content">
-                            <p>Ativação de vias de recuperação e preservação de massa magra.</p>
-                            <div class="tech-grid">
-                                <div class="tech-card"><span>Adicional</span><strong>CJC + Ipamorelin</strong></div>
-                                <div class="tech-card"><span>Horário</span><strong>Noite</strong></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <h3>FASE 3: LIPÓLISE (SEM 9-12)</h3>
-                            <i data-lucide="chevron-down" class="accordion-icon"></i>
-                        </div>
-                        <div class="accordion-content">
-                            <p>Foco máximo em oxidação de gordura. Pausa estratégica de sinalizadores de GH.</p>
-                            <div class="tech-grid">
-                                <div class="tech-card"><span>Entra</span><strong>AOD-9604</strong></div>
-                                <div class="tech-card"><span>Sai</span><strong>CJC-1295</strong></div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="data-card">
+                <div class="card-title"><i data-lucide="activity"></i> Lógica de Progressão</div>
+                <p style="color: var(--text-dim); line-height: 1.8;">
+                    Seu corpo funciona como um “motor”: se acelerado simultaneamente, ocorre o travamento metabólico. 
+                    O protocolo é desenhado em estímulos sequenciais: 
+                    <strong>Preparação (1-4) → Ativação (5-8) → Lipólise (9-12) → Energia (13-16) → Estabilização (17-24).</strong>
+                </p>
+            </div>
+
+            <div class="info-grid">
+                <div class="data-card">
+                    <label>Frequência de Treino</label>
+                    <value>5x por Semana</value>
+                </div>
+                <div class="data-card">
+                    <label>Hidratação Alvo</label>
+                    <value>3.5 Litros / Dia</value>
+                </div>
+                <div class="data-card">
+                    <label>Foco Atual</label>
+                    <value>Fase 1: Preparação</value>
                 </div>
             </div>
         </section>
 
-        <!-- SEÇÃO 02: PEPTÍDEOS -->
-        <section id="peptideos" class="section reveal">
-            <div class="container">
-                <h2 class="section-title">02. Protocolo de Peptídeos</h2>
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <h3>1. RETATRUTIDA (CANETA)</h3>
-                            <i data-lucide="chevron-down" class="accordion-icon"></i>
-                        </div>
-                        <div class="accordion-content">
-                            <div class="tech-grid">
-                                <div class="tech-card"><span>Dose Semanal</span><strong>1,0 mg</strong></div>
-                                <div class="tech-card"><span>Cliques (S1-4)</span><strong>6 Cliques</strong></div>
-                                <div class="tech-card"><span>Local</span><strong>Subcutânea</strong></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <h3>2. GHK-Cu (PELE E REPARO)</h3>
-                            <i data-lucide="chevron-down" class="accordion-icon"></i>
-                        </div>
-                        <div class="accordion-content">
-                            <div class="tech-grid">
-                                <div class="tech-card"><span>Sistêmico</span><strong>2,0 mg / dia</strong></div>
-                                <div class="tech-card"><span>Cliques</span><strong>80 UI</strong></div>
-                                <div class="tech-card"><span>Tópico</span><strong>1-2x / dia</strong></div>
-                            </div>
-                        </div>
-                    </div>
+        <!-- SECTION: FASES (CRONOGRAMA) -->
+        <section id="fases" class="content-section">
+            <div class="section-header">
+                <h1>Cronograma <span style="color:var(--primary)">24 Semanas</span></h1>
+                <p>As 5 etapas da transformação metabólica.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="badge">Semanas 1-4</div>
+                    <h3 style="margin: 0.5rem 0;">FASE 1: INÍCIO E ADAPTAÇÃO</h3>
+                    <p style="color: var(--text-dim);">Foco em Retatrutida (Dose Baixa). Preparar o corpo para queimar gordura sem perda de massa. Controla fome e açúcar.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="badge">Semanas 5-8</div>
+                    <h3 style="margin: 0.5rem 0;">FASE 2: ANABOLISMO E HORMÔNIO</h3>
+                    <p style="color: var(--text-dim);">Entra CJC-1295 + Ipamorelina. Foco em melhorar o sono, preservar músculo e aumentar a recuperação biológica.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="badge">Semanas 9-12</div>
+                    <h3 style="margin: 0.5rem 0;">FASE 3: LIPÓLISE TOTAL</h3>
+                    <p style="color: var(--text-dim);">Pausa CJC/Ipamorelin. Entra AOD-9604. Foco total em queima direta de gordura e redução de medidas.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="badge">Semanas 13-16</div>
+                    <h3 style="margin: 0.5rem 0;">FASE 4: MITOCÔNDRIA E ENERGIA</h3>
+                    <p style="color: var(--text-dim);">Pausa AOD. Entra MOTS-C (2-3x semana). Quebra de platô metabólico e otimização celular profunda.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="badge">Semanas 17-24</div>
+                    <h3 style="margin: 0.5rem 0;">FASE 5: MANUTENÇÃO ESTÁVEL</h3>
+                    <p style="color: var(--text-dim);">Reintrodução inteligente de CJC+Ipamorelin. Foco em estabilizar os ganhos e evitar efeito rebote.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SEÇÃO 03: NUTRIÇÃO -->
-        <section id="nutricao" class="section reveal">
-            <div class="container">
-                <h2 class="section-title">03. Guia Nutricional</h2>
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <h3>REFEIÇÕES BASE</h3>
-                            <i data-lucide="chevron-down" class="accordion-icon"></i>
-                        </div>
-                        <div class="accordion-content">
-                            <p><strong>Café:</strong> 3 ovos + 40g aveia + fruta.</p>
-                            <p><strong>Almoço:</strong> 150g proteína + 100g arroz + feijão + salada.</p>
-                            <p><strong>Jantar:</strong> 150g proteína + vegetais + 80g carbo.</p>
-                        </div>
-                    </div>
+        <!-- SECTION: PEPTIDEOS -->
+        <section id="peptideos" class="content-section">
+            <div class="section-header">
+                <h1>Protocolo de <span style="color:var(--primary)">Peptídeos</span></h1>
+                <p>Dosagens, cliques e administração técnica.</p>
+            </div>
+
+            <!-- RETATRUTIDA -->
+            <div class="data-card">
+                <div class="card-title">1. Retatrutida 40mg (Caneta 10mg)</div>
+                <div class="info-grid">
+                    <div class="info-item"><label>Dose Inicial</label><value>1,0 mg / semana</value></div>
+                    <div class="info-item"><label>Padrão Cliques</label><value>6 cliques = 1,0 mg</value></div>
+                    <div class="info-item"><label>Local</label><value>Abdômen (Rodízio)</value></div>
+                </div>
+                <div style="margin-top: 2rem; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px;">
+                    <span style="font-size: 0.7rem; color: var(--primary); font-weight: 800; display: block; margin-bottom: 0.5rem;">PROGRESSÃO POR SEMANA:</span>
+                    <p style="font-size: 0.9rem; margin: 0; color: var(--text-dim);">S1-4: 6 Cliques (1.0mg) | S5-8: 12 Cliques (2.0mg) | S9-12: 18 Cliques (3.0mg) | S13-16: 24 Cliques (4.0mg) | S17-20: 30 Cliques (5.0mg Máx)</p>
+                </div>
+            </div>
+
+            <!-- GHK-CU -->
+            <div class="data-card">
+                <div class="card-title">2. GHK-Cu (Reparo e Pele)</div>
+                <div class="info-grid">
+                    <div class="info-item"><label>Dose Diária</label><value>2,0 mg (80 UI)</value></div>
+                    <div class="info-item"><label>Frequência</label><value>Diário (Subcutâneo)</value></div>
+                    <div class="info-item"><label>Uso Tópico</label><value>Face (1x) e Cabelo (2x)</value></div>
+                </div>
+                <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-dim);">Auxilia no lipedema, colágeno I e III, vascularização e acne.</p>
+            </div>
+
+            <!-- BPC + TB -->
+            <div class="data-card" style="border-color: var(--accent);">
+                <div class="card-title" style="color:var(--accent)">3. BPC-157 & TB-500 (Caneta 10mg)</div>
+                <div class="info-grid" style="margin-bottom: 1.5rem;">
+                    <div class="info-item"><label>Ataque (14 dias)</label><value>10 Cliques / Dia (1.33mg)</value></div>
+                    <div class="info-item"><label>Transição</label><value>19 Cliques (2x semana)</value></div>
+                    <div class="info-item"><label>Manutenção</label><value>19 Cliques (1x semana)</value></div>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-dim); border-top: 1px solid var(--border); padding-top: 1rem;">
+                    <strong>Horário:</strong> Manhã Jejuno. | <strong>Local:</strong> Região lateral do quadril ou lombar.
+                </p>
+            </div>
+
+            <!-- SUPLEMENTOS -->
+            <div class="section-header" style="margin-top: 5rem;">
+                <h1>Suporte <span style="color:var(--primary)">Nutricional</span></h1>
+            </div>
+            
+            <div class="info-grid">
+                <div class="data-card">
+                    <div class="card-title">Manhã</div>
+                    <ul style="font-size: 0.9rem; padding-left: 1.2rem; color: var(--text-dim);">
+                        <li>Ômega 3</li>
+                        <li>Vitamina D3 + K2</li>
+                        <li>Cromo</li>
+                        <li>Vitamina C</li>
+                    </ul>
+                </div>
+                <div class="data-card">
+                    <div class="card-title">Tarde</div>
+                    <ul style="font-size: 0.9rem; padding-left: 1.2rem; color: var(--text-dim);">
+                        <li>Zinco</li>
+                        <li>Silício</li>
+                        <li>Colágeno</li>
+                    </ul>
+                </div>
+                <div class="data-card">
+                    <div class="card-title">Noite</div>
+                    <ul style="font-size: 0.9rem; padding-left: 1.2rem; color: var(--text-dim);">
+                        <li>Magnésio</li>
+                        <li>Glicina</li>
+                        <li>L-Teanina</li>
+                        <li>Triptofano</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- SEÇÃO 04: TREINO -->
-        <section id="treino" class="section reveal">
-            <div class="container">
-                <h2 class="section-title">04. Cronograma de Treino</h2>
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <h3>PROGRESSÃO DE CARGA (SEM 1-4)</h3>
-                            <i data-lucide="chevron-down" class="accordion-icon"></i>
-                        </div>
-                        <div class="accordion-content">
-                            <p>Foco absoluto em técnica e força pura (3-6 repetições).</p>
-                        </div>
-                    </div>
+        <!-- SECTION: DIETA -->
+        <section id="dieta" class="content-section">
+            <div class="section-header">
+                <h1>Plano <span style="color:var(--primary)">Alimentar</span></h1>
+                <p>Metabolic 30X™: Nutrição orientada a resultados.</p>
+            </div>
+
+            <!-- CALORIAS -->
+            <div class="data-card" style="margin-bottom: 4rem;">
+                <div class="card-title">Calorias por Fase</div>
+                <div class="info-grid">
+                    <div class="info-item"><label>Sem 1-4</label><value>1800 kcal</value></div>
+                    <div class="info-item"><label>Sem 5-8</label><value>1700 kcal</value></div>
+                    <div class="info-item"><label>Sem 9-12</label><value>1600 kcal</value></div>
+                    <div class="info-item"><label>Sem 13-24</label><value>1500 kcal</value></div>
+                </div>
+            </div>
+
+            <!-- MEALS -->
+            <div class="meal-card">
+                <span class="meal-time">08:00 — CAFÉ DA MANHÃ</span>
+                <div class="meal-main">3 Ovos Inteiros + 40g Aveia + 1 Fruta</div>
+                <div class="substitution-list">
+                    <div class="badge" style="margin-bottom: 0.8rem;">Substituições Efetivas:</div>
+                    <div class="sub-item"><i data-lucide="check"></i> 2 ovos + 2 fatias pão integral + 10g pasta amendoim + fruta</div>
+                    <div class="sub-item"><i data-lucide="check"></i> 170g iogurte zero lactose + 40g aveia + fruta</div>
+                    <div class="sub-item"><i data-lucide="check"></i> 1 scoop whey + 40g aveia + 1 banana</div>
+                </div>
+            </div>
+
+            <div class="meal-card">
+                <span class="meal-time">10:30 — LANCHE DA MANHÃ</span>
+                <div class="meal-main">1 Fruta + 10-15g Castanhas</div>
+                <div class="substitution-list">
+                    <div class="sub-item"><i data-lucide="check"></i> 170g iogurte zero lactose</div>
+                    <div class="sub-item"><i data-lucide="check"></i> 1 banana + 10g pasta amendoim</div>
+                    <div class="sub-item"><i data-lucide="check"></i> 2 ovos cozidos</div>
+                </div>
+            </div>
+
+            <div class="meal-card">
+                <span class="meal-time">13:00 — ALMOÇO</span>
+                <div class="meal-main">150g Proteína + 100g Arroz + 80g Feijão + Salada</div>
+                <div class="substitution-list">
+                    <div class="sub-item"><i data-lucide="check"></i> 120g carne vermelha + 150g batata doce + salada</div>
+                    <div class="sub-item"><i data-lucide="check"></i> 150g peixe + 100g arroz integral + legumes</div>
+                    <div class="sub-item"><i data-lucide="check"></i> 150g patinho moído + purê de batata + salada</div>
+                </div>
+            </div>
+
+            <div class="meal-card">
+                <span class="meal-time">16:30 — PRÉ/PÓS-TREINO</span>
+                <div class="meal-main">1 scoop whey + 1 banana + 30g aveia</div>
+                <div class="substitution-list">
+                    <div class="sub-item"><i data-lucide="check"></i> 120g frango + 1 fruta</div>
+                    <div class="sub-item"><i data-lucide="check"></i> 2 ovos + 1 fruta</div>
+                </div>
+            </div>
+
+            <div class="meal-card">
+                <span class="meal-time">19:30 — JANTAR</span>
+                <div class="meal-main">150g Proteína + Legumes + 80-100g Carboidrato</div>
+                <div class="substitution-list">
+                    <div class="sub-item"><i data-lucide="check"></i> Omelete (3 ovos) + 1 fatia pão integral + legumes</div>
+                    <div class="sub-item"><i data-lucide="check"></i> Wrap integral com frango desfiado + salada</div>
+                </div>
+            </div>
+
+            <div class="meal-card">
+                <span class="meal-time">22:00 — CEIA</span>
+                <div class="meal-main">Proteína Leve (1 iogurte ou ½ scoop whey)</div>
+            </div>
+        </section>
+
+        <!-- SECTION: TREINAMENTO -->
+        <section id="treino" class="content-section">
+            <div class="section-header">
+                <h1>Programa de <span style="color:var(--primary)">Treinamento</span></h1>
+                <p>24 Semanas — Fiel ao modelo exclusivo Aline.</p>
+            </div>
+
+            <!-- SEMANAS 1-4 -->
+            <div class="data-card">
+                <div class="card-title">Bloco 01: Força (Semanas 1-4)</div>
+                <p style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 2rem;">Foco em baixa repetição (3-6) e carga máxima. Descanso: 2-3 min.</p>
+                
+                <table class="training-table">
+                    <tr><td colspan="3" class="day-header">Segunda-feira: Inferior + Core</td></tr>
+                    <tr><th>Exercício</th><th>Séries</th><th>Repetições</th></tr>
+                    <tr><td>Leg Press</td><td>4</td><td>3–6</td></tr>
+                    <tr><td>Elevação Pélvica</td><td>4</td><td>3–6</td></tr>
+                    <tr><td>Abdução Máquina</td><td>3</td><td>6</td></tr>
+                    <tr><td>Flexora</td><td>3</td><td>6</td></tr>
+                    <tr><td>Prancha Abdominal</td><td>3</td><td>30–40s</td></tr>
+
+                    <tr><td colspan="3" class="day-header">Terça-feira: Superior + Core</td></tr>
+                    <tr><td>Puxada Frente</td><td>4</td><td>3–6</td></tr>
+                    <tr><td>Remada Máquina</td><td>4</td><td>3–6</td></tr>
+                    <tr><td>Supino Máquina</td><td>3</td><td>3–6</td></tr>
+                    <tr><td>Crucifixo</td><td>3</td><td>6</td></tr>
+                    <tr><td>Prancha Lateral</td><td>3</td><td>20s</td></tr>
+
+                    <tr><td colspan="3" class="day-header">Quarta-feira: Core Terapêutico</td></tr>
+                    <tr><td>Extensão Lombar</td><td>3</td><td>6–8</td></tr>
+                    <tr><td>Prancha</td><td>3</td><td>30–40s</td></tr>
+                    <tr><td>Prancha Lateral</td><td>3</td><td>20–30s</td></tr>
+                </table>
+            </div>
+
+            <div class="data-card" style="margin-top: 3rem;">
+                <div class="card-title">Progressão Sugerida</div>
+                <div class="info-grid" style="font-size: 0.85rem;">
+                    <div><strong>S5-8:</strong> 8–12 Repetições</div>
+                    <div><strong>S9-12:</strong> 12–15 Repetições</div>
+                    <div><strong>S13-16:</strong> 15–20 Repetições</div>
+                    <div><strong>S21-24:</strong> 25–30 Repetições</div>
                 </div>
             </div>
         </section>
 
-        <section class="section reveal" style="text-align: center;">
-            <div class="container">
-                <div style="padding: 3rem; border: 1px solid var(--primary); background: rgba(204, 255, 0, 0.02);">
-                    <h2 style="font-family: var(--font-display); font-size: 2rem;">Dúvidas Frequentes?</h2>
-                    <a href="https://wa.me/5548999229071" class="btn">
-                        <i data-lucide="message-square"></i> Suporte WhatsApp
-                    </a>
+        <!-- SECTION: HABITOS -->
+        <section id="habitos" class="content-section">
+            <div class="section-header">
+                <h1>Sono & <span style="color:var(--primary)">Hidratação</span></h1>
+                <p>Os pilares invisíveis do resultado.</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="data-card">
+                    <div class="card-title">Hidratação (3.5L)</div>
+                    <ul style="font-size: 0.9rem; padding: 0; list-style: none; color: var(--text-dim);">
+                        <li style="margin-bottom: 0.8rem;">💧 <strong>Acordar:</strong> 500 ml</li>
+                        <li style="margin-bottom: 0.8rem;">💧 <strong>Manhã:</strong> 500 ml</li>
+                        <li style="margin-bottom: 0.8rem;">💧 <strong>Tarde/Treino:</strong> 1.0 Litro</li>
+                        <li style="margin-bottom: 0.8rem;">💧 <strong>Noite:</strong> 500 ml</li>
+                    </ul>
+                    <div style="background: rgba(204, 255, 0, 0.05); padding: 1rem; border: 1px dashed var(--primary); font-size: 0.8rem;">
+                        <strong>Dica Avançada:</strong> 1 pitada de sal + limão em 1 copo de água (1x ao dia).
+                    </div>
                 </div>
+
+                <div class="data-card">
+                    <div class="card-title">Sono (7-8h)</div>
+                    <p style="font-size: 0.85rem; color: var(--text-dim);">
+                        Dormir mal = Mais Fome (Grelina ↑) e Menos Saciedade (Leptina ↓).
+                    </p>
+                    <ul style="font-size: 0.85rem; padding-left: 1.2rem; color: var(--text-dim);">
+                        <li>Zero telas 60 min antes</li>
+                        <li>Ambiente escuro total</li>
+                        <li>Temperatura agradável</li>
+                        <li>Evitar café após 16h</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: REGRAS -->
+        <section id="regras" class="content-section">
+            <div class="section-header">
+                <h1>Regras <span style="color:var(--primary)">Críticas</span></h1>
+                <p>O que define o sucesso do protocolo.</p>
+            </div>
+
+            <div class="data-card" style="background: #1a0000; border-color: #ff4444;">
+                <h3 style="color: #ff4444; margin-top: 0;">1. NÃO USE TUDO JUNTO</h3>
+                <p style="opacity: 0.8;">Mais não é melhor. O excesso de estímulos satura os receptores e trava o metabolismo.</p>
+            </div>
+            <div class="data-card">
+                <h3 style="color: var(--primary); margin-top: 0;">2. TROCA INTELIGENTE</h3>
+                <p style="opacity: 0.8;">Sempre que entrar um composto novo, outro deve sair. Isso evita sobrecarga renal e hepática.</p>
+            </div>
+            <div class="data-card">
+                <h3 style="color: var(--accent); margin-top: 0;">3. ESCUTE O CORPO</h3>
+                <p style="opacity: 0.8;">Sinais como cansaço extremo ou fraqueza indicam que o protocolo está pesado demais.</p>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            PROPRIEDADE EXCLUSIVA MÉTODO ESQUILO <br>
-            DOCUMENTO TÉCNICO PROTEGIDO &copy; 2026
-        </div>
-    </footer>
-
     <script type="module">
         lucide.createIcons();
 
-        // Bloqueio de Teclas
-        document.addEventListener('keydown', (e) => {
-            if (e.ctrlKey || e.metaKey) {
-                if (['c', 'u', 's', 'p', 'i'].includes(e.key.toLowerCase())) {
-                    e.preventDefault();
-                    return false;
-                }
-            }
-            if (e.key === 'F12') e.preventDefault();
-        });
+        // --- Navigation Logic ---
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('.content-section');
+        const sidebar = document.getElementById('sidebar');
+        const mobileToggle = document.getElementById('mobileToggle');
 
-        // Accordion
-        document.querySelectorAll('.accordion-header').forEach(header => {
-            header.onclick = function() {
-                const item = this.parentElement;
-                const wasActive = item.classList.contains('active');
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = item.getAttribute('data-section');
                 
-                // Fecha outros
-                document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
-                
-                // Abre este
-                if (!wasActive) {
-                    item.classList.add('active');
-                }
-            };
-        });
+                // Update Nav
+                navItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
 
-        // Reveal
-        const reveal = () => {
-            document.querySelectorAll('.reveal').forEach(el => {
-                const top = el.getBoundingClientRect().top;
-                if (top < window.innerHeight - 50) el.classList.add('active');
+                // Update Content
+                sections.forEach(s => s.classList.remove('active'));
+                document.getElementById(sectionId).classList.add('active');
+
+                // Close Mobile Sidebar
+                if (window.innerWidth <= 1024) sidebar.classList.remove('open');
+                
+                // Scroll Top
+                window.scrollTo({ top: 0, behavior: 'auto' });
             });
-        };
-        window.onscroll = reveal;
-        window.onload = reveal;
+        });
 
-        // Force select none via JS as second layer
-        document.onselectstart = function() { return false; };
+        // Mobile Toggle
+        mobileToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+
+        // Security - Key Block
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && ['c', 'u', 's', 'p'].includes(e.key.toLowerCase())) e.preventDefault();
+        });
     </script>
 </body>
 </html>
