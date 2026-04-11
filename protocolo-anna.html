@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo Personalizado — Anna | Método Esquilo</title>
+    
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            --primary: #CCFF00;
+            --accent: #C5A059;
+            --bg: #050505;
+            --surface: #0a0a0a;
+            --text: #ffffff;
+            --text-dim: rgba(255, 255, 255, 0.6);
+            --border: rgba(255, 255, 255, 0.1);
+            --font-main: 'Inter', sans-serif;
+            --font-display: 'Anton', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Bloqueios de Segurança */
+        * {
+            user-select: none !important;
+            -webkit-user-select: none !important;
+            -webkit-touch-callout: none !important;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--font-main);
+            margin: 0;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Background Layers */
+        .bg-mesh {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(204, 255, 0, 0.03) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+        .logo-img { height: 40px; margin-bottom: 1rem; }
+
+        /* Protocol Nav */
+        .protocol-nav {
+            position: sticky;
+            top: 0;
+            background: rgba(5, 5, 5, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-bottom: 5px;
+        }
+        .nav-inner a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+        .nav-inner a:hover { color: var(--primary); }
+
+        /* Hero */
+        .hero {
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 10vw, 6rem);
+            margin: 0;
+            line-height: 0.9;
+            color: var(--text);
+        }
+        .hero .highlight { color: var(--primary); }
+        .hero p { color: var(--text-dim); font-size: 1.2rem; margin-top: 2rem; }
+
+        /* Accordion */
+        .accordion { margin: 2rem 0; }
+        .accordion-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+        .accordion-header {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        .accordion-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .accordion-icon { transition: transform 0.4s; color: var(--primary); }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease;
+            padding: 0 1.5rem;
+            opacity: 0;
+        }
+        .accordion-item.active { border-color: var(--primary); }
+        .accordion-item.active .accordion-content {
+            max-height: 1000px;
+            padding: 1.5rem;
+            opacity: 1;
+            border-top: 1px solid var(--border);
+        }
+        .accordion-item.active .accordion-icon { transform: rotate(180deg); }
+
+        /* Technical Info */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .tech-card {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+        }
+        .tech-card span { font-size: 0.65rem; color: var(--primary); text-transform: uppercase; font-weight: 800; display: block; margin-bottom: 0.3rem; }
+        .tech-card strong { font-size: 1.1rem; display: block; }
+
+        /* Sections */
+        .section { padding: 4rem 0; }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--accent);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1.2rem 2.5rem;
+            background: var(--primary);
+            color: #000;
+            text-decoration: none;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            margin-top: 2rem;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(204, 255, 0, 0.2); }
+
+        /* Footer */
+        footer {
+            padding: 4rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Reveal Animation */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 4rem; }
+            .nav-inner { justify-content: flex-start; padding: 0 1rem; }
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+    <div class="bg-mesh"></div>
+
+    <header>
+        <div class="container">
+            <img src="/assets/images/logo-transparent.png" alt="Esquilo" class="logo-img">
+            <div style="font-size: 0.6rem; color: var(--primary); font-weight: 900; letter-spacing: 2px;">PROTOCOLO EXCLUSIVO</div>
+        </div>
+    </header>
+
+    <nav class="protocol-nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="#fluxo">Fluxo/Fases</a>
+                <a href="#peptideos">Peptídeos</a>
+                <a href="#nutricao">Nutrição</a>
+                <a href="#treino">Treino</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero reveal">
+            <div class="container">
+                <h1>PROTOCOLO <br><span class="highlight">ANNA</span></h1>
+                <p>Plano técnico personalizado para otimização metabólica e performance.</p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 01: FLUXO -->
+        <section id="fluxo" class="section reveal">
+            <div class="container">
+                <h2 class="section-title">01. Cronograma e Fluxo</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>FASE 1: PREPARAÇÃO (SEM 1-4)</h3>
+                            <i data-lucide="chevron-down" class="accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Foco em sensibilização de receptores e controle glicêmico inicial.</p>
+                            <div class="tech-grid">
+                                <div class="tech-card"><span>Principal</span><strong>Retatrutida</strong></div>
+                                <div class="tech-card"><span>Dose</span><strong>1,0 mg / sem</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>FASE 2: ANABOLISMO (SEM 5-8)</h3>
+                            <i data-lucide="chevron-down" class="accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Ativação de vias de recuperação e preservação de massa magra.</p>
+                            <div class="tech-grid">
+                                <div class="tech-card"><span>Adicional</span><strong>CJC + Ipamorelin</strong></div>
+                                <div class="tech-card"><span>Horário</span><strong>Noite</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>FASE 3: LIPÓLISE (SEM 9-12)</h3>
+                            <i data-lucide="chevron-down" class="accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Foco máximo em oxidação de gordura. Pausa estratégica de sinalizadores de GH.</p>
+                            <div class="tech-grid">
+                                <div class="tech-card"><span>Entra</span><strong>AOD-9604</strong></div>
+                                <div class="tech-card"><span>Sai</span><strong>CJC-1295</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 02: PEPTÍDEOS -->
+        <section id="peptideos" class="section reveal">
+            <div class="container">
+                <h2 class="section-title">02. Protocolo de Peptídeos</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>1. RETATRUTIDA (CANETA)</h3>
+                            <i data-lucide="chevron-down" class="accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="tech-grid">
+                                <div class="tech-card"><span>Dose Semanal</span><strong>1,0 mg</strong></div>
+                                <div class="tech-card"><span>Cliques (S1-4)</span><strong>6 Cliques</strong></div>
+                                <div class="tech-card"><span>Local</span><strong>Subcutânea</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>2. GHK-Cu (PELE E REPARO)</h3>
+                            <i data-lucide="chevron-down" class="accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="tech-grid">
+                                <div class="tech-card"><span>Sistêmico</span><strong>2,0 mg / dia</strong></div>
+                                <div class="tech-card"><span>Cliques</span><strong>80 UI</strong></div>
+                                <div class="tech-card"><span>Tópico</span><strong>1-2x / dia</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 03: NUTRIÇÃO -->
+        <section id="nutricao" class="section reveal">
+            <div class="container">
+                <h2 class="section-title">03. Guia Nutricional</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>REFEIÇÕES BASE</h3>
+                            <i data-lucide="chevron-down" class="accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p><strong>Café:</strong> 3 ovos + 40g aveia + fruta.</p>
+                            <p><strong>Almoço:</strong> 150g proteína + 100g arroz + feijão + salada.</p>
+                            <p><strong>Jantar:</strong> 150g proteína + vegetais + 80g carbo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 04: TREINO -->
+        <section id="treino" class="section reveal">
+            <div class="container">
+                <h2 class="section-title">04. Cronograma de Treino</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>PROGRESSÃO DE CARGA (SEM 1-4)</h3>
+                            <i data-lucide="chevron-down" class="accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Foco absoluto em técnica e força pura (3-6 repetições).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reveal" style="text-align: center;">
+            <div class="container">
+                <div style="padding: 3rem; border: 1px solid var(--primary); background: rgba(204, 255, 0, 0.02);">
+                    <h2 style="font-family: var(--font-display); font-size: 2rem;">Dúvidas Frequentes?</h2>
+                    <a href="https://wa.me/5548999229071" class="btn">
+                        <i data-lucide="message-square"></i> Suporte WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            PROPRIEDADE EXCLUSIVA MÉTODO ESQUILO <br>
+            DOCUMENTO TÉCNICO PROTEGIDO &copy; 2026
+        </div>
+    </footer>
+
+    <script type="module">
+        lucide.createIcons();
+
+        // Bloqueio de Teclas
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey || e.metaKey) {
+                if (['c', 'u', 's', 'p', 'i'].includes(e.key.toLowerCase())) {
+                    e.preventDefault();
+                    return false;
+                }
+            }
+            if (e.key === 'F12') e.preventDefault();
+        });
+
+        // Accordion
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.onclick = function() {
+                const item = this.parentElement;
+                const wasActive = item.classList.contains('active');
+                
+                // Fecha outros
+                document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
+                
+                // Abre este
+                if (!wasActive) {
+                    item.classList.add('active');
+                }
+            };
+        });
+
+        // Reveal
+        const reveal = () => {
+            document.querySelectorAll('.reveal').forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                if (top < window.innerHeight - 50) el.classList.add('active');
+            });
+        };
+        window.onscroll = reveal;
+        window.onload = reveal;
+
+        // Force select none via JS as second layer
+        document.onselectstart = function() { return false; };
+    </script>
+</body>
+</html>
