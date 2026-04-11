@@ -15,6 +15,7 @@ export default defineConfig({
         depoimentos: resolve(__dirname, 'depoimentos.html'),
         contato: resolve(__dirname, 'contato.html'),
         florianopolis: resolve(__dirname, 'personal-trainer-florianopolis/index.html'),
+        protocolo_anna: resolve(__dirname, 'protocolo-anna.html'),
       },
     },
   },
