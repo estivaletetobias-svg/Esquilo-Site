@@ -130,7 +130,12 @@
     <button class="mob-menu" id="mobToggle"><i data-lucide="menu"></i></button>
 
     <aside class="sidebar" id="sidebar">
-        <div class="logo"><img src="/assets/images/logo-transparent.png" alt="Esquilo"></div>
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2.5rem;">
+            <div class="logo" style="margin: 0;"><img src="/assets/images/logo-transparent.png" alt="Esquilo" style="margin-bottom: 0;"></div>
+            <a href="/" title="Voltar ao Site Principal" style="color: var(--text-secondary); text-decoration: none; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.6rem; border: 1px solid var(--border); border-radius: 6px; transition: 0.2s;" onmouseover="this.style.color='#000'; this.style.backgroundColor='var(--primary)'; this.style.borderColor='var(--primary)';" onmouseout="this.style.color='var(--text-secondary)'; this.style.backgroundColor='transparent'; this.style.borderColor='var(--border)';">
+                Voltar <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+            </a>
+        </div>
         
         <nav class="nav-group"><span class="nav-label">Protocolo Técnico</span>
             <a href="#" class="nav-item active" data-target="peptideos"><i data-lucide="microscope"></i> Peptídeos & Fases</a>
