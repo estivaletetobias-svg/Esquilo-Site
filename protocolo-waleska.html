@@ -6,6 +6,8 @@
     <title>Protocolo Waleska — Hub de Performance Bio-Metabólica</title>
     
     <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="/assets/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     
@@ -51,9 +53,17 @@
             z-index: 1000;
             color: #FFF;
             border-right: 1px solid rgba(255,255,255,0.05);
+            overflow-y: auto; /* Permite rolagem vertical */
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent) transparent;
         }
+
+        /* Esconder scrollbar no Chrome/Safari */
+        .sidebar::-webkit-scrollbar { width: 4px; }
+        .sidebar::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
         
-        .logo img { height: 35px; filter: brightness(1.5); margin-bottom: 2.5rem; }
+        .logo { display: block; margin-bottom: 2.5rem; }
+        .logo img { height: 50px; filter: brightness(2.5); width: auto; object-fit: contain; }
         .nav-label { font-size: 0.6rem; text-transform: uppercase; color: rgba(255,255,255,0.4); letter-spacing: 2px; margin-bottom: 1rem; display: block; font-weight: 800; }
         .nav-item { display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem 1rem; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.82rem; font-weight: 600; border-radius: 8px; margin-bottom: 0.3rem; transition: 0.2s; cursor: pointer; border: 1px solid transparent; }
         .nav-item:hover { background: rgba(255,255,255,0.05); color: #FFF; }
