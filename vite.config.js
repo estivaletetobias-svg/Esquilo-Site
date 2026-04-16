@@ -16,6 +16,7 @@ export default defineConfig({
         contato: resolve(__dirname, 'contato.html'),
         florianopolis: resolve(__dirname, 'personal-trainer-florianopolis/index.html'),
         protocolo_anna: resolve(__dirname, 'protocolo-anna.html'),
+        protocolo_waleska: resolve(__dirname, 'protocolo-waleska.html'),
       },
     },
   },
