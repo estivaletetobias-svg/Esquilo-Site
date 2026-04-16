@@ -424,7 +424,7 @@
                 <div class="card-title"><i data-lucide="moon"></i> Noite / Dormir</div>
                 <div class="info-grid">
                     <div class="info-item">
-                        <label>Magnésio</label>
+                        <label>Magnésio Bisglicinato</label>
                         <value>300 mg</value>
                     </div>
                 </div>
@@ -440,50 +440,118 @@
                 <h1>Guia <br><span style="color:var(--primary)">Alimentar</span></h1>
             </div>
 
-            <!-- TREINO MANHÃ -->
-            <div class="meal-card" style="border-left-color:var(--primary)">
-                <span class="meal-tag">OPÇÃO 1: TREINO PELA MANHÃ</span>
+            <!-- ALIMENTAÇÃO AJUSTADA AO HORÁRIO DO TREINO -->
+            <div class="data-card" style="border-color: var(--primary);">
+                <div class="card-title"><i data-lucide="clock"></i> Ajuste por Horário de Treino</div>
                 
-                <p style="color:var(--primary); font-weight:800; margin-bottom:1.5rem; text-transform:uppercase;">➜ PRÉ-TREINO (Leve)</p>
-                <div class="data-card" style="background: rgba(255,255,255,0.02)">
-                    <h2 class="meal-name">Banana + Proteína</h2>
-                    <div class="sub-grid">
-                        <div class="sub-opt"><span class="sub-num">Substituição 1:</span><p>Shake Proteína + Fruta</p></div>
-                        <div class="sub-opt"><span class="sub-num">Substituição 2:</span><p>Pão Integral + Pasta Amendoim</p></div>
-                        <div class="sub-opt"><span class="sub-num">Substituição 3:</span><p>Iogurte Vegetal</p></div>
-                    </div>
-                </div>
+                <div class="info-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+                    <!-- SE TREINAR DE MANHÃ -->
+                    <div style="background: rgba(0,0,0,0.2); padding: 2rem; border-radius: 20px; border: 1px solid var(--border); border-left: 4px solid var(--primary);">
+                        <span class="meal-tag" style="color: var(--primary); margin-bottom: 1.5rem;">SE TREINAR DE MANHÃ</span>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <p style="color:var(--primary); font-weight:800; font-size: 0.75rem; text-transform:uppercase; margin-bottom: 0.5rem;">➜ PRÉ-TREINO (Leve)</p>
+                            <p style="font-size: 1.2rem; font-weight: 700; color: #FFF;">Banana + Proteína</p>
+                            <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+                                <strong style="color: var(--text-main); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px;">Opções:</strong><br>
+                                1. Shake proteína + fruta<br>
+                                2. Pão integral + pasta amendoim<br>
+                                3. Iogurte vegetal
+                            </div>
+                        </div>
 
-                <p style="color:var(--primary); font-weight:800; margin-top:3rem; margin-bottom:1.5rem; text-transform:uppercase;">➜ PÓS-TREINO (Café Completo)</p>
-                <div class="data-card" style="background: rgba(255,255,255,0.02)">
-                    <h2 class="meal-name">Aveia + Proteína + Gordura</h2>
-                    <div class="sub-grid">
-                        <div class="sub-opt"><span class="sub-num">Substituição 1:</span><p>Mingau de aveia c/ Whey + Morango</p></div>
-                        <div class="sub-opt"><span class="sub-num">Substituição 2:</span><p>Ovos mexidos + Pão de Fermentação Natural</p></div>
-                        <div class="sub-opt"><span class="sub-num">Substituição 3:</span><p>Panqueca de Aveia e Ovos</p></div>
+                        <div>
+                            <p style="color:var(--primary); font-weight:800; font-size: 0.75rem; text-transform:uppercase; margin-bottom: 0.5rem;">➜ PÓS-TREINO (Café da Manhã Completo)</p>
+                            <p style="font-size: 1.2rem; font-weight: 700; color: #FFF;">Aveia + Proteína + Gordura <span style="color: var(--text-secondary); font-size: 0.9rem;">ou</span> Shake + Fruta</p>
+                        </div>
+                    </div>
+
+                    <!-- SE TREINAR À TARDE/NOITE -->
+                    <div style="background: rgba(0,0,0,0.2); padding: 2rem; border-radius: 20px; border: 1px solid var(--border); border-left: 4px solid var(--accent);">
+                        <span class="meal-tag" style="color: var(--accent); margin-bottom: 1.5rem;">SE TREINAR À TARDE/NOITE</span>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <p style="color:var(--accent); font-weight:800; font-size: 0.75rem; text-transform:uppercase; margin-bottom: 0.5rem;">➜ PRÉ-TREINO (16:00)</p>
+                            <p style="font-size: 1.2rem; font-weight: 700; color: #FFF;">Shake + Fruta</p>
+                            <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+                                <strong style="color: var(--text-main); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px;">Opções:</strong><br>
+                                1. Castanhas + fruta<br>
+                                2. Sanduíche vegano<br>
+                                3. Iogurte vegetal
+                            </div>
+                        </div>
+
+                        <div>
+                            <p style="color:var(--accent); font-weight:800; font-size: 0.75rem; text-transform:uppercase; margin-bottom: 0.5rem;">➜ PÓS-TREINO</p>
+                            <p style="font-size: 1.2rem; font-weight: 700; color: #FFF;">Proteína + Creatina + Fruta</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- TREINO NOITE -->
-            <div class="meal-card" style="border-left-color:var(--accent)">
-                <span class="meal-tag">OPÇÃO 2: TREINO À NOITE</span>
-                
-                <p style="color:var(--accent); font-weight:800; margin-bottom:1.5rem; text-transform:uppercase;">➜ PRÉ-TREINO (Lanche Tarde)</p>
-                <div class="data-card" style="background: rgba(255,255,255,0.02)">
-                    <h2 class="meal-name">Iogurte + Fruta + Oleaginosa</h2>
-                </div>
+            <div class="sec-header" style="margin-top: 5rem; border-left-color: var(--accent);">
+                <p style="color:var(--accent); font-weight:800; letter-spacing:2px;">ESTRUTURA DIÁRIA</p>
+                <h1>Refeições <br><span style="color:var(--accent)">& Substituições</span></h1>
+            </div>
 
-                <p style="color:var(--accent); font-weight:800; margin-top:3rem; margin-bottom:1.5rem; text-transform:uppercase;">➜ PÓS-TREINO (Jantar)</p>
-                <div class="data-card" style="background: rgba(255,255,255,0.02)">
-                    <h2 class="meal-name">Arroz + Proteína (Frango/Carne) + Legumes</h2>
+            <!-- CAFÉ DA MANHÃ -->
+            <div class="meal-card">
+                <span class="meal-tag">REFEIÇÃO 01</span>
+                <h2 class="meal-name">Café da Manhã</h2>
+                <div class="rule-box green" style="margin-bottom: 2rem;">
+                    <strong style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;">Base Sugerida:</strong><br>
+                    <span style="font-size: 1.4rem; font-weight: 700;">Aveia + Proteína + Banana</span>
+                </div>
+                <div class="sub-grid">
+                    <div class="sub-opt"><span class="sub-num">01</span><p>Tofu + Pão Integral</p></div>
+                    <div class="sub-opt"><span class="sub-num">02</span><p>Panqueca Proteica</p></div>
+                    <div class="sub-opt"><span class="sub-num">03</span><p>Smoothie</p></div>
                 </div>
             </div>
 
-            <!-- REFEIÇÕES FIXAS -->
-            <div class="data-card">
-                <div class="card-title"><i data-lucide="check-square"></i> Almoço (Padrão)</div>
-                <h2 class="meal-name">Proteína Magra + Salada à Vontade + Vegetais</h2>
+            <!-- ALMOÇO -->
+            <div class="meal-card">
+                <span class="meal-tag">REFEIÇÃO 02</span>
+                <h2 class="meal-name">Almoço</h2>
+                <div class="rule-box green" style="margin-bottom: 2rem;">
+                    <strong style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;">Base Sugerida:</strong><br>
+                    <span style="font-size: 1.4rem; font-weight: 700;">Arroz + Lentilha + Legumes</span>
+                </div>
+                <div class="sub-grid">
+                    <div class="sub-opt"><span class="sub-num">01</span><p>Quinoa + Tofu</p></div>
+                    <div class="sub-opt"><span class="sub-num">02</span><p>Macarrão Integral + Proteína Soja</p></div>
+                    <div class="sub-opt"><span class="sub-num">03</span><p>Grão de Bico + Batata</p></div>
+                </div>
+            </div>
+
+            <!-- LANCHE -->
+            <div class="meal-card">
+                <span class="meal-tag">REFEIÇÃO 03</span>
+                <h2 class="meal-name">Lanche</h2>
+                <div class="rule-box green" style="margin-bottom: 2rem;">
+                    <strong style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;">Base Sugerida:</strong><br>
+                    <span style="font-size: 1.4rem; font-weight: 700;">Shake Proteína</span>
+                </div>
+                <div class="sub-grid">
+                    <div class="sub-opt"><span class="sub-num">01</span><p>Iogurte Vegetal</p></div>
+                    <div class="sub-opt"><span class="sub-num">02</span><p>Castanhas</p></div>
+                    <div class="sub-opt"><span class="sub-num">03</span><p>Sanduíche Vegano</p></div>
+                </div>
+            </div>
+
+            <!-- JANTAR -->
+            <div class="meal-card">
+                <span class="meal-tag">REFEIÇÃO 04</span>
+                <h2 class="meal-name">Jantar</h2>
+                <div class="rule-box green" style="margin-bottom: 2rem;">
+                    <strong style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;">Base Sugerida:</strong><br>
+                    <span style="font-size: 1.4rem; font-weight: 700;">Tofu + Legumes</span>
+                </div>
+                <div class="sub-grid">
+                    <div class="sub-opt"><span class="sub-num">01</span><p>Sopa de Lentilha</p></div>
+                    <div class="sub-opt"><span class="sub-num">02</span><p>Wrap Vegano</p></div>
+                    <div class="sub-opt"><span class="sub-num">03</span><p>Salada + Grão de Bico</p></div>
+                </div>
             </div>
         </section>
 
