@@ -74,7 +74,8 @@
         .nav-label { font-size: 0.6rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 2px; margin-bottom: 1rem; display: block; font-weight: 800; }
         .nav-item { display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem 1rem; color: var(--text-secondary); text-decoration: none; font-size: 0.82rem; font-weight: 600; border-radius: 8px; margin-bottom: 0.3rem; transition: 0.2s; cursor: pointer; }
         .nav-item:hover { background: var(--surface); color: var(--text-main); }
-        .nav-item.active { background: var(--primary); color: #000; }
+        .nav-item.active { background: var(--primary) !important; color: #000 !important; }
+        .nav-item.active i { color: #000 !important; }
         .nav-item i { width: 18px; height: 18px; }
 
         /* --- Main Content --- */
@@ -134,9 +135,12 @@
         .sub-opt:hover { border-color: var(--primary); background: rgba(204,255,0,0.05); }
         .sub-num { color: var(--accent); font-weight: 900; font-size: 1rem; margin-top: 2px; }
 
-        /* --- Mobile --- */
-        .top-status { position: fixed; top: 0; left: 0; width: 100%; background: var(--primary); color: #000; text-align: center; padding: 12px; font-size: 0.7rem; font-weight: 900; z-index: 3000; letter-spacing: 2px; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        /* --- Global & Mobile --- */
+        .top-status { position: fixed; top: 0; left: 0; width: 100%; background: var(--primary); color: #000; text-align: center; padding-top: max(14px, env(safe-area-inset-top)); padding-bottom: 12px; font-size: 0.6rem; font-weight: 900; z-index: 3000; letter-spacing: 1px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); line-height: 1.2; text-transform: uppercase; }
+        .top-status strong { font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 2px; color: #000; display: block; }
+        
         .mob-menu { display: none; position: fixed; bottom: 2rem; right: 2rem; width: 68px; height: 68px; background: var(--primary); color: #000; border-radius: 50%; z-index: 2100; border: none; align-items: center; justify-content: center; box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
+        .top-status span.divider { display: none; }
 
         @media (max-width: 1024px) {
             .sidebar { transform: translateX(-100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -153,7 +157,7 @@
 <body oncontextmenu="return false;">
     
     <div class="top-status">
-        <strong>WALESKA GORCZEVSKI PEREIRA</strong> <span style="opacity:0.4; margin:0 10px;">|</span> PROJETO 6 SEMANAS
+        <strong>WALESKA GORCZEVSKI PEREIRA</strong> <span class="divider">|</span> PROJETO 6 SEMANAS
     </div>
 
     <button class="mob-menu" id="mobToggle"><i data-lucide="menu"></i></button>
