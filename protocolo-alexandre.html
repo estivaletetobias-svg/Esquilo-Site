@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
+    <meta name="apple-mobile-web-app-title" content="Hub Alexandre">
+
+    <!-- Favicon / Web App Icons -->
+    <link rel="icon" type="image/png" href="/assets/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+
+    <!-- Open Graph / Compartilhamento -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Protocolo Alexandre Omodei — Performance & Hipertrofia">
+    <meta property="og:description" content="Programa de musculação e performance para meia maratona. Hub exclusivo Esquilo Laser.">
+    <meta property="og:image" content="https://esquilopersonal.com/assets/images/apple-touch-icon.png">
+    <meta property="og:site_name" content="Esquilo Laser">
+
+    <title>Protocolo Alexandre Omodei — Performance & Hipertrofia</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --primary: #CCFF00;
+            --accent: #FF4444; /* Vermelho para dias Fortes */
+            --safe: #00FF88;   /* Verde para dias Neurais/Leves */
+            --flash: #FFEA00;  /* Amarelo para dias de Força/Flash */
+            --bg: #0B0C0E;
+            --surface: #16171B;
+            --surface-hover: #1C1D21;
+            --border: #2B2C31;
+            --text-main: #FFFFFF;
+            --text-secondary: #949499;
+            --font-main: 'Inter', sans-serif;
+            --font-display: 'Anton', sans-serif;
+            --sidebar-width: 280px;
+        }
+
+        /* Base Reset */
+        * { box-sizing: border-box; user-select: none !important; -webkit-user-select: none !important; margin: 0; padding: 0; }
+        html, body { overflow-x: hidden; max-width: 100vw; overscroll-behavior: none; }
+        body { background-color: var(--bg); color: var(--text-main); font-family: var(--font-main); display: flex; min-height: 100vh; line-height: 1.6; }
+
+        /* --- Sidebar --- */
+        .sidebar { width: var(--sidebar-width); background: var(--bg); border-right: 1px solid var(--border); height: 100vh; position: fixed; padding: 2.5rem 1.5rem; display: flex; flex-direction: column; z-index: 1000; overflow-y: auto; }
+        .logo img { height: 45px; filter: brightness(1.8); width: auto; object-fit: contain; }
+        .nav-group { margin-bottom: 2rem; }
+        .nav-label { font-size: 0.6rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 2px; margin-bottom: 1rem; display: block; font-weight: 800; }
+        .nav-item { display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem 1rem; color: var(--text-secondary); text-decoration: none; font-size: 0.82rem; font-weight: 600; border-radius: 8px; margin-bottom: 0.3rem; transition: 0.2s; cursor: pointer; }
+        .nav-item:hover { background: var(--surface); color: var(--text-main); }
+        .nav-item.active { background: var(--primary) !important; color: #000 !important; }
+        .nav-item.active i { color: #000 !important; }
+
+        /* --- Main Content --- */
+        .main-content { flex: 1; margin-left: var(--sidebar-width); padding-top: 80px; }
+        .content-section { display: none; padding: 4rem; max-width: 1100px; margin: 0 auto; }
+        .content-section.active { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+        .sec-header { margin-bottom: 3.5rem; border-left: 4px solid var(--primary); padding-left: 2rem; }
+        .sec-header h1 { font-family: var(--font-display); font-size: 3.5rem; text-transform: uppercase; letter-spacing: 1px; line-height: 1; margin: 0; }
+        .sec-header p { color: var(--text-secondary); margin-top: 1rem; font-size: 1.1rem; }
+
+        /* --- Components --- */
+        .data-card { background: var(--surface); border: 1px solid var(--border); padding: 2rem; border-radius: 20px; margin-bottom: 2rem; position: relative; }
+        .card-title { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem; color: var(--primary); font-weight: 800; font-size: 1.2rem; text-transform: uppercase; border-bottom: 1px solid var(--border); padding-bottom: 0.8rem; }
+        
+        .badge { display: inline-block; padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.65rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; }
+        .badge-red { background: rgba(255, 68, 68, 0.15); color: var(--accent); border: 1px solid var(--accent); }
+        .badge-green { background: rgba(0, 255, 136, 0.15); color: var(--safe); border: 1px solid var(--safe); }
+        .badge-flash { background: rgba(255, 234, 0, 0.15); color: var(--flash); border: 1px solid var(--flash); }
+
+        .tech-table { width: 100%; border-collapse: collapse; margin-top: 1rem; color: #FFF; }
+        .tech-table th, .tech-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+        .tech-table th { font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
+        .tech-table td { font-size: 0.9rem; font-weight: 600; }
+        .highlight { color: var(--primary); }
+
+        .workout-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .workout-item { padding: 1rem; border-radius: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--border); }
+        .workout-item h4 { color: var(--primary); margin-bottom: 0.5rem; font-size: 0.9rem; text-transform: uppercase; border-left: 2px solid var(--primary); padding-left: 0.8rem; }
+        .exercise-list { list-style: none; }
+        .exercise-list li { margin-bottom: 0.6rem; font-size: 0.9rem; color: #FFF; display: flex; justify-content: space-between; align-items: baseline; }
+        .exercise-list li span { color: var(--text-secondary); font-size: 0.75rem; font-weight: 700; }
+
+        .rule-box { background: rgba(0,0,0,0.3); border-left: 3px solid var(--primary); padding: 1.5rem; border-radius: 0 12px 12px 0; margin-top: 1.5rem; font-size: 0.9rem; }
+        .rule-box.red { border-left-color: var(--accent); background: rgba(255,68,68,0.05); }
+
+        /* --- Top Bar & Mobile --- */
+        .top-status { position: fixed; top: 0; left: 0; width: 100%; background: var(--primary); color: #000; text-align: center; padding: 12px; font-size: 0.7rem; font-weight: 950; z-index: 3000; letter-spacing: 1px; text-transform: uppercase; }
+        .mob-menu { display: none; position: fixed; bottom: 2rem; right: 2rem; width: 64px; height: 64px; background: var(--primary); color: #000; border-radius: 50%; z-index: 2500; border: none; align-items: center; justify-content: center; box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
+
+        @media (max-width: 1024px) {
+            .sidebar { transform: translateX(-100%); transition: 0.3s; }
+            .sidebar.open { transform: translateX(0); }
+            .main-content { margin-left: 0; }
+            .content-section { padding: 6rem 1.5rem 4rem 1.5rem; }
+            .mob-menu { display: flex; }
+            .sec-header h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+
+    <div class="top-status">
+        ALEXANDRE OMODEI • PROTOCOLO PERFORMANCE & HIPERTROFIA
+    </div>
+
+    <button class="mob-menu" id="mobToggle"><i data-lucide="menu"></i></button>
+
+    <aside class="sidebar" id="sidebar">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+            <div class="logo"><img src="/assets/images/logo-transparent.png" alt="Esquilo"></div>
+            <a href="https://esquilopersonal.com/" style="color: var(--text-secondary); text-decoration: none; font-size: 0.6rem; text-transform: uppercase; font-weight: 800; padding: 0.4rem 0.6rem; border: 1px solid var(--border); border-radius: 6px;">SITE <i data-lucide="external-link" style="width: 10px;"></i></a>
+        </div>
+
+        <nav class="nav-group">
+            <span class="nav-label">Fundamentos</span>
+            <a href="#" class="nav-item active" data-target="visao"><i data-lucide="target"></i> Visão Geral</a>
+            <a href="#" class="nav-item" data-target="calendario"><i data-lucide="calendar"></i> Calendário</a>
+        </nav>
+
+        <nav class="nav-group">
+            <span class="nav-label">Treinamento</span>
+            <a href="#" class="nav-item" data-target="segunda"><i data-lucide="dumbbell"></i> Segunda (Forte)</a>
+            <a href="#" class="nav-item" data-target="terca"><i data-lucide="zap"></i> Terça (Verde)</a>
+            <a href="#" class="nav-item" data-target="quarta"><i data-lucide="dumbbell"></i> Quarta (Forte)</a>
+            <a href="#" class="nav-item" data-target="quinta"><i data-lucide="zap"></i> Quinta (Verde)</a>
+            <a href="#" class="nav-item" data-target="sexta"><i data-lucide="zap-off"></i> Sexta (Força)</a>
+        </nav>
+
+        <nav class="nav-group">
+            <span class="nav-label">Nutrição</span>
+            <a href="#" class="nav-item" data-target="dieta"><i data-lucide="utensils"></i> Plano Alimentar</a>
+            <a href="#" class="nav-item" data-target="suplementos"><i data-lucide="flask-conical"></i> Suplementação</a>
+        </nav>
+
+        <div style="margin-top: auto; padding-top: 2rem; border-top: 1px solid var(--border);">
+            <a href="https://wa.me/5548999229071" target="_blank" style="background: #25D366; color: #FFF; text-decoration: none; padding: 0.8rem; border-radius: 8px; font-weight: 800; font-size: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 0.4rem;">
+                <i data-lucide="message-circle"></i> SUPORTE VIP
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <!-- =============================== -->
+        <!-- VISÃO GERAL                      -->
+        <!-- =============================== -->
+        <section id="visao" class="content-section active">
+            <div class="sec-header">
+                <p style="color:var(--primary); font-weight:800; letter-spacing:2px;">PROTOCOLO ATLETA</p>
+                <h1>Performance<br><span style="color:var(--primary)">&amp; Hipertrofia</span></h1>
+                <p>Alexandre Omodei • Foco: Meia Maratona</p>
+            </div>
+
+            <div class="data-card">
+                <div class="card-title"><i data-lucide="activity"></i> Princípio da Organização Inteligente</div>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">A musculação aqui serve para potencializar a corrida. Manipulamos a fadiga para que você chegue no Longão com as fibras recrutadas, mas não exauridas.</p>
+                
+                <div class="workout-grid">
+                    <div class="workout-item" style="border-top: 4px solid var(--accent);">
+                        <h4 style="color:var(--accent); border:none;">🔴 Dias Fortes</h4>
+                        <p style="font-size: 0.8rem;">Foco em hipertrofia e sinalização estrutural. Onde construímos a carcaça.</p>
+                    </div>
+                    <div class="workout-item" style="border-top: 4px solid var(--safe);">
+                        <h4 style="color:var(--safe); border:none;">🟢 Dias Verdes</h4>
+                        <p style="font-size: 0.8rem;">Estímulo neural recuperativo. Ativação sem gerar lixo metabólico.</p>
+                    </div>
+                    <div class="workout-item" style="border-top: 4px solid var(--flash);">
+                        <h4 style="color:var(--flash); border:none;">⚡ Pré-Longão</h4>
+                        <p style="font-size: 0.8rem;">Força máxima e baixo volume. Recrutamento total para estabilidade.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="data-card">
+                <div class="card-title"><i data-lucide="trending-up"></i> Resultados Esperados</div>
+                <table class="tech-table">
+                    <tr><td>Economia de Corrida</td><td class="highlight">Correr com menos esforço</td></tr>
+                    <tr><td>Hipertrofia Funcional</td><td class="highlight">Ganho de densidade</td></tr>
+                    <tr><td>Resiliência Articular</td><td class="highlight">Menos riscos de lesão</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- =============================== -->
+        <!-- CALENDÁRIO                      -->
+        <!-- =============================== -->
+        <section id="calendario" class="content-section">
+            <div class="sec-header">
+                <h1>Calendário<br><span style="color:var(--primary)">Semanal</span></h1>
+                <p>O equilíbrio entre as pistas e os ferros</p>
+            </div>
+
+            <div class="data-card">
+                <table class="tech-table">
+                    <thead>
+                        <tr><th>Dia</th><th>Corrida</th><th>Musculação</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Segunda</td><td>OFF</td><td style="color:var(--accent)">🔴 FORTE</td></tr>
+                        <tr><td>Terça</td><td>Leve</td><td style="color:var(--safe)">🟢 NEURAL LEVE</td></tr>
+                        <tr><td>Quarta</td><td>OFF</td><td style="color:var(--accent)">🔴 FORTE</td></tr>
+                        <tr><td>Quinta</td><td>FORTE</td><td style="color:var(--safe)">🟢 NEURAL</td></tr>
+                        <tr><td>Sexta</td><td>OFF</td><td style="color:var(--flash)">⚡ FORÇA</td></tr>
+                        <tr><td>Sábado</td><td class="highlight">LONGÃO</td><td>❌ Descanso</td></tr>
+                        <tr><td>Domingo</td><td>OFF</td><td>❌ Descanso</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="data-card">
+                <div class="card-title"><i data-lucide="layers"></i> Periodização (4 Semanas)</div>
+                <div class="workout-grid">
+                    <div class="workout-item"><h4>Sem 1</h4><p style="font-size:0.8rem;">Adaptação: Ajuste de cargas e técnica.</p></div>
+                    <div class="workout-item"><h4>Sem 2</h4><p style="font-size:0.8rem;">Progressão: Aumento gradual de esforço.</p></div>
+                    <div class="workout-item"><h4>Sem 3</h4><p style="font-size:0.8rem;">Intensidade: Pico de carga/repetições.</p></div>
+                    <div class="workout-item"><h4>Sem 4</h4><p style="font-size:0.8rem;">Deload: Recuperação para supercompensar.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================== -->
+        <!-- TREINO SEGUNDA                  -->
+        <!-- =============================== -->
+        <section id="segunda" class="content-section">
+            <div class="sec-header">
+                <div class="badge badge-red">🔴 Volume Alto</div>
+                <h1>Hipertrofia<br><span style="color:var(--accent)">Global</span></h1>
+                <p>Foco: Estímulo estrutural e densidade</p>
+            </div>
+
+            <div class="workout-grid">
+                <div class="data-card">
+                    <div class="card-title">Peito & Costas</div>
+                    <ul class="exercise-list">
+                        <li>Supino Reto (Barra) <span>4x 6–8</span></li>
+                        <li>Supino Inclinado (Halt) <span>3x 8–10</span></li>
+                        <li>Crucifixo Máquina <span>3x 10–12</span></li>
+                        <li>Remada Curvada (Barra) <span>4x 8</span></li>
+                        <li>Puxada na Frente <span>3x 10</span></li>
+                    </ul>
+                </div>
+                <div class="data-card">
+                    <div class="card-title">Pernas & Ombros</div>
+                    <ul class="exercise-list">
+                        <li>Agachamento Livre <span>4x 6–8</span></li>
+                        <li>Leg Press <span>3x 10</span></li>
+                        <li>Desenvolvimento <span>3x 8</span></li>
+                        <li>Elevação Lateral <span>3x 12</span></li>
+                    </ul>
+                </div>
+                <div class="data-card">
+                    <div class="card-title">Acessórios & Core</div>
+                    <ul class="exercise-list">
+                        <li>Rosca Direta <span>3x 10</span></li>
+                        <li>Tríceps Polia <span>3x 10</span></li>
+                        <li>Prancha <span>3x 40s</span></li>
+                        <li>Extensão Lombar <span>3x 12</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================== -->
+        <!-- TREINO TERÇA                    -->
+        <!-- =============================== -->
+        <section id="terca" class="content-section">
+            <div class="sec-header">
+                <div class="badge badge-green">🟢 Recuperativo</div>
+                <h1>Neural<br><span style="color:var(--safe)">Recuperativo</span></h1>
+                <p>Estímulo neuromuscular sem fadiga periférica</p>
+            </div>
+
+            <div class="data-card">
+                <div class="card-title">Fluxo de Movimento</div>
+                <ul class="exercise-list">
+                    <li>Agachamento (Leve/Explosivo) <span>3x 3</span></li>
+                    <li>Levantamento Terra (Leve) <span>3x 3</span></li>
+                    <li>Supino Reto (Moderado) <span>3x 5</span></li>
+                    <li>Barra Fixa <span>3x 5–6</span></li>
+                    <li>Desenvolvimento <span>2x 5</span></li>
+                    <li>Prancha <span>3x 30s</span></li>
+                </ul>
+                <div class="rule-box">
+                    <strong>Regra de Ouro:</strong> Nunca chegue perto da falha. Mantenha a velocidade do movimento máxima e o descanso entre 2–3 minutos.
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================== -->
+        <!-- TREINO QUARTA                   -->
+        <!-- =============================== -->
+        <section id="quarta" class="content-section">
+            <div class="sec-header">
+                <div class="badge badge-red">🔴 Complementar</div>
+                <h1>Hipertrofia<br><span style="color:var(--accent)">Complementar</span></h1>
+                <p>Ajuste fino e volume muscular</p>
+            </div>
+
+            <div class="workout-grid">
+                <div class="data-card">
+                    <div class="card-title">Push & Pull</div>
+                    <ul class="exercise-list">
+                        <li>Supino Inclinado (Barra) <span>3x 6–8</span></li>
+                        <li>Barra Fixa (Volume) <span>4x 8</span></li>
+                        <li>Remada Unilateral <span>3x 10</span></li>
+                        <li>Crucifixo Halter <span>3x 12</span></li>
+                    </ul>
+                </div>
+                <div class="data-card">
+                    <div class="card-title">Cadeia Posterior</div>
+                    <ul class="exercise-list">
+                        <li>Levantamento Terra <span>4x 5</span></li>
+                        <li>Afundo (Walking) <span>3x 10</span></li>
+                        <li>Mesa Flexora <span>3x 10</span></li>
+                    </ul>
+                </div>
+                <div class="data-card">
+                    <div class="card-title">Braços & Detalhes</div>
+                    <ul class="exercise-list">
+                        <li>Rosca Alternada <span>3x 10</span></li>
+                        <li>Tríceps Testa <span>3x 10</span></li>
+                        <li>Elevação Posterior <span>3x 12</span></li>
+                        <li>Abdominal Infra <span>3x 15</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================== -->
+        <!-- TREINO QUINTA                    -->
+        <!-- =============================== -->
+        <section id="quinta" class="content-section">
+            <div class="sec-header">
+                <div class="badge badge-green">🟢 Ativação</div>
+                <h1>Ativação<br><span style="color:var(--safe)">Neural</span></h1>
+                <p>Dia de Corrida Forte (Tiros): Ative seu sistema</p>
+            </div>
+
+            <div class="data-card">
+                <div class="card-title">Treino Expresso (30 min)</div>
+                <ul class="exercise-list">
+                    <li>Agachamento Rápido <span>3x 3</span></li>
+                    <li>Salto Vertical <span>3x 5</span></li>
+                    <li>Supino Reto (Leve) <span>3x 5</span></li>
+                    <li>Barra Fixa <span>3x 5</span></li>
+                    <li>Prancha <span>3x 30s</span></li>
+                </ul>
+                <div class="rule-box" style="border-left-color: var(--safe);">
+                    <strong>Foco:</strong> Prontidão. Você deve sair do treino sentindo-se mais leve e rápido do que quando entrou.
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================== -->
+        <!-- TREINO SEXTA                    -->
+        <!-- =============================== -->
+        <section id="sexta" class="content-section">
+            <div class="sec-header">
+                <div class="badge badge-flash">⚡ Força Pré-Longão</div>
+                <h1>Carga<br><span style="color:var(--flash)">Máxima</span></h1>
+                <p>Foco: Estabilidade e recrutamento de elite</p>
+            </div>
+
+            <div class="data-card">
+                <div class="card-title">Os Grandes Levantamentos</div>
+                <ul class="exercise-list">
+                    <li>Agachamento Livre <span>4x 3–5</span></li>
+                    <li>Levantamento Terra <span>3x 3–5</span></li>
+                    <li>Supino Reto <span>3x 4–6</span></li>
+                    <li>Barra Fixa <span>3x 6–8</span></li>
+                    <li>Desenvolvimento <span>3x 5</span></li>
+                </ul>
+                <div class="rule-box red">
+                    <strong>AVISO:</strong> Cargas altas, mas sem falha técnica. O objetivo é informar ao cérebro que ele precisa recrutar todas as fibras para o Longão de amanhã.
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================== -->
+        <!-- DIETA                           -->
+        <!-- =============================== -->
+        <section id="dieta" class="content-section">
+            <div class="sec-header">
+                <h1>Plano<br><span style="color:var(--primary)">Alimentar</span></h1>
+                <p>Metas por quilo de peso corporal</p>
+            </div>
+
+            <div class="workout-grid">
+                <div class="data-card" style="border-top: 4px solid var(--primary);">
+                    <div class="card-title">Macronutrientes</div>
+                    <table class="tech-table">
+                        <tr><td>Proteína</td><td class="highlight">146 g (2g/kg)</td></tr>
+                        <tr><td>Carbo</td><td class="highlight">300–400 g</td></tr>
+                        <tr><td>Gordura</td><td class="highlight">60–70 g</td></tr>
+                    </table>
+                </div>
+                <div class="data-card">
+                    <div class="card-title">Estratégia High Carb</div>
+                    <p style="font-size: 0.8rem; color: var(--text-secondary);">Quintas e Sábados: Aumente o carboidrato em 20% e reduza a gordura. O glicogênio é sua bateria na corrida.</p>
+                </div>
+            </div>
+
+            <div class="data-card">
+                <div class="card-title">Menu Suggestion</div>
+                <div class="workout-grid">
+                    <div class="workout-item">
+                        <h4>Manhã</h4>
+                        <p style="font-size: 0.85rem;">4 Ovos + Aveia + Fruta</p>
+                    </div>
+                    <div class="workout-item">
+                        <h4>Almoço</h4>
+                        <p style="font-size: 0.85rem;">Carne + Arroz + Legumes</p>
+                    </div>
+                    <div class="workout-item">
+                        <h4>Pré/Pós Treino</h4>
+                        <p style="font-size: 0.85rem;">Banana + Whey | Whey + Arroz/Banana</p>
+                    </div>
+                    <div class="workout-item">
+                        <h4>Jantar</h4>
+                        <p style="font-size: 0.85rem;">Frango + Arroz + Legumes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================== -->
+        <!-- SUPLEMENTOS                     -->
+        <!-- =============================== -->
+        <section id="suplementos" class="content-section">
+            <div class="sec-header">
+                <h1>Suporte<br><span style="color:var(--primary)">Suplementar</span></h1>
+                <p>Estratégia de elite para performance</p>
+            </div>
+
+            <div class="data-card">
+                <ul class="exercise-list">
+                    <li>Creatina <span>3 a 5g / dia (Eterno)</span></li>
+                    <li>Whey Protein <span>Conforme meta proteica</span></li>
+                    <li>Cafeína <span>Pré-treinos explosivos</span></li>
+                    <li>Eletrólitos <span>Essencial no Longão (Sábado)</span></li>
+                </ul>
+            </div>
+
+            <div class="rule-box red">
+                <strong>Hidratação:</strong> Mínimo de 35ml por kg de peso. Para você, Alexandre, o alvo é 3 Litros+ nos dias de treino/corrida.
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Navigation Logic
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('.content-section');
+        const sidebar = document.getElementById('sidebar');
+        const mobToggle = document.getElementById('mobToggle');
+
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = item.getAttribute('data-target');
+
+                navItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+
+                sections.forEach(s => {
+                    s.classList.remove('active');
+                    if(s.id === target) s.classList.add('active');
+                });
+
+                if(window.innerWidth <= 1024) sidebar.classList.remove('open');
+                window.scrollTo(0, 0);
+            });
+        });
+
+        mobToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+
+        // Initialize Lucide
+        lucide.createIcons();
+    </script>
+</body>
+</html>
