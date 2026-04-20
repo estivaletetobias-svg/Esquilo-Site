@@ -21,11 +21,11 @@ O protocolo baseia-se na manipulação da fadiga central e periférica para que 
 
 | Dia | Corrida | Musculação | Nível de Intensidade |
 | :--- | :--- | :--- | :--- |
-| **Segunda** | OFF | 🔴 HIPERTROFIA GLOBAL | Alta (Volume) |
-| **Terça** | Leve | 🟢 NEURAL RECUPERATIVO | Baixa (Recuperativo Ativo) |
-| **Quarta** | OFF | 🔴 HIPERTROFIA COMPLEMENTAR | Alta (Volume) |
-| **Quinta** | FORTE | 🟢 NEURAL ATIVAÇÃO | Baixa (Curto/Explosivo) |
-| **Sexta** | OFF | ⚡ FORÇA MÁXIMA | Alta (Carga) |
+| **Segunda** | OFF | 🔴 FORTE | Alta (Volume) |
+| **Terça** | Leve | 🟢 NEURAL LEVE | Baixa (Recuperativo Ativo) |
+| **Quarta** | OFF | 🔴 FORTE | Alta (Volume) |
+| **Quinta** | FORTE | 🟢 NEURAL | Baixa (Curto/Explosivo) |
+| **Sexta** | OFF | ⚡ FORÇA | Alta (Carga) |
 | **Sábado** | **LONGÃO** | ❌ DESCANSO | - |
 | **Domingo** | OFF | ❌ DESCANSO | - |
 
@@ -59,10 +59,10 @@ O protocolo baseia-se na manipulação da fadiga central e periférica para que 
 ### TERÇA — TREINO NEURAL (RECUPERATIVO ATIVO)
 *Regras: Não gerar fadiga | Não ir até a falha | Descanso: 2 min.*
 
-- **Pernas:** Agachamento (Leve/Explosivo) — 3x3 | Levantamento Terra (Leve) — 3x3
-- **Peito:** Supino Reto (Moderado) — 3x5
+- **Pernas:** Agachamento (Leve/Explosivo) — 3x 3 | Levantamento Terra (Leve) — 3x 3
+- **Peito:** Supino Reto (Moderado) — 3x 5
 - **Costas:** Barra Fixa — 3x 5–6
-- **Ombros:** Desenvolvimento — 2x5
+- **Ombros:** Desenvolvimento — 2x 5
 - **Core:** Prancha — 3x 30s
 
 ### QUARTA — HIPERTROFIA COMPLEMENTAR
@@ -76,8 +76,8 @@ O protocolo baseia-se na manipulação da fadiga central e periférica para que 
 ### QUINTA — NEURAL ATIVAÇÃO (DIA DE TIRO/FORTE)
 *Treino rápido: 30–40 min | Foco: Prontidão neuromuscular.*
 
-- **Pernas:** Agachamento (Leve/Rápido) — 3x3 | Salto Vertical — 3x5
-- **Geral:** Supino Leve (3x5) | Barra Fixa (3x5) | Desenvolvimento Leve (2x5)
+- **Pernas:** Agachamento (Leve/Rápido) — 3x 3 | Salto Vertical — 3x 5
+- **Geral:** Supino Leve — 3x 5 | Barra Fixa — 3x 5 | Desenvolvimento Leve — 2x 5
 - **Core:** Prancha — 3x 30s
 
 ### SEXTA — FORÇA MÁXIMA (PRÉ-LONGÃO)
@@ -117,12 +117,12 @@ O protocolo baseia-se na manipulação da fadiga central e periférica para que 
 
 | Refeição | Sugestão Base | Substituições |
 | :--- | :--- | :--- |
-| **Café da Manhã** | 4 Ovos + Aveia + Fruta | 1. Omelete + Pão Integral \| 2. Iogurte + Whey + Granola |
-| **Almoço** | Carne + Arroz + Legumes | 1. Frango + Batata Doce \| 2. Carne Moída + Macarrão |
-| **Pré-Treino** | Banana + Whey | 1. Pão + Pasta de Amendoim \| 2. Tapioca + Queijo |
-| **Pós-Treino** | Whey + Carboidrato | 1. Whey + Banana \| 2. Arroz + Frango |
-| **Jantar** | Proteína + Carboidrato | 1. Frango + Arroz \| 2. Omelete + Batata |
-| **Ceia** | Iogurte ou Whey | 1. Ovos \| 2. Queijo + Castanhas |
+| **Café da Manhã** | 4 Ovos + Aveia + Fruta | 1. Omelete + Pão Integral \| 2. Iogurte + Whey + Granola \| 3. Vitamina com Whey |
+| **Almoço** | Carne + Arroz + Legumes | 1. Frango + Batata Doce \| 2. Carne Moída + Macarrão \| 3. Peixe + Arroz |
+| **Pré-Treino** | Banana + Whey | 1. Pão + Pasta de Amendoim \| 2. Tapioca + Queijo \| 3. Iogurte + Fruta |
+| **Pós-Treino** | Whey + Carboidrato | 1. Whey + Banana \| 2. Arroz + Frango \| 3. Shake Completo |
+| **Jantar** | Proteína + Carboidrato | 1. Frango + Arroz \| 2. Omelete + Batata \| 3. Peixe + Legumes |
+| **Ceia** | Iogurte ou Whey | 1. Ovos \| 2. Queijo + Castanhas \| 3. Whey + Pasta de Amendoim |
 
 ---
 
@@ -135,10 +135,10 @@ O protocolo baseia-se na manipulação da fadiga central e periférica para que 
 ---
 
 ## 🏁 RESULTADOS ESPERADOS
-- [ ] Ganho de massa magra e densidade muscular.
-- [ ] Melhor economia de corrida (correr mais gastando menos).
-- [ ] Recuperação acelerada entre estímulos.
-- [ ] Melhor estabilidade articular (core e pernas fortes).
+- [x] Ganho de massa magra e densidade muscular.
+- [x] Melhor economia de corrida (correr mais gastando menos).
+- [x] Recuperação acelerada entre estímulos.
+- [x] Melhor estabilidade articular (core e pernas fortes).
 
 ---
 
