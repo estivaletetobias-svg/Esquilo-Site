@@ -1,7 +1,14 @@
 User-agent: *
+# Bloquear protocolos individuais por segurança e privacidade (Prioridade Máxima)
+Disallow: /protocolo-*.html
+Disallow: /bruto-*.md
+Disallow: /bruto-*.txt
+Disallow: /avaliacao-*.html
+
+# Allow general access for everything else
 Allow: /
 
-# Allow AI crawlers for GEO citations
+# Specific AI agents allowed for GEO/SEO citations
 User-agent: GPTBot
 Allow: /
 
