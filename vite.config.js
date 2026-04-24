@@ -19,6 +19,7 @@ export default defineConfig({
         protocolo_waleska: resolve(__dirname, 'protocolo-waleska.html'),
         protocolo_izabel: resolve(__dirname, 'protocolo-izabel.html'),
         protocolo_alexandre: resolve(__dirname, 'protocolo-alexandre.html'),
+        protocolo_anarubia: resolve(__dirname, 'protocolo-anarubia.html'),
       },
     },
   },

@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Hub Waleska">
+    
+    <!-- Favicon / Web App Icons -->
+    <link rel="icon" type="image/png" href="/assets/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+
+    <title>Protocolo Waleska — Hub de Performance Bio-Metabólica</title>
+    
+    <meta name="robots" content="noindex, nofollow">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            /* Design Original Anna/Esquilo: Dark & Neon */
+            --primary: #CCFF00; /* Lima Neon */
+            --accent: #F97316;  /* Laranja (Toque Waleska) */
+            --bg: #0B0C0E;
+            --surface: #16171B;
+            --surface-hover: #1C1D21;
+            --border: #2B2C31;
+            --text-main: #FFFFFF;
+            --text-secondary: #949499;
+            --blue-light: #2563EB;
+            --font-main: 'Inter', sans-serif;
+            --font-display: 'Anton', sans-serif;
+            --sidebar-width: 280px;
+        }
+
+        * { box-sizing: border-box; user-select: none !important; -webkit-user-select: none !important; }
+
+        html, body {
+            overflow-x: hidden;
+            max-width: 100vw;
+            overscroll-behavior: none;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* --- Sidebar & UX --- */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--bg);
+            border-right: 1px solid var(--border);
+            height: 100vh;
+            position: fixed;
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        .sidebar::-webkit-scrollbar { width: 4px; }
+        .sidebar::-webkit-scrollbar-thumb { background: var(--border); }
+
+        .logo { display: block; margin-bottom: 2.5rem; }
+        .logo img { height: 45px; filter: brightness(1.8); width: auto; object-fit: contain; }
+        
+        .nav-label { font-size: 0.6rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 2px; margin-bottom: 1rem; display: block; font-weight: 800; }
+        .nav-item { display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem 1rem; color: var(--text-secondary); text-decoration: none; font-size: 0.82rem; font-weight: 600; border-radius: 8px; margin-bottom: 0.3rem; transition: 0.2s; cursor: pointer; }
+        .nav-item:hover { background: var(--surface); color: var(--text-main); }
+        .nav-item.active { background: var(--primary) !important; color: #000 !important; }
+        .nav-item.active i { color: #000 !important; }
+        .nav-item i { width: 18px; height: 18px; }
+
+        /* --- Main Content --- */
+        .main-content { flex: 1; margin-left: var(--sidebar-width); background: var(--bg); min-height: 100vh;}
+        .content-section { display: none; padding: 6rem 4rem; max-width: 1100px; margin: 0 auto; }
+        .content-section.active { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+        .sec-header { margin-bottom: 4rem; border-left: 4px solid var(--primary); padding-left: 2rem; }
+        .sec-header h1 { font-family: var(--font-display); font-size: 3.5rem; text-transform: uppercase; letter-spacing: 1px; line-height: 1; margin: 0; }
+        .sec-header p { color: var(--text-secondary); margin-top: 1rem; font-size: 1.1rem; }
+
+        /* --- Global Components --- */
+        .data-card { background: var(--surface); border: 1px solid var(--border); padding: 2.5rem; border-radius: 20px; margin-bottom: 2.5rem; position: relative; }
+        .card-title { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.8rem; color: var(--primary); font-weight: 800; font-size: 1.35rem; text-transform: uppercase; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
+        .card-title i { color: var(--primary); }
+        
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; }
+        .info-item { display: block; }
+        .info-item label { display: block; font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 0.8rem; }
+        .info-item value { display: block; font-size: 1.25rem; font-weight: 700; color: #FFF; line-height: 1.4; }
+
+        .rule-box { background: rgba(0,0,0,0.3); border-left: 3px solid var(--accent); padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; font-size: 0.95rem; }
+        .rule-box.green { border-left-color: var(--primary); }
+        .rule-box.blue { border-left-color: var(--blue-light); }
+
+        .badge { background: rgba(204,255,0,0.1); color: var(--primary); padding: 0.4rem 0.8rem; border-radius: 4px; border: 1px solid var(--primary); font-size: 0.7rem; font-weight: 950; margin-bottom: 1rem; text-transform: uppercase; display: inline-block; }
+
+        .tech-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; display: block; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+        .tech-table th, .tech-table td { padding: 1.2rem 1.5rem; border-bottom: 1px solid var(--border); text-align: left; min-width: max-content; }
+        .tech-table th { font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; }
+        .tech-table td { font-size: 0.95rem; font-weight: 600; color: #FFF; }
+
+        .item-list { list-style: none; padding: 0; margin: 0; }
+        .item-list li { display: flex; align-items: flex-start; gap: 0.8rem; margin-bottom: 0.8rem; font-size: 1.1rem; color: #FFF; }
+        .item-list li i { color: var(--primary); margin-top: 4px; flex-shrink: 0; width: 18px; }
+
+        /* --- Accordion (Treino) --- */
+        .acc-item { border: 1px solid var(--border); border-radius: 12px; margin-bottom: 1rem; overflow: hidden; background: var(--surface); }
+        .acc-header { padding: 1.6rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: 0.3s; }
+        .acc-header:hover { background: var(--surface-hover); }
+        .acc-header h3 { margin: 0; font-size: 1.1rem; text-transform: uppercase; color: #FFF; }
+        .acc-header i { color: var(--primary); transition: 0.3s; }
+        .acc-item.active .acc-header { background: var(--surface-hover); }
+        .acc-item.active .acc-header i { transform: rotate(180deg); }
+        .acc-content { display: none; padding: 2rem; background: #000; border-top: 1px solid var(--border); }
+        .acc-item.active .acc-content { display: block; }
+        .train-day { background: var(--surface-hover); color: var(--primary) !important; font-weight: 900 !important; font-size: 1rem !important; }
+
+        /* --- Nutrition --- */
+        .meal-card { background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 3rem; margin-bottom: 3.5rem; }
+        .meal-tag { color: var(--accent); font-weight: 900; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; display: block; margin-bottom: 1rem; }
+        .meal-name { font-size: 2rem; font-weight: 800; color: #FFF; margin-bottom: 0.5rem; border-left: 4px solid var(--primary); padding-left: 1.5rem; }
+        
+        .sub-grid { display: grid; gap: 1rem; margin-top: 2rem; }
+        .sub-opt { background: rgba(0,0,0,0.2); border: 1px solid var(--border); padding: 1.5rem; border-radius: 14px; display: flex; gap: 1.2rem; align-items: flex-start; transition: 0.3s; }
+        .sub-opt:hover { border-color: var(--primary); background: rgba(204,255,0,0.05); }
+        .sub-num { color: var(--accent); font-weight: 900; font-size: 1rem; margin-top: 2px; }
+
+        /* --- Global & Mobile --- */
+        .top-status { position: fixed; top: 0; left: 0; width: 100%; background: var(--primary); color: #000; text-align: center; padding-top: max(14px, env(safe-area-inset-top)); padding-bottom: 12px; font-size: 0.6rem; font-weight: 900; z-index: 3000; letter-spacing: 1px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); line-height: 1.2; text-transform: uppercase; }
+        .top-status strong { font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 2px; color: #000; display: block; }
+        
+        .mob-menu { display: none; position: fixed; bottom: 2rem; right: 2rem; width: 68px; height: 68px; background: var(--primary); color: #000; border-radius: 50%; z-index: 2100; border: none; align-items: center; justify-content: center; box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
+        .top-status span.divider { display: none; }
+
+        @media (max-width: 1024px) {
+            .sidebar { transform: translateX(-100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+            .sidebar.open { transform: translateX(0); }
+            .main-content { margin-left: 0; width: 100vw; }
+            .content-section { padding: 8rem 1.5rem 4rem 1.5rem; }
+            .mob-menu { display: flex; }
+            .sec-header h1 { font-size: 2.3rem; }
+            .meal-name { font-size: 1.5rem; }
+            .meal-card { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+    
+    <div class="top-status">
+        <strong>WALESKA GORCZEVSKI PEREIRA</strong> <span class="divider">|</span> PROJETO 6 SEMANAS
+    </div>
+
+    <button class="mob-menu" id="mobToggle"><i data-lucide="menu"></i></button>
+
+    <aside class="sidebar" id="sidebar">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+            <div class="logo" style="margin: 0;"><img src="/assets/images/logo-transparent.png" alt="Esquilo" style="margin-bottom: 0; height: 40px; filter: brightness(2);"></div>
+            <a href="https://esquilopersonal.com/" title="Acesse o meu site completo" style="color: var(--text-secondary); text-decoration: none; font-size: 0.6rem; text-transform: uppercase; font-weight: 800; display: flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.6rem; border: 1px solid var(--border); border-radius: 6px; transition: 0.2s;">
+                Site <i data-lucide="external-link" style="width: 12px; height: 12px;"></i>
+            </a>
+        </div>
+        
+        <nav class="nav-group"><span class="nav-label">Protocolo Técnico</span>
+            <a href="#" class="nav-item active" data-target="estrategia"><i data-lucide="target"></i> Estratégia Central</a>
+            <a href="#" class="nav-item" data-target="conclusao"><i data-lucide="award"></i> Estilo de Vida</a>
+            <a href="#" class="nav-item" data-target="menstruacao" style="color:var(--accent)"><i data-lucide="droplet"></i> Fisiologia Menstrual</a>
+        </nav>
+
+        <nav class="nav-group"><span class="nav-label">Nutrição & Rotina</span>
+            <a href="#" class="nav-item" data-target="rotina"><i data-lucide="sun"></i> Rotina Diária</a>
+            <a href="#" class="nav-item" data-target="alimentacao"><i data-lucide="utensils"></i> Guia Alimentar</a>
+        </nav>
+
+        <nav class="nav-group"><span class="nav-label">Performance</span>
+            <a href="#" class="nav-item" data-target="treino1"><i data-lucide="calendar"></i> Treino (Sem 1-2)</a>
+            <a href="#" class="nav-item" data-target="treino2"><i data-lucide="calendar"></i> Treino (Sem 3-4)</a>
+            <a href="#" class="nav-item" data-target="treino3"><i data-lucide="calendar"></i> Treino (Sem 5-6)</a>
+            <a href="#" class="nav-item" data-target="extras"><i data-lucide="zap"></i> Ajustes & Viagens</a>
+        </nav>
+
+        <nav class="nav-group"><span class="nav-label">Aceleração</span>
+            <a href="#" class="nav-item" data-target="peptideos" style="color:var(--primary)"><i data-lucide="zap"></i> Acelerar Resultados</a>
+        </nav>
+
+        <div style="margin-top: 2rem; background: var(--surface); border: 1px solid var(--border); padding: 1rem; border-radius: 12px; text-align: center;">
+            <p style="font-size: 0.7rem; color: var(--text-secondary); margin-top: 0; margin-bottom: 0.8rem; font-weight: 600; line-height: 1.4;">Dúvidas do protocolo?<br><span style="color:#FFF; font-weight:800;">Suporte VIP Esquilo</span></p>
+            <a href="https://wa.me/5548999229071" target="_blank" style="background: #25D366; color: #FFF; text-decoration: none; padding: 0.6rem; border-radius: 8px; font-weight: 800; font-size: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 0.4rem; transition: 0.2s;">
+                <i data-lucide="message-circle" style="width: 16px; height: 16px;"></i> WhatsApp
+            </a>
+        </div>
+
+        <div style="margin-top:auto; font-size:0.6rem; color:var(--text-secondary); text-transform:uppercase; padding-top:2rem;">
+            &copy; 2026 MÉTODO ESQUILO®<br>By <a href="https://tobiasestivalete.com.br" target="_blank" style="color:#FFF; text-decoration:none; font-weight:800;">Tobias Estivalete</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <!-- ======================= -->
+        <!-- ESTRATÉGIA CENTRAL -->
+        <!-- ======================= -->
+        <section id="estrategia" class="content-section active">
+            <div class="sec-header">
+                <p style="color:var(--primary); font-weight:800; letter-spacing:2px;">PILAR ESTRUTURAL</p>
+                <h1>Visão <br><span style="color:var(--primary)">Central</span></h1>
+            </div>
+
+            <div class="data-card">
+                <div class="card-title"><i data-lucide="activity"></i> Objetivos do Ciclo</div>
+                <ul class="item-list">
+                    <li><i data-lucide="check-circle"></i> Preservar massa magra em TODAS as fases do ciclo</li>
+                    <li><i data-lucide="check-circle"></i> Ajustar <strong>volume</strong> (não carga)</li>
+                    <li><i data-lucide="check-circle"></i> Controle Bio-Metabólico:
+                        <div style="margin-left: 2rem; margin-top: 0.5rem; color: var(--text-secondary); font-size: 1rem;">
+                            ➜ Combate ao Ferro baixo<br>
+                            ➜ Ajuste de Testosterona baixa<br>
+                            ➜ Gestão de Compulsão
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="info-grid">
+                <!-- DHEA -->
+                <div class="data-card">
+                    <div class="card-title"><i data-lucide="calendar"></i> Ciclo DHEA</div>
+                    <div class="info-item" style="margin-bottom: 1.5rem;">
+                        <label>Protocolo Semanal</label>
+                        <value>SEG a SEX ➜ Usa<br>SÁB e DOM ➜ Pausa</value>
+                    </div>
+                    <div class="info-item">
+                        <label>Diferencial</label>
+                        <value>6 Semanas ON / 2 OFF</value>
+                    </div>
+                    <div class="rule-box green">
+                        Fundamental para ajuste da <strong>testosterona</strong> e disposição.
+                    </div>
+                </div>
+
+                <!-- HIDRATAÇÃO -->
+                <div class="data-card">
+                    <div class="card-title"><i data-lucide="droplet"></i> Hidratação</div>
+                    <div class="info-item" style="margin-bottom: 1.5rem;">
+                        <label>Base Diária</label>
+                        <value>3,0 Litros</value>
+                    </div>
+                    <table class="tech-table">
+                        <tr><th>Fase</th><th>Volume</th></tr>
+                        <tr><td>Normal</td><td>3,0 L</td></tr>
+                        <tr><td>TPM</td><td>3,5 L</td></tr>
+                        <tr><td>Menstruação</td><td>3,0 L</td></tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================= -->
+        <!-- ESTILO DE VIDA (Antiga Conclusão) -->
+        <!-- ======================= -->
+        <section id="conclusao" class="content-section">
+            <div class="sec-header">
+                <p style="color:var(--primary); font-weight:800; letter-spacing:2px;">RESULTADOS ESPERADOS</p>
+                <h1>Estilo de <br><span style="color:var(--primary)">Vida</span></h1>
+            </div>
+
+            <div class="data-card">
+                <div class="card-title"><i data-lucide="trending-up"></i> Progressão Proposital</div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Estrutura</label>
+                        <value>Definição Muscular</value>
+                    </div>
+                    <div class="info-item">
+                        <label>Metabolismo</label>
+                        <value>Aumento de Gasto Calórico</value>
+                    </div>
+                    <div class="info-item">
+                        <label>Cognição</label>
+                        <value>Foco e Redução de Compulsão</value>
+                    </div>
+                </div>
+                <div class="rule-box" style="margin-top:2rem;">
+                    “Este protocolo não é apenas uma mudança temporária, mas uma calibração biológica para um novo patamar de performance.”
+                </div>
+            </div>
+
+            <div class="data-card">
+                <div class="card-title"><i data-lucide="moon"></i> Higiene do Sono</div>
+                <div class="info-grid" style="margin-bottom:1.5rem;">
+                    <div class="info-item">
+                        <label>Dormir</label>
+                        <value>22:00 — 22:30</value>
+                    </div>
+                    <div class="info-item">
+                        <label>Acordar</label>
+                        <value>07:00 — 07:30</value>
+                    </div>
+                </div>
+                <ul class="item-list">
+                    <li><i data-lucide="minus"></i> Sem tela 60 min antes de dormir</li>
+                    <li><i data-lucide="minus"></i> Ambiente totalmente escuro</li>
+                    <li><i data-lucide="minus"></i> Temperatura confortável no quarto</li>
+                    <li><i data-lucide="minus"></i> Suplementação noturna 40 min antes</li>
+                </ul>
+            </div>
+
+            <div class="data-card">
+                <div class="card-title"><i data-lucide="star"></i> Pilares do Resultado</div>
+                <ul class="item-list">
+                    <li><i data-lucide="check-circle"></i> <strong>1.</strong> Ferro TODOS os dias</li>
+                    <li><i data-lucide="check-circle"></i> <strong>2.</strong> Treino consistente</li>
+                    <li><i data-lucide="check-circle"></i> <strong>3.</strong> Proteína adequada</li>
+                    <li><i data-lucide="check-circle"></i> <strong>4.</strong> Sono regulado</li>
+                    <li><i data-lucide="check-circle"></i> <strong>5.</strong> Ajuste do ciclo menstrual</li>
+                </ul>
+                <div class="rule-box green" style="margin-top:1.5rem;">
+                    Resultado esperado em 6 semanas: glúteo mais firme, menos retenção, mais definição e melhora hormonal.
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================= -->
+        <!-- FISIOLOGIA MENSTRUAL (Novo) -->
+        <!-- ======================= -->
+        <section id="menstruacao" class="content-section">
+            <div class="sec-header">
+                <p style="color:var(--accent); font-weight:800; letter-spacing:2px;">AJUSTE DE SEGURANÇA</p>
+                <h1>Fisiologia <br><span style="color:var(--accent)">Menstrual</span></h1>
+                <p>(Aplicação em QUALQUER semana de treino)</p>
+            </div>
+
+            <div class="data-card" style="border-color: var(--accent);">
+                <div class="card-title"><i data-lucide="zap"></i> Ajuste Validado</div>
+                <p style="font-weight:600; margin-bottom:2rem; color:var(--text-secondary); border-bottom:1px solid var(--border); padding-bottom:1rem;">
+                    Durante o período menstrual, o foco é manutenção da técnica e proteção metabólica.
+                </p>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Carga</label>
+                        <value>Mantém a carga</value>
+                    </div>
+                    <div class="info-item">
+                        <label>Repetições</label>
+                        <value>Mantém repetições</value>
+                    </div>
+                    <div class="info-item">
+                        <label>Volume (Séries)</label>
+                        <value style="color:var(--accent)">Reduz séries ~50%</value>
+                    </div>
+                </div>
+
+                <div class="rule-box" style="background: rgba(249, 115, 22, 0.1); border-left-color: var(--accent); margin-top:2rem;">
+                    <strong>Dica Técnica:</strong> Se o treino original previa 4 séries, faça apenas 2 durante este período. Isso gasta a energia necessária sem causar estresse inflamatório excessivo.
+                </div>
+            </div>
+
+            <div class="data-card">
+                <div class="card-title"><i data-lucide="droplet"></i> Suporte Adicional</div>
+                <ul class="item-list">
+                    <li><i data-lucide="check"></i> Hidratação: Manter 3.0L</li>
+                    <li><i data-lucide="check"></i> Atenção redobrada ao Ferro e Vitamina C</li>
+                    <li><i data-lucide="check"></i> Controle de compulsão por doces (Magnum noturno focado)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ======================= -->
+        <!-- ROTINA DIÁRIA -->
+        <!-- ======================= -->
+        <section id="rotina" class="content-section">
+            <div class="sec-header">
+                <p style="color:var(--primary); font-weight:800; letter-spacing:2px;">TIMELINE DE PERFORMANCE</p>
+                <h1>Cronograma <br><span style="color:var(--primary)">Diário</span></h1>
+            </div>
+
+            <!-- AO ACORDAR -->
+            <div class="data-card">
+                <div class="badge">JEJUM — não tomar com café preto ou chá preto</div>
+                <div class="card-title"><i data-lucide="sun"></i> Ao Acordar</div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Ferro</label>
+                        <value>40 mg</value>
+                    </div>
+                    <div class="info-item">
+                        <label>Vitamina C</label>
+                        <value>500 mg</value>
+                    </div>
+                    <div class="info-item">
+                        <label>Shot</label>
+                        <value>Água + Limão (500ml)</value>
+                    </div>
+                </div>
+                <div class="rule-box blue">
+                    <strong>ESPERAR 40 MINUTOS</strong> antes da primeira refeição para absorção total do Ferro.
+                </div>
+            </div>
+
+            <!-- CAFÉ DA MANHÃ -->
+            <div class="data-card">
+                <div class="badge">MANHÃ</div>
+                <div class="card-title"><i data-lucide="coffee"></i> Café da Manhã / Manhã</div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>DHEA (SEG-SEX)</label>
+                        <value>25 mg</value>
+                    </div>
+                    <div class="info-item">
+                        <label>Vitamina D3</label>
+                        <value>3000 UI</value>
+                    </div>
+                    <div class="info-item">
+                        <label>Ômega 3</label>
+                        <value>1,0 g</value>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ALMOÇO -->
+            <div class="data-card">
+                <div class="badge">TARDE</div>
+                <div class="card-title"><i data-lucide="utensils"></i> Almoço</div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Ômega 3</label>
+                        <value>+ 1,0 g</value>
+                    </div>
+                    <div class="info-item">
+                        <label>Multivitamínico</label>
+                        <value>1 Dose</value>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NOITE -->
+            <div class="data-card">
+                <div class="badge">NOITE</div>
+                <div class="card-title"><i data-lucide="moon"></i> Noite / Dormir</div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Magnésio Bisglicinato</label>
+                        <value>300 mg</value>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================= -->
+        <!-- GUIA ALIMENTAR -->
+        <!-- ======================= -->
+        <section id="alimentacao" class="content-section">
+            <div class="sec-header">
+                <p style="color:var(--primary); font-weight:800; letter-spacing:2px;">NUTRIÇÃO RESPONSIVA</p>
+                <h1>Guia <br><span style="color:var(--primary)">Alimentar</span></h1>
+            </div>
+
+            <!-- ALIMENTAÇÃO AJUSTADA AO HORÁRIO DO TREINO -->
+            <div class="data-card" style="border-color: var(--primary);">
+                <div class="card-title"><i data-lucide="clock"></i> Ajuste por Horário de Treino</div>
+                
+                <div class="info-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+                    <!-- SE TREINAR DE MANHÃ -->
+                    <div style="background: rgba(0,0,0,0.2); padding: 2rem; border-radius: 20px; border: 1px solid var(--border); border-left: 4px solid var(--primary);">
+                        <span class="meal-tag" style="color: var(--primary); margin-bottom: 1.5rem;">SE TREINAR DE MANHÃ</span>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <p style="color:var(--primary); font-weight:800; font-size: 0.75rem; text-transform:uppercase; margin-bottom: 0.5rem;">➜ PRÉ-TREINO (Leve)</p>
+                            <p style="font-size: 1.2rem; font-weight: 700; color: #FFF;">Banana + Proteína</p>
+                            <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+                                <strong style="color: var(--text-main); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px;">Opções:</strong><br>
+                                1. Shake proteína + fruta<br>
+                                2. Pão integral + pasta amendoim<br>
+                                3. Iogurte vegetal
+                            </div>
+                        </div>
+
+                        <div>
+                            <p style="color:var(--primary); font-weight:800; font-size: 0.75rem; text-transform:uppercase; margin-bottom: 0.5rem;">➜ PÓS-TREINO (Café da Manhã Completo)</p>
+                            <p style="font-size: 1.2rem; font-weight: 700; color: #FFF;">Aveia + Proteína + Gordura <span style="color: var(--text-secondary); font-size: 0.9rem;">ou</span> Shake + Fruta</p>
+                        </div>
+                    </div>
+
+                    <!-- SE TREINAR À TARDE/NOITE -->
+                    <div style="background: rgba(0,0,0,0.2); padding: 2rem; border-radius: 20px; border: 1px solid var(--border); border-left: 4px solid var(--accent);">
+                        <span class="meal-tag" style="color: var(--accent); margin-bottom: 1.5rem;">SE TREINAR À TARDE/NOITE</span>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <p style="color:var(--accent); font-weight:800; font-size: 0.75rem; text-transform:uppercase; margin-bottom: 0.5rem;">➜ PRÉ-TREINO (16:00)</p>
+                            <p style="font-size: 1.2rem; font-weight: 700; color: #FFF;">Shake + Fruta</p>
+                            <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+                                <strong style="color: var(--text-main); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px;">Opções:</strong><br>
+                                1. Castanhas + fruta<br>
+                                2. Sanduíche vegano<br>
+                                3. Iogurte vegetal
+                            </div>
+                        </div>
+
+                        <div>
+                            <p style="color:var(--accent); font-weight:800; font-size: 0.75rem; text-transform:uppercase; margin-bottom: 0.5rem;">➜ PÓS-TREINO</p>
+                            <p style="font-size: 1.2rem; font-weight: 700; color: #FFF;">Proteína + Creatina + Fruta</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sec-header" style="margin-top: 5rem; border-left-color: var(--accent);">
+                <p style="color:var(--accent); font-weight:800; letter-spacing:2px;">ESTRUTURA DIÁRIA</p>
+                <h1>Refeições <br><span style="color:var(--accent)">& Substituições</span></h1>
+            </div>
+
+            <!-- CAFÉ DA MANHÃ -->
+            <div class="meal-card">
+                <span class="meal-tag">REFEIÇÃO 01</span>
+                <h2 class="meal-name">Café da Manhã</h2>
+                <div class="rule-box green" style="margin-bottom: 2rem;">
+                    <strong style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;">Base Sugerida:</strong><br>
+                    <span style="font-size: 1.4rem; font-weight: 700;">Aveia + Proteína + Banana</span>
+                </div>
+                <div class="sub-grid">
+                    <div class="sub-opt"><span class="sub-num">01</span><p>Tofu + Pão Integral</p></div>
+                    <div class="sub-opt"><span class="sub-num">02</span><p>Panqueca Proteica</p></div>
+                    <div class="sub-opt"><span class="sub-num">03</span><p>Smoothie</p></div>
+                </div>
+            </div>
+
+            <!-- ALMOÇO -->
+            <div class="meal-card">
+                <span class="meal-tag">REFEIÇÃO 02</span>
+                <h2 class="meal-name">Almoço</h2>
+                <div class="rule-box green" style="margin-bottom: 2rem;">
+                    <strong style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;">Base Sugerida:</strong><br>
+                    <span style="font-size: 1.4rem; font-weight: 700;">Arroz + Lentilha + Legumes</span>
+                </div>
+                <div class="sub-grid">
+                    <div class="sub-opt"><span class="sub-num">01</span><p>Quinoa + Tofu</p></div>
+                    <div class="sub-opt"><span class="sub-num">02</span><p>Macarrão Integral + Proteína Soja</p></div>
+                    <div class="sub-opt"><span class="sub-num">03</span><p>Grão de Bico + Batata</p></div>
+                </div>
+            </div>
+
+            <!-- LANCHE -->
+            <div class="meal-card">
+                <span class="meal-tag">REFEIÇÃO 03</span>
+                <h2 class="meal-name">Lanche</h2>
+                <div class="rule-box green" style="margin-bottom: 2rem;">
+                    <strong style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;">Base Sugerida:</strong><br>
+                    <span style="font-size: 1.4rem; font-weight: 700;">Shake Proteína</span>
+                </div>
+                <div class="sub-grid">
+                    <div class="sub-opt"><span class="sub-num">01</span><p>Iogurte Vegetal</p></div>
+                    <div class="sub-opt"><span class="sub-num">02</span><p>Castanhas</p></div>
+                    <div class="sub-opt"><span class="sub-num">03</span><p>Sanduíche Vegano</p></div>
+                </div>
+            </div>
+
+            <!-- JANTAR -->
+            <div class="meal-card">
+                <span class="meal-tag">REFEIÇÃO 04</span>
+                <h2 class="meal-name">Jantar</h2>
+                <div class="rule-box green" style="margin-bottom: 2rem;">
+                    <strong style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;">Base Sugerida:</strong><br>
+                    <span style="font-size: 1.4rem; font-weight: 700;">Tofu + Legumes</span>
+                </div>
+                <div class="sub-grid">
+                    <div class="sub-opt"><span class="sub-num">01</span><p>Sopa de Lentilha</p></div>
+                    <div class="sub-opt"><span class="sub-num">02</span><p>Wrap Vegano</p></div>
+                    <div class="sub-opt"><span class="sub-num">03</span><p>Salada + Grão de Bico</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================= -->
+        <!-- TREINO SEMANA 1-2 -->
+        <!-- ======================= -->
+        <section id="treino1" class="content-section">
+            <div class="sec-header">
+                <p style="color:var(--primary); font-weight:800; letter-spacing:2px;">FASE 1: PERIODIZAÇÃO ONDULATÓRIA</p>
+                <h1>Treino <br><span style="color:var(--primary)">Semanas 1-2</span></h1>
+            </div>
+
+            <div class="data-card" style="margin-bottom:2.5rem;">
+                <div class="card-title"><i data-lucide="calendar"></i> Divisão Semanal</div>
+                <table class="tech-table">
+                    <tr><th>Dia</th><th>Foco</th><th>Método</th></tr>
+                    <tr class="train-day"><td>SEG</td><td>Inferior — Glúteo/Posterior</td><td>FORÇA</td></tr>
+                    <tr><td>TER</td><td>Superior — Costas/Tríceps</td><td>HIPERTROFIA</td></tr>
+                    <tr class="train-day"><td>QUA</td><td>Inferior — Quadríceps</td><td>METABÓLICO</td></tr>
+                    <tr><td>QUI</td><td>Superior — Ombro/Core</td><td>FORÇA</td></tr>
+                    <tr class="train-day"><td>SEX</td><td>Inferior — Glúteo Completo</td><td>HIPERTROFIA</td></tr>
+                    <tr><td>SAB</td><td>Full Body</td><td>METABÓLICO</td></tr>
+                    <tr><td>DOM</td><td colspan="2">OFF / Caminhada Leve</td></tr>
+                </table>
+                <div class="rule-box green" style="margin-top:1.5rem;">
+                    <strong>Periodização Ondulatória:</strong> Força (6-8 reps) → Hipertrofia (8-12 reps) → Metabólico (12-20 reps)
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header"><h3>💪 SEG — Inferior (Glúteo/Posterior) — FORÇA</h3><i data-lucide="chevron-down"></i></div>
+                <div class="acc-content">
+                    <table class="tech-table">
+                        <tr><th>Exercício</th><th>Séries x Reps</th></tr>
+                        <tr><td>Agachamento Livre</td><td>4 x 6-8</td></tr>
+                        <tr><td>Levantamento Terra Romeno</td><td>4 x 6-8</td></tr>
+                        <tr><td>Hip Thrust</td><td>4 x 8</td></tr>
+                        <tr><td>Afundo com Halter</td><td>3 x 8 (cada perna)</td></tr>
+                        <tr><td>Mesa Flexora</td><td>3 x 10</td></tr>
+                        <tr><td>Panturrilha</td><td>4 x 12</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header"><h3>🏋️ TER — Superior (Costas/Tríceps) — HIPERTROFIA</h3><i data-lucide="chevron-down"></i></div>
+                <div class="acc-content">
+                    <table class="tech-table">
+                        <tr><th>Exercício</th><th>Séries x Reps</th></tr>
+                        <tr><td>Puxada na Frente</td><td>4 x 10-12</td></tr>
+                        <tr><td>Remada Curvada</td><td>4 x 10</td></tr>
+                        <tr><td>Tríceps Corda</td><td>4 x 12</td></tr>
+                        <tr><td>Tríceps Testa</td><td>3 x 10</td></tr>
+                        <tr><td>Elevação Lateral</td><td>4 x 12-15</td></tr>
+                        <tr><td>Abdômen Prancha</td><td>3 x 40s</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header"><h3>⚡ QUA — Inferior (Quadríceps) — METABÓLICO</h3><i data-lucide="chevron-down"></i></div>
+                <div class="acc-content">
+                    <table class="tech-table">
+                        <tr><th>Exercício</th><th>Séries x Reps</th></tr>
+                        <tr><td>Leg Press</td><td>4 x 15</td></tr>
+                        <tr><td>Cadeira Extensora</td><td>4 x 15-20</td></tr>
+                        <tr><td>Agachamento Sumô</td><td>3 x 15</td></tr>
+                        <tr><td>Passada Andando</td><td>3 x 20 passos</td></tr>
+                        <tr><td>Glúteo no Cabo</td><td>4 x 15</td></tr>
+                        <tr><td>Abdutora</td><td>4 x 20</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header"><h3>💪 QUI — Superior (Ombro/Core) — FORÇA</h3><i data-lucide="chevron-down"></i></div>
+                <div class="acc-content">
+                    <table class="tech-table">
+                        <tr><th>Exercício</th><th>Séries x Reps</th></tr>
+                        <tr><td>Desenvolvimento com Halter</td><td>4 x 6-8</td></tr>
+                        <tr><td>Remada Baixa</td><td>4 x 8</td></tr>
+                        <tr><td>Barra Assistida</td><td>3 x 6-8</td></tr>
+                        <tr><td>Elevação Lateral</td><td>3 x 10</td></tr>
+                        <tr><td>Core (Prancha + Elevação de Pernas)</td><td>3 séries</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header"><h3>🍑 SEX — Glúteo Completo — HIPERTROFIA</h3><i data-lucide="chevron-down"></i></div>
+                <div class="acc-content">
+                    <table class="tech-table">
+                        <tr><th>Exercício</th><th>Séries x Reps</th></tr>
+                        <tr><td>Hip Thrust</td><td>5 x 10</td></tr>
+                        <tr><td>Stiff</td><td>4 x 10-12</td></tr>
+                        <tr><td>Abdução</td><td>4 x 15</td></tr>
+                        <tr><td>Glúteo no Cabo</td><td>4 x 12</td></tr>
+                        <tr><td>Step Up</td><td>3 x 12 (cada perna)</td></tr>
+                    </table>
+                    <div class="rule-box green" style="margin-top:1.5rem;">Foco total no <strong>pump</strong> e conexão mente-músculo.</div>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header"><h3>🔥 SAB — Full Body Metabólico</h3><i data-lucide="chevron-down"></i></div>
+                <div class="acc-content">
+                    <p style="color:var(--text-secondary); margin-bottom:1.5rem;">Circuito — 4 voltas. Descanso: 1 min entre voltas.</p>
+                    <table class="tech-table">
+                        <tr><th>Exercício</th><th>Reps</th></tr>
+                        <tr><td>Agachamento + Halter</td><td>15</td></tr>
+                        <tr><td>Flexão</td><td>12</td></tr>
+                        <tr><td>Remada com Elástico</td><td>15</td></tr>
+                        <tr><td>Afundo</td><td>12 (cada lado)</td></tr>
+                        <tr><td>Abdominal</td><td>20</td></tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================= -->
+        <!-- TREINO SEMANA 3-4 -->
+        <!-- ======================= -->
+        <section id="treino2" class="content-section">
+            <div class="sec-header">
+                <p style="color:var(--primary); font-weight:800; letter-spacing:2px;">FASE 2: HIPERTROFIA COMPLETA</p>
+                <h1>Treino <br><span style="color:var(--primary)">Semanas 3-4</span></h1>
+            </div>
+
+            <div class="rule-box green" style="margin-bottom:2.5rem;">
+                <strong>Objetivo:</strong> Ganho de massa + aumento de carga em todos os exercícios.
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header"><h3>🍑 SEG — Glúteo</h3><i data-lucide="chevron-down"></i></div>
+                <div class="acc-content">
+                    <table class="tech-table">
+                        <tr><th>Exercício</th><th>Séries x Reps</th></tr>
+                        <tr><td>Elevação de Quadril</td><td>5 x 8</td></tr>
+                        <tr><td>Agachamento</td><td>4 x 8</td></tr>
+                        <tr><td>Levantamento Terra</td><td>4 x 8</td></tr>
+                        <tr><td>Afundo</td><td>3 x 10 (cada perna)</td></tr>
+                        <tr><td>Abdução</td><td>4 x 15</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header"><h3>🏋️ TER — Costas + Tríceps</h3><i data-lucide="chevron-down"></i></div>
+                <div class="acc-content">
+                    <table class="tech-table">
+                        <tr><th>Exercício</th><th>Séries x Reps</th></tr>
+                        <tr><td>Puxada Frente</td><td>4 x 8</td></tr>
+                        <tr><td>Remada</td><td>4 x 8</td></tr>
+                        <tr><td>Tríceps Polia</td><td>4 x 10</td></tr>
+                        <tr><td>Tríceps Testa</td><td>3 x 10</td></tr>
+                        <tr><td>Elevação Lateral</td><td>4 x 12</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header"><h3>⚡ QUA — Pernas</h3><i data-lucide="chevron-down"></i></div>
+                <div class="acc-content">
+                    <table class="tech-table">
+                        <tr><th>Exercício</th><th>Séries x Reps</th></tr>
+                        <tr><td>Leg Press</td><td>4 x 10</td></tr>
+                        <tr><td>Extensora</td><td>4 x 12</td></tr>
+                        <tr><td>Passada</td><td>3 x 10 (cada perna)</td></tr>
+                        <tr><td>Adutora</td><td>3 x 12</td></tr>
+                        <tr><td>Agachamento</td><td>3 x 12</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header"><h3>💪 QUI — Ombro + Abdômen</h3><i data-lucide="chevron-down"></i></div>
+                <div class="acc-content">
+                    <table class="tech-table">
+                        <tr><th>Exercício</th><th>Séries x Reps</th></tr>
+                        <tr><td>Desenvolvimento</td><td>4 x 8</td></tr>
+                        <tr><td>Elevação Lateral</td><td>4 x 12</td></tr>
+                        <tr><td>Elevação Frontal</td><td>3 x 10</td></tr>
+                        <tr><td>Abdômen</td><td>3 x 15</td></tr>
+                        <tr><td>Prancha</td><td>3 x 45s</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header"><h3>🍑 SEX — Glúteo (2º Estímulo)</h3><i data-lucide="chevron-down"></i></div>
+                <div class="acc-content">
+                    <table class="tech-table">
+                        <tr><th>Exercício</th><th>Séries x Reps</th></tr>
+                        <tr><td>Elevação de Quadril</td><td>5 x 10</td></tr>
+                        <tr><td>Stiff</td><td>4 x 10</td></tr>
+                        <tr><td>Glúteo no Cabo</td><td>4 x 12 (cada perna)</td></tr>
+                        <tr><td>Abdução</td><td>4 x 15</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header"><h3>🔥 SAB — Metabólico</h3><i data-lucide="chevron-down"></i></div>
+                <div class="acc-content">
+                    <table class="tech-table">
+                        <tr><th>Exercício</th><th>Séries x Reps</th></tr>
+                        <tr><td>Agachamento</td><td>4 x 15</td></tr>
+                        <tr><td>Afundo</td><td>3 x 12 (cada perna)</td></tr>
+                        <tr><td>Flexão</td><td>3 x 12</td></tr>
+                        <tr><td>Remada com Elástico</td><td>3 x 15</td></tr>
+                        <tr><td>Abdominal</td><td>4 x 20</td></tr>
+                        <tr><td>Prancha</td><td>3 x 50s</td></tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================= -->
+        <!-- TREINO SEMANA 5-6 -->
+        <!-- ======================= -->
+        <section id="treino3" class="content-section">
+            <div class="sec-header">
+                <p style="color:var(--primary); font-weight:800; letter-spacing:2px;">FASE 3: DEFINIÇÃO & DENSIDADE</p>
+                <h1>Treino <br><span style="color:var(--primary)">Semanas 5-6</span></h1>
+            </div>
+
+            <div class="rule-box" style="margin-bottom:2.5rem;">
+                <strong>Objetivo:</strong> Refinamento + gasto calórico + densidade muscular
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header"><h3>🍑 SEG — Glúteo</h3><i data-lucide="chevron-down"></i></div>
+                <div class="acc-content">
+                    <table class="tech-table">
+                        <tr><th>Exercício</th><th>Séries x Reps</th></tr>
+                        <tr><td>Elevação de Quadril</td><td>5 x 10</td></tr>
+                        <tr><td>Agachamento</td><td>4 x 12</td></tr>
+                        <tr><td>Levantamento Terra</td><td>3 x 12</td></tr>
+                        <tr><td>Afundo</td><td>3 x 12 (cada perna)</td></tr>
+                        <tr><td>Abdução</td><td>4 x 20</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header"><h3>🏋️ TER — Costas + Tríceps</h3><i data-lucide="chevron-down"></i></div>
+                <div class="acc-content">
+                    <table class="tech-table">
+                        <tr><th>Exercício</th><th>Séries x Reps</th></tr>
+                        <tr><td>Puxada Frente</td><td>4 x 10</td></tr>
+                        <tr><td>Remada</td><td>4 x 10</td></tr>
+                        <tr><td>Tríceps Polia</td><td>3 x 12</td></tr>
+                        <tr><td>Tríceps Testa</td><td>3 x 12</td></tr>
+                        <tr><td>Elevação Lateral</td><td>4 x 15</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header"><h3>⚡ QUA — Pernas</h3><i data-lucide="chevron-down"></i></div>
+                <div class="acc-content">
+                    <table class="tech-table">
+                        <tr><th>Exercício</th><th>Séries x Reps</th></tr>
+                        <tr><td>Leg Press</td><td>4 x 12</td></tr>
+                        <tr><td>Extensora</td><td>4 x 15</td></tr>
+                        <tr><td>Passada</td><td>3 x 12 (cada perna)</td></tr>
+                        <tr><td>Adutora</td><td>3 x 15</td></tr>
+                        <tr><td>Agachamento</td><td>2 x 20</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header"><h3>💪 QUI — Ombro + Abdômen</h3><i data-lucide="chevron-down"></i></div>
+                <div class="acc-content">
+                    <table class="tech-table">
+                        <tr><th>Exercício</th><th>Séries x Reps</th></tr>
+                        <tr><td>Desenvolvimento</td><td>4 x 10</td></tr>
+                        <tr><td>Elevação Lateral</td><td>4 x 15</td></tr>
+                        <tr><td>Elevação Frontal</td><td>3 x 12</td></tr>
+                        <tr><td>Abdômen</td><td>3 x 20</td></tr>
+                        <tr><td>Prancha</td><td>3 x 60s</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header"><h3>🍑 SEX — Glúteo (2º Estímulo)</h3><i data-lucide="chevron-down"></i></div>
+                <div class="acc-content">
+                    <table class="tech-table">
+                        <tr><th>Exercício</th><th>Séries x Reps</th></tr>
+                        <tr><td>Elevação de Quadril</td><td>5 x 12</td></tr>
+                        <tr><td>Stiff</td><td>4 x 12</td></tr>
+                        <tr><td>Glúteo no Cabo</td><td>4 x 15 (cada perna)</td></tr>
+                        <tr><td>Abdução</td><td>4 x 20</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header"><h3>🔥 SAB — Metabólico Final</h3><i data-lucide="chevron-down"></i></div>
+                <div class="acc-content">
+                    <table class="tech-table">
+                        <tr><th>Exercício</th><th>Séries x Reps</th></tr>
+                        <tr><td>Agachamento</td><td>4 x 20</td></tr>
+                        <tr><td>Afundo</td><td>3 x 15 (cada perna)</td></tr>
+                        <tr><td>Flexão</td><td>3 x 12</td></tr>
+                        <tr><td>Remada com Elástico</td><td>3 x 15</td></tr>
+                        <tr><td>Abdominal</td><td>4 x 25</td></tr>
+                        <tr><td>Prancha</td><td>3 x 60s</td></tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================= -->
+        <!-- AJUSTES & VIAGENS -->
+        <!-- ======================= -->
+        <section id="extras" class="content-section">
+            <div class="sec-header">
+                <p style="color:var(--primary); font-weight:800; letter-spacing:2px;">FLEXIBILIDADE</p>
+                <h1>Ajustes & <br><span style="color:var(--primary)">Viagens</span></h1>
+            </div>
+
+            <div class="data-card">
+                <div class="badge">VERSÃO COMPLETA — 30 MIN</div>
+                <div class="card-title"><i data-lucide="plane"></i> Treino de Viagem</div>
+                <table class="tech-table">
+                    <tr><th>Exercício</th><th>Séries x Reps</th></tr>
+                    <tr><td>Agachamento</td><td>4 x 20</td></tr>
+                    <tr><td>Afundo</td><td>3 x 15 (cada perna)</td></tr>
+                    <tr><td>Elevação de Quadril</td><td>4 x 20</td></tr>
+                    <tr><td>Abdução com Elástico</td><td>4 x 20</td></tr>
+                    <tr><td>Prancha</td><td>3 x 45-60s</td></tr>
+                </table>
+            </div>
+
+            <div class="data-card">
+                <div class="badge">VERSÃO EXPRESS — 20 MIN</div>
+                <div class="card-title"><i data-lucide="zap"></i> Treino Express</div>
+                <table class="tech-table">
+                    <tr><th>Exercício</th><th>Séries x Reps</th></tr>
+                    <tr><td>Agachamento</td><td>3 x 20</td></tr>
+                    <tr><td>Afundo</td><td>3 x 12</td></tr>
+                    <tr><td>Flexão</td><td>3 x 10</td></tr>
+                    <tr><td>Abdominal</td><td>3 x 20</td></tr>
+                </table>
+                <div class="rule-box green" style="margin-top:1.5rem;">
+                    Respeita a fisiologia feminina — mantém estímulo mesmo durante a menstruação. Progressão inteligente: estética (glúteo, cintura, definição).
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================= -->
+        <!-- PEPTÍDEOS (Fim do Protocolo) -->
+        <!-- ======================= -->
+        <section id="peptideos" class="content-section">
+            <div class="sec-header">
+                <p style="color:var(--primary); font-weight:800; letter-spacing:2px;">ACELERAÇÃO ESTRATÉGICA</p>
+                <h1>Opção para <br><span style="color:var(--primary)">Acelerar Resultados</span></h1>
+                <p>(Utilizar conforme orientação de progressão)</p>
+            </div>
+
+            <!-- RETATRUTIDA -->
+            <div class="data-card">
+                <div class="badge">JÁ VEM EM CANETA — USE OS CLIQUES PRESCRITOS</div>
+                <div class="card-title">1. Retatrutida — Progressão de Dose</div>
+                <table class="tech-table">
+                    <tr><th>Semana</th><th>Dose</th><th>Cliques</th></tr>
+                    <tr><td>Semana 1</td><td>1 mg</td><td>6 cliques</td></tr>
+                    <tr><td>Semana 2</td><td>2 mg</td><td>12 cliques</td></tr>
+                    <tr><td>Semana 3</td><td>3 mg</td><td>18 cliques</td></tr>
+                    <tr><td>Semana 4</td><td>4 mg</td><td>24 cliques</td></tr>
+                    <tr><td>Semana 5</td><td>5 mg</td><td>30 cliques</td></tr>
+                    <tr><td>Semana 6</td><td>6 mg</td><td>36 cliques</td></tr>
+                </table>
+                <div class="rule-box blue" style="margin-top:1.5rem;">
+                    <strong>Atenção Semana 3:</strong> Só aumentar para 4 mg na sem. 4 caso não tenha resultados. Se estiver tendo resultado, manter a dose.
+                </div>
+                <div class="info-grid" style="margin-top:1.5rem;">
+                    <div class="info-item">
+                        <label>Horário Fixo</label>
+                        <value>Domingo — 21:00</value>
+                    </div>
+                    <div class="info-item">
+                        <label>Via</label>
+                        <value>Subcutânea</value>
+                    </div>
+                    <div class="info-item">
+                        <label>Local de Aplicação</label>
+                        <value>Abdômen (2-3 cm do umbigo) — alternando lados semanalmente</value>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CJC + IPAMORELIN -->
+            <div class="data-card">
+                <div class="card-title">2. CJC-1295 + Ipamorelina — Por Fases</div>
+
+                <div class="acc-item" style="margin-bottom:1rem;">
+                    <div class="acc-header"><h3>Fase 1 — Semanas 1-2</h3><i data-lucide="chevron-down"></i></div>
+                    <div class="acc-content">
+                        <div class="info-grid">
+                            <div class="info-item"><label>Dose</label><value>CJC 100 mcg + Ipamorelina 100 mcg</value></div>
+                            <div class="info-item"><label>Frequência</label><value>2x ao dia</value></div>
+                            <div class="info-item"><label>Horários</label><value>07:30 (jejum) + 21:30 (antes de dormir)</value></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item" style="margin-bottom:1rem;">
+                    <div class="acc-header"><h3>Fase 2 — Semanas 3-4 (mais anabólica)</h3><i data-lucide="chevron-down"></i></div>
+                    <div class="acc-content">
+                        <div class="info-grid">
+                            <div class="info-item"><label>Dose</label><value>CJC 100 mcg + Ipamorelina 100 mcg</value></div>
+                            <div class="info-item"><label>Frequência</label><value>2x ao dia (igual Fase 1)</value></div>
+                            <div class="info-item"><label>Horários</label><value>07:30 + 21:30</value></div>
+                            <div class="info-item"><label>Foco</label><value>Recuperação + Ganho de Massa</value></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item">
+                    <div class="acc-header"><h3>Fase 3 — Semanas 5-6 (ajuste estratégico)</h3><i data-lucide="chevron-down"></i></div>
+                    <div class="acc-content">
+                        <div class="info-grid">
+                            <div class="info-item"><label>Dose</label><value>CJC 100 mcg + Ipamorelina 100 mcg</value></div>
+                            <div class="info-item"><label>Frequência</label><value>1x ao dia (redução)</value></div>
+                            <div class="info-item"><label>Horário</label><value>21:30 (noite) — apenas</value></div>
+                        </div>
+                        <div class="rule-box green" style="margin-top:1rem;">Evita dessensibilização e mantém a eficiência do peptídeo.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // --- Navegação SPA ---
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('.content-section');
+        const sidebar = document.getElementById('sidebar');
+        const mobToggle = document.getElementById('mobToggle');
+
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                if(item.getAttribute('href') === '#') e.preventDefault();
+                
+                const target = item.getAttribute('data-target');
+                if(!target) return;
+
+                // Update UI
+                navItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+
+                sections.forEach(sec => {
+                    sec.classList.remove('active');
+                    if(sec.id === target) sec.classList.add('active');
+                });
+
+                // Close mobile sidebar
+                if(window.innerWidth <= 1024) sidebar.classList.remove('open');
+                
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // --- Mobile Menu ---
+        mobToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+
+        // --- Accordion Logic ---
+        const accHeaders = document.querySelectorAll('.acc-header');
+        accHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // --- Initialize Lucide ---
+        lucide.createIcons();
+    </script>
+</body>
+</html>
