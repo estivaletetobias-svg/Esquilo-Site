@@ -129,6 +129,7 @@
             <span class="nav-label">Programa Muscular</span>
             <a href="#" class="nav-item" data-target="programa1"><i data-lucide="dumbbell"></i> Treinamento Muscular 1</a>
             <a href="#" class="nav-item" data-target="programa2"><i data-lucide="activity"></i> Treinamento Muscular 2</a>
+            <a href="#" class="nav-item" data-target="programa3"><i data-lucide="zap"></i> Treinamento Muscular 3</a>
         </nav>
 
         <nav class="nav-group">
@@ -704,95 +705,209 @@
         </section>
 
         <!-- =============================== -->
+        <!-- PROGRAMA MUSCULAR 3             -->
+        <!-- =============================== -->
+        <section id="programa3" class="content-section">
+            <div class="sec-header">
+                <div class="badge badge-flash" style="background: rgba(204, 255, 0, 0.15); color: var(--primary); border-color: var(--primary);">MÁXIMA DENSIDADE</div>
+                <h1>Programa<br><span style="color:var(--primary)">Muscular 3</span></h1>
+                <p>Hipertrofia & Densidade Muscular • Bloco de Elite</p>
+            </div>
+
+            <!-- Seleção de Semana -->
+            <div style="display: flex; gap: 1rem; margin-bottom: 3rem; overflow-x: auto; padding-bottom: 1rem;">
+                <button class="week-btn active" data-week="1" style="background: var(--surface); border: 1px solid var(--border); color: #FFF; padding: 0.8rem 1.5rem; border-radius: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; transition: 0.3s;">Semana 1: Base</button>
+                <button class="week-btn" data-week="2" style="background: var(--surface); border: 1px solid var(--border); color: #FFF; padding: 0.8rem 1.5rem; border-radius: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; transition: 0.3s;">Semana 2: Volume</button>
+                <button class="week-btn" data-week="3" style="background: var(--surface); border: 1px solid var(--border); color: #FFF; padding: 0.8rem 1.5rem; border-radius: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; transition: 0.3s;">Semana 3: Intensidade</button>
+            </div>
+
+            <!-- MÉTODOS -->
+            <div class="workout-grid" style="margin-bottom: 4rem;">
+                <div class="data-card" style="border-color: var(--primary); margin-bottom: 0;">
+                    <div class="card-title"><i data-lucide="zap"></i> Métodos de Intensidade</div>
+                    <ul class="exercise-list">
+                        <li>🔹 PSE 7-9 <span>Reserva de 1-2 reps</span></li>
+                        <li>🔹 Back-off Sets <span>-30% carga | 15-30 reps</span></li>
+                        <li>🔹 Burning Sets <span>Carga leve | 20-30 reps</span></li>
+                    </ul>
+                </div>
+                <div class="data-card" style="border-color: var(--safe); margin-bottom: 0;">
+                    <div class="card-title"><i data-lucide="gauge"></i> Execução (Burn Sets)</div>
+                    <ul class="exercise-list">
+                        <li>Carga Leve <span>Foco na técnica</span></li>
+                        <li>Movimento Contínuo <span>Sem travar articulação</span></li>
+                        <li>Respiração <span>Controlada e constante</span></li>
+                    </ul>
+                    <p style="font-size: 0.75rem; color: var(--safe); margin-top: 1rem; font-weight: 700;">👉 Objetivo: Sensação de queima intensa.</p>
+                </div>
+            </div>
+
+            <!-- SEMANA 1 -->
+            <div class="week-content active" id="week-1">
+                <div class="sec-header">
+                    <div class="badge badge-green">FASE 1</div>
+                    <h2>Semana 1: <span style="color:var(--safe)">Base & Controle</span></h2>
+                </div>
+                <div class="workout-grid">
+                    <div class="data-card">
+                        <div class="card-title">Empurrar (A)</div>
+                        <ul class="exercise-list">
+                            <li>Supino Reto <span>4x 10–12</span></li>
+                            <li>Inclinado Halter <span>3x 10–12</span></li>
+                            <li>Crucifixo Máquina <span>3x 12–15</span></li>
+                            <li>Desenvolvimento <span>3x 10–12</span></li>
+                            <li>Elevação Lateral <span>4x 12–15</span></li>
+                            <li>Tríceps Testa + Corda <span>3x 10–15</span></li>
+                        </ul>
+                    </div>
+                    <div class="data-card">
+                        <div class="card-title">Puxar (B)</div>
+                        <ul class="exercise-list">
+                            <li>Barra Fixa <span>4x 6–10</span></li>
+                            <li>Remada Curvada <span>4x 10–12</span></li>
+                            <li>Puxada Frente <span>3x 10–12</span></li>
+                            <li>Rosca Direta <span>3x 10–12</span></li>
+                            <li>Rosca Alternada <span>3x 10–12</span></li>
+                            <li>Rosca Martelo <span>2x 12–15</span></li>
+                        </ul>
+                    </div>
+                    <div class="data-card">
+                        <div class="card-title">Pernas (C)</div>
+                        <ul class="exercise-list">
+                            <li>Agachamento Livre <span>4x 8–12</span></li>
+                            <li>Leg Press 45º <span>3x 10–12</span></li>
+                            <li>Stiff (Duro) <span>3x 10–12</span></li>
+                            <li>Mesa Flexora <span>3x 12–15</span></li>
+                            <li>Afundo + Panturrilha <span>3x 10-15</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEMANA 2 -->
+            <div class="week-content" id="week-2" style="display: none;">
+                <div class="sec-header">
+                    <div class="badge badge-flash">FASE 2</div>
+                    <h2>Semana 2: <span style="color:var(--flash)">Volume Acumulado</span></h2>
+                </div>
+                <div class="workout-grid">
+                    <div class="data-card">
+                        <div class="card-title">Empurrar (A)</div>
+                        <ul class="exercise-list">
+                            <li>Supino Reto <span>4x 12–15 + 1x20</span></li>
+                            <li>Inclinado Halter <span>3x 12–15 + 1x20</span></li>
+                            <li>Crucifixo <span>3x 15–20</span></li>
+                            <li>Desenvolvimento <span>3x 12–15</span></li>
+                            <li>Elevação Lateral <span>4x 15–20</span></li>
+                            <li>Tríceps Testa + Corda <span>3x 12–20</span></li>
+                        </ul>
+                    </div>
+                    <div class="data-card">
+                        <div class="card-title">Puxar (B)</div>
+                        <ul class="exercise-list">
+                            <li>Barra Fixa <span>4x 8–12</span></li>
+                            <li>Remada Curvada <span>4x 12–15 + 1x20</span></li>
+                            <li>Puxada Frente <span>3x 12–15</span></li>
+                            <li>Rosca Direta <span>3x 12–15</span></li>
+                            <li>Rosca Alternada <span>3x 12–15</span></li>
+                            <li>Rosca Martelo <span>2x 15–20</span></li>
+                        </ul>
+                    </div>
+                    <div class="data-card">
+                        <div class="card-title">Pernas (C)</div>
+                        <ul class="exercise-list">
+                            <li>Agachamento <span>4x 10–12 + 1x20</span></li>
+                            <li>Leg Press <span>3x 12–15 + 1x20</span></li>
+                            <li>Stiff (Duro) <span>3x 12–15</span></li>
+                            <li>Mesa Flexora <span>3x 15–20</span></li>
+                            <li>Afundo + Panturrilha <span>3x 12-20</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEMANA 3 -->
+            <div class="week-content" id="week-3" style="display: none;">
+                <div class="sec-header">
+                    <div class="badge badge-red">FASE 3</div>
+                    <h2>Semana 3: <span style="color:var(--accent)">Choque de Intensidade</span></h2>
+                </div>
+                <div class="workout-grid">
+                    <div class="data-card">
+                        <div class="card-title">Empurrar (A)</div>
+                        <ul class="exercise-list">
+                            <li>Supino Reto <span>3x 8–10 + 2 Metab.</span></li>
+                            <li>Inclinado Halter <span>2x 10–12 + 2 Metab.</span></li>
+                            <li>Crucifixo Máquina <span>3x 20–30</span></li>
+                            <li>Desenvolvimento <span>3x 8–12</span></li>
+                            <li>Elevação Lateral <span>4x 20–30</span></li>
+                            <li>Tríceps Corda <span>3x 20–30</span></li>
+                        </ul>
+                    </div>
+                    <div class="data-card">
+                        <div class="card-title">Puxar (B)</div>
+                        <ul class="exercise-list">
+                            <li>Barra Fixa <span>4x 6–10</span></li>
+                            <li>Remada Curvada <span>3x 8–12 + 2 Metab.</span></li>
+                            <li>Puxada Frente <span>3x 12–15</span></li>
+                            <li>Rosca Direta <span>3x 8–12</span></li>
+                            <li>Rosca Alternada <span>3x 10–12</span></li>
+                            <li>Rosca Martelo <span>2x 15–20</span></li>
+                        </ul>
+                    </div>
+                    <div class="data-card">
+                        <div class="card-title">Pernas (C)</div>
+                        <ul class="exercise-list">
+                            <li>Agachamento <span>3x 8–10 + 2 Metab.</span></li>
+                            <li>Leg Press <span>3x 12–15 + 2 Metab.</span></li>
+                            <li>Stiff (Duro) <span>3x 8–12</span></li>
+                            <li>Mesa Flexora <span>3x 15–20</span></li>
+                            <li>Afundo + Panturrilha <span>3x 15-30</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rule-box red" style="margin-top: 4rem;">
+                <strong>DOMINGO:</strong> Descanso regenerativo total. Foco em sono profundo e supercompensação para colher os frutos do choque metabólico.
+            </div>
+        </section>
+
+        <!-- =============================== -->
         <!-- DIETA                           -->
         <!-- =============================== -->
         <section id="dieta" class="content-section">
             <div class="sec-header">
                 <h1>Metas<br><span style="color:var(--primary)">Nutricionais</span></h1>
-                <p>Alvos diários baseados no peso corporal (73kg aprox.)</p>
+                <p>Alvos diários para otimizar o Programa Muscular 3</p>
             </div>
 
             <div class="workout-grid">
                 <div class="data-card" style="border-top: 4px solid var(--primary);">
-                    <div class="card-title">Macronutrientes</div>
+                    <div class="card-title">Macronutrientes & Hidratação</div>
                     <table class="tech-table">
-                        <tr><td>Proteína</td><td class="highlight">146 g (2g/kg)</td></tr>
-                        <tr><td>Carboidratos</td><td class="highlight">300–400 g</td></tr>
-                        <tr><td>Gorduras</td><td class="highlight">60–70 g</td></tr>
+                        <tr><td>Proteína</td><td class="highlight">1,8g – 2,2g / kg</td></tr>
+                        <tr><td>Hidratação</td><td class="highlight">35ml – 45ml / kg</td></tr>
                     </table>
                 </div>
                 <div class="data-card">
-                    <div class="card-title">Estratégia Hormonal</div>
-                    <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 1rem;"><strong>Qui / Sáb (High Carb):</strong> Aumente carbos e reduza gordura para suportar o volume de corrida.</p>
-                    <p style="font-size: 0.8rem; color: var(--text-secondary);"><strong>Terça:</strong> Manter equilíbrio calórico estável.</p>
+                    <div class="card-title">Diretrizes Clínicas</div>
+                    <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 1rem;"><strong>Foco em Hipertrofia:</strong> Manter superávit calórico controlado para suportar o volume das semanas 2 e 3.</p>
+                    <p style="font-size: 0.8rem; color: var(--text-secondary);"><strong>Recuperação:</strong> Priorize carboidratos de alta qualidade nos dias de treino C (Pernas).</p>
                 </div>
             </div>
 
             <!-- MENU SUGGESTION COM SUBSTITUIÇÕES -->
             <div class="data-card">
-                <div class="card-title"><i data-lucide="utensils"></i> Plano Alimentar Refinado</div>
+                <div class="card-title"><i data-lucide="utensils"></i> Plano Alimentar Estratégico</div>
                 
                 <div class="workout-grid">
-                    <!-- Café da Manhã -->
-                    <div class="workout-item">
-                        <h4>🌅 Café da Manhã</h4>
-                        <p style="font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem;">4 Ovos + Aveia + Fruta</p>
-                        <div style="font-size: 0.7rem; color: var(--text-secondary);">
-                            1. Omelete + Pão Integral<br>
-                            2. Iogurte + Whey + Granola<br>
-                            3. Vitamina com Whey
-                        </div>
-                    </div>
-                    <!-- Almoço -->
-                    <div class="workout-item">
-                        <h4>☀️ Almoço</h4>
-                        <p style="font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem;">Carne + Arroz + Legumes</p>
-                        <div style="font-size: 0.7rem; color: var(--text-secondary);">
-                            1. Frango + Batata Doce<br>
-                            2. Carne Moída + Macarrão<br>
-                            3. Peixe + Arroz
-                        </div>
-                    </div>
-                    <!-- Pré-Treino -->
-                    <div class="workout-item">
-                        <h4>⚡ Pré-Treino</h4>
-                        <p style="font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem;">Banana + Whey</p>
-                        <div style="font-size: 0.7rem; color: var(--text-secondary);">
-                            1. Pão + Pasta de Amendoim<br>
-                            2. Tapioca + Queijo<br>
-                            3. Iogurte + Fruta
-                        </div>
-                    </div>
-                    <!-- Pós-Treino -->
-                    <div class="workout-item">
-                        <h4>💪 Pós-Treino</h4>
-                        <p style="font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem;">Whey + Carboidrato</p>
-                        <div style="font-size: 0.7rem; color: var(--text-secondary);">
-                            1. Whey + Banana<br>
-                            2. Arroz + Frango<br>
-                            3. Shake Completo
-                        </div>
-                    </div>
-                    <!-- Jantar -->
-                    <div class="workout-item">
-                        <h4>🌙 Jantar</h4>
-                        <p style="font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem;">Proteína + Carboidrato</p>
-                        <div style="font-size: 0.7rem; color: var(--text-secondary);">
-                            1. Frango + Arroz<br>
-                            2. Omelete + Batata<br>
-                            3. Peixe + Legumes
-                        </div>
-                    </div>
-                    <!-- Ceia -->
-                    <div class="workout-item">
-                        <h4>💤 Ceia</h4>
-                        <p style="font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem;">Iogurte ou Whey</p>
-                        <div style="font-size: 0.7rem; color: var(--text-secondary);">
-                            1. Ovos<br>
-                            2. Queijo + Castanhas<br>
-                            3. Whey + Pasta de Amendoim
-                        </div>
-                    </div>
+                    <div class="workout-item"><h4>🌅 Café da Manhã</h4><p style="font-size: 0.85rem; font-weight: 700;">Ovos + Aveia</p></div>
+                    <div class="workout-item"><h4>☀️ Almoço</h4><p style="font-size: 0.85rem; font-weight: 700;">Arroz + Carne (Bovina/Frango)</p></div>
+                    <div class="workout-item"><h4>⚡ Pré-Treino</h4><p style="font-size: 0.85rem; font-weight: 700;">Banana + Whey</p></div>
+                    <div class="workout-item"><h4>💪 Pós-Treino</h4><p style="font-size: 0.85rem; font-weight: 700;">Whey + Carboidrato</p></div>
+                    <div class="workout-item"><h4>🌙 Jantar</h4><p style="font-size: 0.85rem; font-weight: 700;">Proteína + Carboidrato</p></div>
+                    <div class="workout-item"><h4>💤 Ceia</h4><p style="font-size: 0.85rem; font-weight: 700;">Iogurte / Caseína</p></div>
                 </div>
             </div>
         </section>
@@ -803,24 +918,35 @@
         <section id="suplementos" class="content-section">
             <div class="sec-header">
                 <h1>Hub de<br><span style="color:var(--primary)">Suplementação</span></h1>
-                <p>Apoio bioquímico à performance de endurance</p>
+                <p>Apoio bioquímico estratégico (Protocolo Alexandre)</p>
             </div>
 
-            <div class="data-card">
-                <ul class="exercise-list">
-                    <li>Creatina <span>3 a 5g / dia (Energia ATP)</span></li>
-                    <li>Whey Protein <span>Complemento proteico estratégico</span></li>
-                    <li>Cafeína <span>Apenas pré-treino intenso / corrida</span></li>
-                    <li>Eletrólitos <span>Essencial no Longão (Sábado)</span></li>
-                </ul>
+            <div class="workout-grid">
+                <div class="data-card">
+                    <div class="card-title">☀️ Manhã</div>
+                    <ul class="exercise-list">
+                        <li>Vitamina D <span>Essencial imunidade/hormonal</span></li>
+                        <li>Ômega 3 <span>Anti-inflamatório natural</span></li>
+                    </ul>
+                </div>
+                <div class="data-card">
+                    <div class="card-title">⚡ Pré/Pós Treino</div>
+                    <ul class="exercise-list">
+                        <li>Cafeína <span>Foco e potência (Pré)</span></li>
+                        <li>Whey Protein <span>Recuperação estrutural</span></li>
+                        <li>Creatina <span>Força e explosão ATP (Pós)</span></li>
+                    </ul>
+                </div>
+                <div class="data-card">
+                    <div class="card-title">🌙 Noite</div>
+                    <ul class="exercise-list">
+                        <li>Magnésio <span>Qualidade de sono e relaxamento</span></li>
+                    </ul>
+                </div>
             </div>
 
             <div class="rule-box red">
-                <strong>Hidratação Crítica:</strong> Mínimo de 35ml por kg. No seu caso, Alexandre, o alvo é 3 Litros+ nos dias de treino ou corrida forte para evitar desidratação e queda de rendimento.
-            </div>
-
-            <div style="margin-top: 4rem; text-align: center; opacity: 0.5;">
-                <p style="font-family: var(--font-display); font-size: 1.2rem; text-transform: uppercase;">"Treinar forte é importante…<br>mas treinar certo é o que traz resultado."</p>
+                <strong>Hidratação Crítica:</strong> Seu novo alvo é de <strong>35ml a 45ml por kg</strong>. Para seu peso, isso significa manter-se acima de 3.5L nos dias de treino para garantir a densidade e recuperação.
             </div>
         </section>
 
@@ -853,6 +979,32 @@
 
         mobToggle.addEventListener('click', () => {
             sidebar.classList.toggle('open');
+        });
+
+        // Week Switcher Logic (Programa 3)
+        const weekBtns = document.querySelectorAll('.week-btn');
+        const weekContents = document.querySelectorAll('.week-content');
+
+        weekBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const week = btn.getAttribute('data-week');
+                
+                weekBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.style.background = 'var(--surface)';
+                    b.style.borderColor = 'var(--border)';
+                });
+                
+                btn.classList.add('active');
+                btn.style.background = 'var(--primary)';
+                btn.style.borderColor = 'var(--primary)';
+                btn.style.color = '#000';
+
+                weekContents.forEach(content => {
+                    content.style.display = 'none';
+                    if(content.id === `week-${week}`) content.style.display = 'block';
+                });
+            });
         });
 
         // Initialize Lucide
