@@ -97,6 +97,12 @@
             .mob-menu { display: flex; }
             .sec-header h1 { font-size: 2.2rem; }
         }
+
+        @media (max-width: 480px) {
+            .data-card { padding: 1.2rem; }
+            .content-section { padding: 5rem 1rem 3rem 1rem; }
+            .tech-table th, .tech-table td { padding: 0.6rem 0.4rem; font-size: 0.75rem; }
+        }
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -152,11 +158,13 @@
             <div class="workout-grid">
                 <div class="data-card">
                     <div class="card-title"><i data-lucide="pen-tool"></i> Padrão da Caneta</div>
-                    <table class="tech-table">
-                        <tr><td>1 clique</td><td class="highlight">0,073 mg</td></tr>
-                        <tr><td>12 cliques</td><td class="highlight">0,876 mg</td></tr>
-                        <tr><td>14 cliques</td><td class="highlight">1,022 mg (~1mg alvo)</td></tr>
-                    </table>
+                    <div style="overflow-x: auto; width: 100%;">
+                        <table class="tech-table">
+                            <tr><td>1 clique</td><td class="highlight">0,073 mg</td></tr>
+                            <tr><td>12 cliques</td><td class="highlight">0,876 mg</td></tr>
+                            <tr><td>14 cliques</td><td class="highlight">1,022 mg (~1mg alvo)</td></tr>
+                        </table>
+                    </div>
                     <div class="rule-box" style="margin-top: 1.5rem; padding: 1rem;">
                         <strong>Totalização:</strong><br>
                         ✔ 2 canetas = 50 mg total<br>
@@ -231,16 +239,18 @@
                 </div>
                 <p style="color:var(--text-secondary); margin-bottom: 1.5rem;"><strong>Objetivo:</strong> Reduzir inflamação e adaptação tecidual.</p>
                 
-                <table class="tech-table">
-                    <thead><tr><th>Dia da Semana</th><th>Local de Aplicação</th></tr></thead>
-                    <tbody>
-                        <tr><td>Segunda-feira</td><td class="highlight">Joelho medial</td></tr>
-                        <tr><td>Terça-feira</td><td class="highlight">Joelho lateral</td></tr>
-                        <tr><td>Quarta-feira</td><td class="highlight">Infrapatelar</td></tr>
-                        <tr><td>Quinta-feira</td><td class="highlight">Abdômen</td></tr>
-                        <tr><td>Sexta-feira</td><td class="highlight">Joelho medial</td></tr>
-                    </tbody>
-                </table>
+                <div style="overflow-x: auto; width: 100%;">
+                    <table class="tech-table">
+                        <thead><tr><th>Dia da Semana</th><th>Local de Aplicação</th></tr></thead>
+                        <tbody>
+                            <tr><td>Segunda-feira</td><td class="highlight">Joelho medial</td></tr>
+                            <tr><td>Terça-feira</td><td class="highlight">Joelho lateral</td></tr>
+                            <tr><td>Quarta-feira</td><td class="highlight">Infrapatelar</td></tr>
+                            <tr><td>Quinta-feira</td><td class="highlight">Abdômen</td></tr>
+                            <tr><td>Sexta-feira</td><td class="highlight">Joelho medial</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <!-- FASE 2 -->
@@ -252,16 +262,18 @@
                 </div>
                 <p style="color:var(--text-secondary); margin-bottom: 1.5rem;"><strong>Objetivo:</strong> Regeneração ativa e estímulo de colágeno.</p>
                 
-                <table class="tech-table">
-                    <thead><tr><th>Dia da Semana</th><th>Local de Aplicação</th></tr></thead>
-                    <tbody>
-                        <tr><td>Segunda-feira</td><td class="highlight">Joelho medial</td></tr>
-                        <tr><td>Terça-feira</td><td class="highlight">Joelho lateral</td></tr>
-                        <tr><td>Quarta-feira</td><td class="highlight">Infrapatelar</td></tr>
-                        <tr><td>Quinta-feira</td><td class="highlight">Abdômen</td></tr>
-                        <tr><td>Sexta-feira</td><td class="highlight">Joelho medial</td></tr>
-                    </tbody>
-                </table>
+                <div style="overflow-x: auto; width: 100%;">
+                    <table class="tech-table">
+                        <thead><tr><th>Dia da Semana</th><th>Local de Aplicação</th></tr></thead>
+                        <tbody>
+                            <tr><td>Segunda-feira</td><td class="highlight">Joelho medial</td></tr>
+                            <tr><td>Terça-feira</td><td class="highlight">Joelho lateral</td></tr>
+                            <tr><td>Quarta-feira</td><td class="highlight">Infrapatelar</td></tr>
+                            <tr><td>Quinta-feira</td><td class="highlight">Abdômen</td></tr>
+                            <tr><td>Sexta-feira</td><td class="highlight">Joelho medial</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <!-- FASE 3 -->
@@ -305,14 +317,16 @@
             <!-- CÁLCULO FINAL -->
             <div class="data-card">
                 <div class="card-title"><i data-lucide="calculator"></i> Cálculo Final (Exato)</div>
-                <table class="tech-table">
-                    <thead><tr><th>Fase</th><th>Aplicações</th><th>Cliques</th><th>Quantidade (mg)</th></tr></thead>
-                    <tbody>
-                        <tr><td>Fase 1</td><td>15</td><td>180</td><td class="highlight">13,14 mg</td></tr>
-                        <tr><td>Fase 2</td><td>25</td><td>350</td><td class="highlight">25,55 mg</td></tr>
-                        <tr><td>Fase 3</td><td>10</td><td>120</td><td class="highlight">8,76 mg</td></tr>
-                    </tbody>
-                </table>
+                <div style="overflow-x: auto; width: 100%;">
+                    <table class="tech-table">
+                        <thead><tr><th>Fase</th><th>Aplicações</th><th>Cliques</th><th>Quantidade (mg)</th></tr></thead>
+                        <tbody>
+                            <tr><td>Fase 1</td><td>15</td><td>180</td><td class="highlight">13,14 mg</td></tr>
+                            <tr><td>Fase 2</td><td>25</td><td>350</td><td class="highlight">25,55 mg</td></tr>
+                            <tr><td>Fase 3</td><td>10</td><td>120</td><td class="highlight">8,76 mg</td></tr>
+                        </tbody>
+                    </table>
+                </div>
                 <div class="rule-box" style="margin-top: 1.5rem; background: rgba(0, 255, 136, 0.05); border-left-color: var(--safe);">
                     <h4 style="color:var(--safe); margin-bottom: 0.5rem; font-size: 1rem;">🔢 TOTAL FINAL: 650 cliques = 47,45 mg</h4>
                     <p style="font-size: 0.9rem;">✔ Dentro da capacidade das 2 canetas<br>✔ Margem de segurança ideal</p>
