@@ -79,8 +79,8 @@
         .workout-item h4 { color: var(--primary); margin-bottom: 0.5rem; font-size: 0.9rem; text-transform: uppercase; border-left: 2px solid var(--primary); padding-left: 0.8rem; }
         
         .exercise-list { list-style: none; }
-        .exercise-list li { margin-bottom: 0.8rem; font-size: 0.9rem; color: #FFF; display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
-        .exercise-list li span { color: var(--text-secondary); font-size: 0.75rem; font-weight: 700; text-align: right; flex: 1; word-wrap: break-word; }
+        .exercise-list li { margin-bottom: 0.6rem; font-size: 0.9rem; color: #FFF; display: flex; justify-content: space-between; align-items: baseline; }
+        .exercise-list li span { color: var(--text-secondary); font-size: 0.75rem; font-weight: 700; text-align: right; }
 
         .rule-box { background: rgba(0,0,0,0.3); border-left: 3px solid var(--primary); padding: 1.5rem; border-radius: 0 12px 12px 0; margin-top: 1.5rem; font-size: 0.9rem; }
         .rule-box.red { border-left-color: var(--accent); background: rgba(255,68,68,0.05); }
@@ -96,12 +96,6 @@
             .content-section { padding: 6rem 1.5rem 4rem 1.5rem; }
             .mob-menu { display: flex; }
             .sec-header h1 { font-size: 2.2rem; }
-        }
-        
-        @media (max-width: 480px) {
-            .exercise-list li { flex-direction: column; align-items: flex-start; gap: 0.2rem; margin-bottom: 1rem; }
-            .exercise-list li span { text-align: left; width: 100%; margin-top: 0.2rem; }
-            .tech-table th, .tech-table td { padding: 0.8rem 0.5rem; font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -191,18 +185,29 @@
                 <div class="workout-grid">
                     <div>
                         <h4 style="color:var(--safe); margin-bottom: 1rem;">🔵 Joelho (Ação Local)</h4>
-                        <ul class="exercise-list">
-                            <li><strong>Região medial (principal):</strong> <span>Parte interna do joelho, 2–3 cm da patela</span></li>
-                            <li><strong>Região lateral:</strong> <span>Parte externa do joelho, 2–3 cm da patela</span></li>
-                            <li><strong>Região infrapatelar:</strong> <span>Abaixo da patela, sobre o tendão patelar</span></li>
-                        </ul>
+                        <div style="margin-bottom: 1rem;">
+                            <strong style="color: #FFF; font-size: 0.85rem;">Região medial (principal):</strong>
+                            <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.2rem;">Parte interna do joelho, 2–3 cm da patela</p>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <strong style="color: #FFF; font-size: 0.85rem;">Região lateral:</strong>
+                            <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.2rem;">Parte externa do joelho, 2–3 cm da patela</p>
+                        </div>
+                        <div>
+                            <strong style="color: #FFF; font-size: 0.85rem;">Região infrapatelar:</strong>
+                            <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.2rem;">Abaixo da patela, sobre o tendão patelar</p>
+                        </div>
                     </div>
                     <div>
                         <h4 style="color:var(--safe); margin-bottom: 1rem;">🟢 Abdômen (Ação Sistêmica)</h4>
-                        <ul class="exercise-list">
-                            <li><strong>Local:</strong> <span>2–3 cm ao redor do umbigo</span></li>
-                            <li><strong>Rotação:</strong> <span>Direita, Esquerda, Acima, Abaixo</span></li>
-                        </ul>
+                        <div style="margin-bottom: 1rem;">
+                            <strong style="color: #FFF; font-size: 0.85rem;">Local:</strong>
+                            <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.2rem;">2–3 cm ao redor do umbigo</p>
+                        </div>
+                        <div>
+                            <strong style="color: #FFF; font-size: 0.85rem;">Rotação:</strong>
+                            <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.2rem;">Direita, Esquerda, Acima, Abaixo</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -321,13 +326,26 @@
                 <div class="workout-grid">
                     <div style="border-top: 3px solid var(--primary); padding-top: 1rem;">
                         <h4 style="color:var(--primary); margin-bottom: 1rem;">📅 Dias com Aplicação</h4>
-                        <ul class="exercise-list">
-                            <li>🌅 07:00 <span>CoQ10 (100–200mg) + Ômega 3 (2g)</span></li>
-                            <li>🍽️ 12:00 <span>Ômega 3 (1g)</span></li>
-                            <li>🌇 16:00 <span>Vitamina C (500mg)</span></li>
-                            <li>🌙 21:30 <span>Vitamina C (500mg) + Magnésio (300-400mg)</span></li>
-                            <li>💉 22:00 <span style="color:var(--accent); font-weight:800;">Aplicação do Peptídeo</span></li>
-                        </ul>
+                        <div style="margin-bottom: 1.2rem;">
+                            <strong style="color: #FFF; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">🌅 07:00</strong>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.2rem;">CoQ10 (100–200mg) + Ômega 3 (2g)</p>
+                        </div>
+                        <div style="margin-bottom: 1.2rem;">
+                            <strong style="color: #FFF; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">🍽️ 12:00</strong>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.2rem;">Ômega 3 (1g)</p>
+                        </div>
+                        <div style="margin-bottom: 1.2rem;">
+                            <strong style="color: #FFF; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">🌇 16:00</strong>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.2rem;">Vitamina C (500mg)</p>
+                        </div>
+                        <div style="margin-bottom: 1.2rem;">
+                            <strong style="color: #FFF; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">🌙 21:30</strong>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.2rem;">Vitamina C (500mg) + Magnésio (300-400mg)</p>
+                        </div>
+                        <div>
+                            <strong style="color: #FFF; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">💉 22:00</strong>
+                            <p style="font-size: 0.85rem; color: var(--accent); margin-top: 0.2rem; font-weight: 800;">Aplicação do Peptídeo</p>
+                        </div>
                     </div>
                     <div style="border-top: 3px solid var(--text-secondary); padding-top: 1rem;">
                         <h4 style="color:var(--text-main); margin-bottom: 1rem;">📅 Dias sem Aplicação</h4>
