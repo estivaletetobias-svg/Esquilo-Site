@@ -20,6 +20,7 @@ export default defineConfig({
         protocolo_izabel: resolve(__dirname, 'protocolo-izabel.html'),
         protocolo_alexandre: resolve(__dirname, 'protocolo-alexandre.html'),
         protocolo_anarubia: resolve(__dirname, 'protocolo-anarubia.html'),
+        protocolo_claudevanir: resolve(__dirname, 'protocolo-claudevanir.html'),
       },
     },
   },
