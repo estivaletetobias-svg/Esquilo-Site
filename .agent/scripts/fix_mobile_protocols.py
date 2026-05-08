@@ -5,6 +5,11 @@ def fix_html(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
 
+    # 0. Basic Interaction and Title Fixes
+    content = content.replace('user-select: none !important; -webkit-user-select: none !important; ', '')
+    content = content.replace('overscroll-behavior: none; ', '')
+    content = re.sub(r'<h1 style="font-size:\s*[^"]+">', '<h1>', content)
+
     # 1. Update CSS
     css_updates = """
         .tech-table { width: 100%; border-collapse: collapse; color: #FFF; }
@@ -12,6 +17,7 @@ def fix_html(file_path):
         .tech-table th { font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
         .tech-table td { font-size: 0.9rem; font-weight: 600; }
         .highlight { color: var(--primary); }
+        .sec-header h1 { overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; }
 
         /* Table Container for Mobile Scroll */
         .table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem; border: 1px solid var(--border); border-radius: 12px; background: rgba(0,0,0,0.1); }
@@ -38,8 +44,8 @@ def fix_html(file_path):
             .main-content { margin-left: 0; }
             .content-section { padding: 6rem 1rem 4rem 1rem; }
             .mob-menu { display: flex; }
-            .sec-header h1 { font-size: 2.2rem; }
-            .data-card { padding: 1.5rem; }
+            .sec-header h1 { font-size: 1.8rem; }
+            .data-card { padding: 1.2rem; }
             .tech-table th, .tech-table td { padding: 0.8rem; }
         }
     """
