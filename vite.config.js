@@ -21,6 +21,7 @@ export default defineConfig({
         protocolo_alexandre: resolve(__dirname, 'protocolo-alexandre.html'),
         protocolo_anarubia: resolve(__dirname, 'protocolo-anarubia.html'),
         protocolo_claudevanir: resolve(__dirname, 'protocolo-claudevanir.html'),
+        protocolo_caio: resolve(__dirname, 'protocolo-caio.html'),
       },
     },
   },
