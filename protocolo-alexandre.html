@@ -75,11 +75,16 @@
         .badge-green { background: rgba(0, 255, 136, 0.15); color: var(--safe); border: 1px solid var(--safe); }
         .badge-flash { background: rgba(255, 234, 0, 0.15); color: var(--flash); border: 1px solid var(--flash); }
 
-        .tech-table { width: 100%; border-collapse: collapse; margin-top: 1rem; color: #FFF; }
-        .tech-table th, .tech-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); }
-        .tech-table th { font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
+        .tech-table { width: 100%; border-collapse: collapse; color: #FFF; }
+        .tech-table th, .tech-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); min-width: 120px; }
+        .tech-table th { font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
         .tech-table td { font-size: 0.9rem; font-weight: 600; }
         .highlight { color: var(--primary); }
+
+        /* Table Container for Mobile Scroll */
+        .table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem; border: 1px solid var(--border); border-radius: 12px; background: rgba(0,0,0,0.1); }
+        .table-wrapper::-webkit-scrollbar { height: 4px; }
+        .table-wrapper::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
 
         .workout-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
         .workout-item { padding: 1rem; border-radius: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--border); }
@@ -99,10 +104,13 @@
             .sidebar { transform: translateX(-100%); transition: 0.3s; }
             .sidebar.open { transform: translateX(0); }
             .main-content { margin-left: 0; }
-            .content-section { padding: 6rem 1.5rem 4rem 1.5rem; }
+            .content-section { padding: 6rem 1rem 4rem 1rem; }
             .mob-menu { display: flex; }
             .sec-header h1 { font-size: 2.2rem; }
+            .data-card { padding: 1.5rem; }
+            .tech-table th, .tech-table td { padding: 0.8rem; }
         }
+
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -178,12 +186,12 @@
 
             <div class="data-card">
                 <div class="card-title"><i data-lucide="trending-up"></i> Resultados Esperados</div>
-                <table class="tech-table">
+                <div class="table-wrapper"><table class="tech-table">
                     <tr><td>Ganho de Massa Magra</td><td class="highlight">Densidade muscular</td></tr>
                     <tr><td>Economia de Corrida</td><td class="highlight">Correr com menos esforço</td></tr>
                     <tr><td>Recuperação Acelerada</td><td class="highlight">Menos fadiga acumulada</td></tr>
                     <tr><td>Resiliência Articular</td><td class="highlight">Core e pernas fortes</td></tr>
-                </table>
+                </table></div>
             </div>
         </section>
 
@@ -197,7 +205,7 @@
             </div>
 
             <div class="data-card">
-                <table class="tech-table">
+                <div class="table-wrapper"><table class="tech-table">
                     <thead>
                         <tr><th>Dia</th><th>Corrida</th><th>Musculação</th></tr>
                     </thead>
@@ -210,7 +218,7 @@
                         <tr><td>Sábado</td><td class="highlight">LONGÃO</td><td>❌ Descanso</td></tr>
                         <tr><td>Domingo</td><td>OFF</td><td>❌ Descanso</td></tr>
                     </tbody>
-                </table>
+                </table></div>
             </div>
 
             <div class="data-card">
@@ -388,14 +396,14 @@
             <div class="data-card" style="border-color: var(--primary);">
                 <div class="card-title"><i data-lucide="brain"></i> O que é RPE (Essencial Entender)</div>
                 <p style="color:var(--text-secondary); margin-bottom: 1rem;">RPE = Rate of Perceived Exertion (Percepção de Esforço). É uma escala de 0 a 10 que mede o quão difícil está o exercício para você.</p>
-                <table class="tech-table">
+                <div class="table-wrapper"><table class="tech-table">
                     <tr><th>RPE</th><th>Sensação</th><th>O que significa</th></tr>
                     <tr><td class="highlight">10</td><td>Máximo</td><td>Falha total (não consegue mais repetir)</td></tr>
                     <tr><td class="highlight">9</td><td>Muito pesado</td><td>1 repetição sobrando</td></tr>
                     <tr><td class="highlight">8</td><td>Pesado</td><td>2 repetições sobrando</td></tr>
                     <tr><td class="highlight">7</td><td>Moderado</td><td>3 repetições sobrando</td></tr>
                     <tr><td class="highlight">6</td><td>Leve</td><td>4+ repetições sobrando</td></tr>
-                </table>
+                </table></div>
 
                 <div class="rule-box" style="border-left-color: var(--safe); margin-top: 2rem;">
                     <strong style="display:block; margin-bottom:0.5rem; color:var(--safe);">📌 REGRA DE OURO PARA SUA SEMANA:</strong>
@@ -894,10 +902,10 @@
                 <!-- METAS -->
                 <div class="data-card" style="border-top: 4px solid var(--primary);">
                     <div class="card-title">Metas Diárias</div>
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><td>Proteína</td><td class="highlight">1,8g – 2,2g / kg</td></tr>
                         <tr><td>Hidratação</td><td class="highlight">35ml – 45ml / kg</td></tr>
-                    </table>
+                    </table></div>
                 </div>
                 <!-- SUPLEMENTOS -->
                 <div class="data-card">
@@ -940,10 +948,10 @@
             <div class="workout-grid">
                 <div class="data-card" style="border-top: 4px solid var(--primary);">
                     <div class="card-title">Macronutrientes & Hidratação</div>
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><td>Proteína</td><td class="highlight">1,8g – 2,2g / kg</td></tr>
                         <tr><td>Hidratação</td><td class="highlight">35ml – 45ml / kg</td></tr>
-                    </table>
+                    </table></div>
                 </div>
                 <div class="data-card">
                     <div class="card-title">Diretrizes Clínicas</div>

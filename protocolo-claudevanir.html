@@ -68,11 +68,16 @@
         .badge-green { background: rgba(0, 255, 136, 0.15); color: var(--safe); border: 1px solid var(--safe); }
         .badge-flash { background: rgba(255, 234, 0, 0.15); color: var(--flash); border: 1px solid var(--flash); }
 
-        .tech-table { width: 100%; border-collapse: collapse; margin-top: 1rem; color: #FFF; }
-        .tech-table th, .tech-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); }
-        .tech-table th { font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
+        .tech-table { width: 100%; border-collapse: collapse; color: #FFF; }
+        .tech-table th, .tech-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); min-width: 120px; }
+        .tech-table th { font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
         .tech-table td { font-size: 0.9rem; font-weight: 600; }
         .highlight { color: var(--primary); }
+
+        /* Table Container for Mobile Scroll */
+        .table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem; border: 1px solid var(--border); border-radius: 12px; background: rgba(0,0,0,0.1); }
+        .table-wrapper::-webkit-scrollbar { height: 4px; }
+        .table-wrapper::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
 
         .workout-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
         .workout-item { padding: 1rem; border-radius: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--border); }
@@ -93,10 +98,13 @@
             .sidebar { transform: translateX(-100%); transition: 0.3s; }
             .sidebar.open { transform: translateX(0); }
             .main-content { margin-left: 0; }
-            .content-section { padding: 6rem 1.5rem 4rem 1.5rem; }
+            .content-section { padding: 6rem 1rem 4rem 1rem; }
             .mob-menu { display: flex; }
             .sec-header h1 { font-size: 2.2rem; }
+            .data-card { padding: 1.5rem; }
+            .tech-table th, .tech-table td { padding: 0.8rem; }
         }
+
 
         @media (max-width: 480px) {
             .data-card { padding: 1.2rem; }
@@ -159,11 +167,11 @@
                 <div class="data-card">
                     <div class="card-title"><i data-lucide="pen-tool"></i> Padrão da Caneta</div>
                     <div style="overflow-x: auto; width: 100%;">
-                        <table class="tech-table">
+                        <div class="table-wrapper"><table class="tech-table">
                             <tr><td>1 clique</td><td class="highlight">0,073 mg</td></tr>
                             <tr><td>12 cliques</td><td class="highlight">0,876 mg</td></tr>
                             <tr><td>14 cliques</td><td class="highlight">1,022 mg (~1mg alvo)</td></tr>
-                        </table>
+                        </table></div>
                     </div>
                     <div class="rule-box" style="margin-top: 1.5rem; padding: 1rem;">
                         <strong>Totalização:</strong><br>
@@ -240,7 +248,7 @@
                 <p style="color:var(--text-secondary); margin-bottom: 1.5rem;"><strong>Objetivo:</strong> Reduzir inflamação e adaptação tecidual.</p>
                 
                 <div style="overflow-x: auto; width: 100%;">
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <thead><tr><th>Dia da Semana</th><th>Local de Aplicação</th></tr></thead>
                         <tbody>
                             <tr><td>Segunda-feira</td><td class="highlight">Joelho medial</td></tr>
@@ -249,7 +257,7 @@
                             <tr><td>Quinta-feira</td><td class="highlight">Abdômen</td></tr>
                             <tr><td>Sexta-feira</td><td class="highlight">Joelho medial</td></tr>
                         </tbody>
-                    </table>
+                    </table></div>
                 </div>
             </div>
 
@@ -263,7 +271,7 @@
                 <p style="color:var(--text-secondary); margin-bottom: 1.5rem;"><strong>Objetivo:</strong> Regeneração ativa e estímulo de colágeno.</p>
                 
                 <div style="overflow-x: auto; width: 100%;">
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <thead><tr><th>Dia da Semana</th><th>Local de Aplicação</th></tr></thead>
                         <tbody>
                             <tr><td>Segunda-feira</td><td class="highlight">Joelho medial</td></tr>
@@ -272,7 +280,7 @@
                             <tr><td>Quinta-feira</td><td class="highlight">Abdômen</td></tr>
                             <tr><td>Sexta-feira</td><td class="highlight">Joelho medial</td></tr>
                         </tbody>
-                    </table>
+                    </table></div>
                 </div>
             </div>
 
@@ -318,14 +326,14 @@
             <div class="data-card">
                 <div class="card-title"><i data-lucide="calculator"></i> Cálculo Final (Exato)</div>
                 <div style="overflow-x: auto; width: 100%;">
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <thead><tr><th>Fase</th><th>Aplicações</th><th>Cliques</th><th>Quantidade (mg)</th></tr></thead>
                         <tbody>
                             <tr><td>Fase 1</td><td>15</td><td>180</td><td class="highlight">13,14 mg</td></tr>
                             <tr><td>Fase 2</td><td>25</td><td>350</td><td class="highlight">25,55 mg</td></tr>
                             <tr><td>Fase 3</td><td>10</td><td>120</td><td class="highlight">8,76 mg</td></tr>
                         </tbody>
-                    </table>
+                    </table></div>
                 </div>
                 <div class="rule-box" style="margin-top: 1.5rem; background: rgba(0, 255, 136, 0.05); border-left-color: var(--safe);">
                     <h4 style="color:var(--safe); margin-bottom: 0.5rem; font-size: 1rem;">🔢 TOTAL FINAL: 650 cliques = 47,45 mg</h4>

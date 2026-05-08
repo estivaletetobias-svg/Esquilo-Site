@@ -114,11 +114,16 @@
         .badge { background: rgba(204,255,0,0.1); color: var(--primary); padding: 0.4rem 0.8rem; border-radius: 4px; border: 1px solid var(--primary); font-size: 0.7rem; font-weight: 950; margin-bottom: 1rem; text-transform: uppercase; display: inline-block; }
         .badge.blue { background: rgba(0,212,255,0.1); color: var(--accent); border-color: var(--accent); }
 
-        .tech-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; display: block; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
-        .tech-table th, .tech-table td { padding: 1.2rem 1.5rem; border-bottom: 1px solid var(--border); text-align: left; min-width: max-content; }
-        .tech-table th { font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; }
-        .tech-table td { font-size: 0.95rem; font-weight: 600; color: #FFF; }
-        .tech-table .highlight { color: var(--primary); font-weight: 900; }
+        .tech-table { width: 100%; border-collapse: collapse; color: #FFF; }
+        .tech-table th, .tech-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); min-width: 120px; }
+        .tech-table th { font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+        .tech-table td { font-size: 0.9rem; font-weight: 600; }
+        .highlight { color: var(--primary); }
+
+        /* Table Container for Mobile Scroll */
+        .table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem; border: 1px solid var(--border); border-radius: 12px; background: rgba(0,0,0,0.1); }
+        .table-wrapper::-webkit-scrollbar { height: 4px; }
+        .table-wrapper::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
 
         .item-list { list-style: none; padding: 0; margin: 0; }
         .item-list li { display: flex; align-items: flex-start; gap: 0.8rem; margin-bottom: 0.8rem; font-size: 1rem; color: #FFF; }
@@ -177,16 +182,16 @@
         .mob-menu { display: none; position: fixed; bottom: 2rem; right: 2rem; width: 68px; height: 68px; background: var(--primary); color: #000; border-radius: 50%; z-index: 2100; border: none; align-items: center; justify-content: center; box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
 
         @media (max-width: 1024px) {
-            .sidebar { transform: translateX(-100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+            .sidebar { transform: translateX(-100%); transition: 0.3s; }
             .sidebar.open { transform: translateX(0); }
-            .main-content { margin-left: 0; width: 100vw; }
-            .content-section { padding: 8rem 1.5rem 4rem 1.5rem; }
+            .main-content { margin-left: 0; }
+            .content-section { padding: 6rem 1rem 4rem 1rem; }
             .mob-menu { display: flex; }
-            .sec-header h1 { font-size: 2.3rem; }
-            .phase-title { font-size: 1.5rem; }
-            .timeline { padding-left: 1.5rem; }
-            .tl-item::before { left: -1.95rem; }
+            .sec-header h1 { font-size: 2.2rem; }
+            .data-card { padding: 1.5rem; }
+            .tech-table th, .tech-table td { padding: 0.8rem; }
         }
+
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -327,11 +332,11 @@
                         <value>10 mg/ml</value>
                     </div>
                 </div>
-                <table class="tech-table">
+                <div class="table-wrapper"><table class="tech-table">
                     <tr><th>Unidade Seringa</th><th>Mg</th></tr>
                     <tr><td>1 UI</td><td class="highlight">0,1 mg</td></tr>
                     <tr><td>10 UI</td><td class="highlight">1 mg</td></tr>
-                </table>
+                </table></div>
             </div>
 
             <div class="sec-header" style="margin-top: 4rem;">
@@ -713,14 +718,14 @@
                         <value>10 mg/ml</value>
                     </div>
                 </div>
-                <table class="tech-table">
+                <div class="table-wrapper"><table class="tech-table">
                     <tr><th>Unidade</th><th>mg</th><th>mcg</th></tr>
                     <tr><td>1 UI</td><td class="highlight">0,1 mg</td><td>100 mcg</td></tr>
                     <tr><td>2 UI</td><td class="highlight">0,2 mg</td><td>200 mcg</td></tr>
                     <tr><td>5 UI</td><td class="highlight">0,5 mg</td><td>500 mcg</td></tr>
                     <tr><td>10 UI</td><td class="highlight">1 mg</td><td>1000 mcg</td></tr>
                     <tr><td>20 UI</td><td class="highlight">2 mg</td><td>2000 mcg</td></tr>
-                </table>
+                </table></div>
             </div>
 
             <!-- Conversão Caneta -->
@@ -730,12 +735,12 @@
                 <div class="rule-box green" style="margin-bottom: 1.5rem;">
                     <strong>Padrão:</strong> 1 clique = 0,2 mg
                 </div>
-                <table class="tech-table">
+                <div class="table-wrapper"><table class="tech-table">
                     <tr><th>Cliques</th><th>Dose</th><th>Fase</th></tr>
                     <tr><td>5 cliques</td><td class="highlight">1 mg</td><td>Fase 1</td></tr>
                     <tr><td>6 cliques</td><td class="highlight">1,2 mg</td><td>Fase 2 & 4</td></tr>
                     <tr><td>8 cliques</td><td class="highlight">1,6 mg</td><td>Fase 3</td></tr>
-                </table>
+                </table></div>
             </div>
         </section>
 
@@ -1159,14 +1164,14 @@
                 <div class="acc-item active">
                     <div class="acc-header"><h3>Técnica Subcutânea</h3><i data-lucide="chevron-down"></i></div>
                     <div class="acc-content" style="display:block;">
-                        <table class="tech-table">
+                        <div class="table-wrapper"><table class="tech-table">
                             <tr><th>Passo</th><th>Ação</th></tr>
                             <tr><td>1</td><td>Higienizar a área com algodão + álcool</td></tr>
                             <tr><td>2</td><td>Pinçar levemente a pele</td></tr>
                             <tr><td>3</td><td>Inserir a agulha (45° ou 90°)</td></tr>
                             <tr><td>4</td><td>Aplicar o líquido lentamente</td></tr>
                             <tr><td>5</td><td>Aguardar 10 segundos antes de retirar</td></tr>
-                        </table>
+                        </table></div>
                     </div>
                 </div>
             </div>

@@ -118,13 +118,16 @@
         .top-status span.divider { display: none; }
 
         @media (max-width: 1024px) {
-            .sidebar { transform: translateX(-100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+            .sidebar { transform: translateX(-100%); transition: 0.3s; }
             .sidebar.open { transform: translateX(0); }
-            .main-content { margin-left: 0; width: 100vw; }
-            .content-section { padding: 8rem 1.5rem 4rem 1.5rem; }
+            .main-content { margin-left: 0; }
+            .content-section { padding: 6rem 1rem 4rem 1rem; }
             .mob-menu { display: flex; }
-            .sec-header h1 { font-size: 2.3rem; }
+            .sec-header h1 { font-size: 2.2rem; }
+            .data-card { padding: 1.5rem; }
+            .tech-table th, .tech-table td { padding: 0.8rem; }
         }
+
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -226,14 +229,14 @@
                 <div class="data-card">
                     <div class="card-title"><i data-lucide="settings"></i> Tabela da Caneta</div>
                     <div class="badge">1 MG = 6 CLIQUES</div>
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><th>Dose</th><th>Cliques</th></tr>
                         <tr><td>1 mg</td><td>6</td></tr>
                         <tr><td>2 mg</td><td>12</td></tr>
                         <tr><td>3 mg</td><td>18</td></tr>
                         <tr><td>4 mg</td><td>24</td></tr>
                         <tr><td>5 mg</td><td>30</td></tr>
-                    </table>
+                    </table></div>
                 </div>
             </div>
         </section>

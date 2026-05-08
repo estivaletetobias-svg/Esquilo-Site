@@ -143,15 +143,16 @@
         .top-status span.divider { display: none; }
 
         @media (max-width: 1024px) {
-            .sidebar { transform: translateX(-100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+            .sidebar { transform: translateX(-100%); transition: 0.3s; }
             .sidebar.open { transform: translateX(0); }
-            .main-content { margin-left: 0; width: 100vw; }
-            .content-section { padding: 8rem 1.5rem 4rem 1.5rem; }
+            .main-content { margin-left: 0; }
+            .content-section { padding: 6rem 1rem 4rem 1rem; }
             .mob-menu { display: flex; }
-            .sec-header h1 { font-size: 2.3rem; }
-            .meal-name { font-size: 1.5rem; }
-            .meal-card { padding: 2rem 1.5rem; }
+            .sec-header h1 { font-size: 2.2rem; }
+            .data-card { padding: 1.5rem; }
+            .tech-table th, .tech-table td { padding: 0.8rem; }
         }
+
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -254,12 +255,12 @@
                         <label>Base Diária</label>
                         <value>3,0 Litros</value>
                     </div>
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><th>Fase</th><th>Volume</th></tr>
                         <tr><td>Normal</td><td>3,0 L</td></tr>
                         <tr><td>TPM</td><td>3,5 L</td></tr>
                         <tr><td>Menstruação</td><td>3,0 L</td></tr>
-                    </table>
+                    </table></div>
                 </div>
             </div>
         </section>
@@ -591,7 +592,7 @@
 
             <div class="data-card" style="margin-bottom:2.5rem;">
                 <div class="card-title"><i data-lucide="calendar"></i> Divisão Semanal</div>
-                <table class="tech-table">
+                <div class="table-wrapper"><table class="tech-table">
                     <tr><th>Dia</th><th>Foco</th><th>Método</th></tr>
                     <tr class="train-day"><td>SEG</td><td>Inferior — Glúteo/Posterior</td><td>FORÇA</td></tr>
                     <tr><td>TER</td><td>Superior — Costas/Tríceps</td><td>HIPERTROFIA</td></tr>
@@ -600,7 +601,7 @@
                     <tr class="train-day"><td>SEX</td><td>Inferior — Glúteo Completo</td><td>HIPERTROFIA</td></tr>
                     <tr><td>SAB</td><td>Full Body</td><td>METABÓLICO</td></tr>
                     <tr><td>DOM</td><td colspan="2">OFF / Caminhada Leve</td></tr>
-                </table>
+                </table></div>
                 <div class="rule-box green" style="margin-top:1.5rem;">
                     <strong>Periodização Ondulatória:</strong> Força (6-8 reps) → Hipertrofia (8-12 reps) → Metabólico (12-20 reps)
                 </div>
@@ -609,7 +610,7 @@
             <div class="acc-item">
                 <div class="acc-header"><h3>💪 SEG — Inferior (Glúteo/Posterior) — FORÇA</h3><i data-lucide="chevron-down"></i></div>
                 <div class="acc-content">
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><th>Exercício</th><th>Séries x Reps</th></tr>
                         <tr><td>Agachamento Livre</td><td>4 x 6-8</td></tr>
                         <tr><td>Levantamento Terra Romeno</td><td>4 x 6-8</td></tr>
@@ -617,14 +618,14 @@
                         <tr><td>Afundo com Halter</td><td>3 x 8 (cada perna)</td></tr>
                         <tr><td>Mesa Flexora</td><td>3 x 10</td></tr>
                         <tr><td>Panturrilha</td><td>4 x 12</td></tr>
-                    </table>
+                    </table></div>
                 </div>
             </div>
 
             <div class="acc-item">
                 <div class="acc-header"><h3>🏋️ TER — Superior (Costas/Tríceps) — HIPERTROFIA</h3><i data-lucide="chevron-down"></i></div>
                 <div class="acc-content">
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><th>Exercício</th><th>Séries x Reps</th></tr>
                         <tr><td>Puxada na Frente</td><td>4 x 10-12</td></tr>
                         <tr><td>Remada Curvada</td><td>4 x 10</td></tr>
@@ -632,14 +633,14 @@
                         <tr><td>Tríceps Testa</td><td>3 x 10</td></tr>
                         <tr><td>Elevação Lateral</td><td>4 x 12-15</td></tr>
                         <tr><td>Abdômen Prancha</td><td>3 x 40s</td></tr>
-                    </table>
+                    </table></div>
                 </div>
             </div>
 
             <div class="acc-item">
                 <div class="acc-header"><h3>⚡ QUA — Inferior (Quadríceps) — METABÓLICO</h3><i data-lucide="chevron-down"></i></div>
                 <div class="acc-content">
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><th>Exercício</th><th>Séries x Reps</th></tr>
                         <tr><td>Leg Press</td><td>4 x 15</td></tr>
                         <tr><td>Cadeira Extensora</td><td>4 x 15-20</td></tr>
@@ -647,35 +648,35 @@
                         <tr><td>Passada Andando</td><td>3 x 20 passos</td></tr>
                         <tr><td>Glúteo no Cabo</td><td>4 x 15</td></tr>
                         <tr><td>Abdutora</td><td>4 x 20</td></tr>
-                    </table>
+                    </table></div>
                 </div>
             </div>
 
             <div class="acc-item">
                 <div class="acc-header"><h3>💪 QUI — Superior (Ombro/Core) — FORÇA</h3><i data-lucide="chevron-down"></i></div>
                 <div class="acc-content">
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><th>Exercício</th><th>Séries x Reps</th></tr>
                         <tr><td>Desenvolvimento com Halter</td><td>4 x 6-8</td></tr>
                         <tr><td>Remada Baixa</td><td>4 x 8</td></tr>
                         <tr><td>Barra Assistida</td><td>3 x 6-8</td></tr>
                         <tr><td>Elevação Lateral</td><td>3 x 10</td></tr>
                         <tr><td>Core (Prancha + Elevação de Pernas)</td><td>3 séries</td></tr>
-                    </table>
+                    </table></div>
                 </div>
             </div>
 
             <div class="acc-item">
                 <div class="acc-header"><h3>🍑 SEX — Glúteo Completo — HIPERTROFIA</h3><i data-lucide="chevron-down"></i></div>
                 <div class="acc-content">
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><th>Exercício</th><th>Séries x Reps</th></tr>
                         <tr><td>Hip Thrust</td><td>5 x 10</td></tr>
                         <tr><td>Stiff</td><td>4 x 10-12</td></tr>
                         <tr><td>Abdução</td><td>4 x 15</td></tr>
                         <tr><td>Glúteo no Cabo</td><td>4 x 12</td></tr>
                         <tr><td>Step Up</td><td>3 x 12 (cada perna)</td></tr>
-                    </table>
+                    </table></div>
                     <div class="rule-box green" style="margin-top:1.5rem;">Foco total no <strong>pump</strong> e conexão mente-músculo.</div>
                 </div>
             </div>
@@ -684,14 +685,14 @@
                 <div class="acc-header"><h3>🔥 SAB — Full Body Metabólico</h3><i data-lucide="chevron-down"></i></div>
                 <div class="acc-content">
                     <p style="color:var(--text-secondary); margin-bottom:1.5rem;">Circuito — 4 voltas. Descanso: 1 min entre voltas.</p>
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><th>Exercício</th><th>Reps</th></tr>
                         <tr><td>Agachamento + Halter</td><td>15</td></tr>
                         <tr><td>Flexão</td><td>12</td></tr>
                         <tr><td>Remada com Elástico</td><td>15</td></tr>
                         <tr><td>Afundo</td><td>12 (cada lado)</td></tr>
                         <tr><td>Abdominal</td><td>20</td></tr>
-                    </table>
+                    </table></div>
                 </div>
             </div>
         </section>
@@ -712,76 +713,76 @@
             <div class="acc-item">
                 <div class="acc-header"><h3>🍑 SEG — Glúteo</h3><i data-lucide="chevron-down"></i></div>
                 <div class="acc-content">
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><th>Exercício</th><th>Séries x Reps</th></tr>
                         <tr><td>Elevação de Quadril</td><td>5 x 8</td></tr>
                         <tr><td>Agachamento</td><td>4 x 8</td></tr>
                         <tr><td>Levantamento Terra</td><td>4 x 8</td></tr>
                         <tr><td>Afundo</td><td>3 x 10 (cada perna)</td></tr>
                         <tr><td>Abdução</td><td>4 x 15</td></tr>
-                    </table>
+                    </table></div>
                 </div>
             </div>
 
             <div class="acc-item">
                 <div class="acc-header"><h3>🏋️ TER — Costas + Tríceps</h3><i data-lucide="chevron-down"></i></div>
                 <div class="acc-content">
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><th>Exercício</th><th>Séries x Reps</th></tr>
                         <tr><td>Puxada Frente</td><td>4 x 8</td></tr>
                         <tr><td>Remada</td><td>4 x 8</td></tr>
                         <tr><td>Tríceps Polia</td><td>4 x 10</td></tr>
                         <tr><td>Tríceps Testa</td><td>3 x 10</td></tr>
                         <tr><td>Elevação Lateral</td><td>4 x 12</td></tr>
-                    </table>
+                    </table></div>
                 </div>
             </div>
 
             <div class="acc-item">
                 <div class="acc-header"><h3>⚡ QUA — Pernas</h3><i data-lucide="chevron-down"></i></div>
                 <div class="acc-content">
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><th>Exercício</th><th>Séries x Reps</th></tr>
                         <tr><td>Leg Press</td><td>4 x 10</td></tr>
                         <tr><td>Extensora</td><td>4 x 12</td></tr>
                         <tr><td>Passada</td><td>3 x 10 (cada perna)</td></tr>
                         <tr><td>Adutora</td><td>3 x 12</td></tr>
                         <tr><td>Agachamento</td><td>3 x 12</td></tr>
-                    </table>
+                    </table></div>
                 </div>
             </div>
 
             <div class="acc-item">
                 <div class="acc-header"><h3>💪 QUI — Ombro + Abdômen</h3><i data-lucide="chevron-down"></i></div>
                 <div class="acc-content">
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><th>Exercício</th><th>Séries x Reps</th></tr>
                         <tr><td>Desenvolvimento</td><td>4 x 8</td></tr>
                         <tr><td>Elevação Lateral</td><td>4 x 12</td></tr>
                         <tr><td>Elevação Frontal</td><td>3 x 10</td></tr>
                         <tr><td>Abdômen</td><td>3 x 15</td></tr>
                         <tr><td>Prancha</td><td>3 x 45s</td></tr>
-                    </table>
+                    </table></div>
                 </div>
             </div>
 
             <div class="acc-item">
                 <div class="acc-header"><h3>🍑 SEX — Glúteo (2º Estímulo)</h3><i data-lucide="chevron-down"></i></div>
                 <div class="acc-content">
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><th>Exercício</th><th>Séries x Reps</th></tr>
                         <tr><td>Elevação de Quadril</td><td>5 x 10</td></tr>
                         <tr><td>Stiff</td><td>4 x 10</td></tr>
                         <tr><td>Glúteo no Cabo</td><td>4 x 12 (cada perna)</td></tr>
                         <tr><td>Abdução</td><td>4 x 15</td></tr>
-                    </table>
+                    </table></div>
                 </div>
             </div>
 
             <div class="acc-item">
                 <div class="acc-header"><h3>🔥 SAB — Metabólico</h3><i data-lucide="chevron-down"></i></div>
                 <div class="acc-content">
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><th>Exercício</th><th>Séries x Reps</th></tr>
                         <tr><td>Agachamento</td><td>4 x 15</td></tr>
                         <tr><td>Afundo</td><td>3 x 12 (cada perna)</td></tr>
@@ -789,7 +790,7 @@
                         <tr><td>Remada com Elástico</td><td>3 x 15</td></tr>
                         <tr><td>Abdominal</td><td>4 x 20</td></tr>
                         <tr><td>Prancha</td><td>3 x 50s</td></tr>
-                    </table>
+                    </table></div>
                 </div>
             </div>
         </section>
@@ -810,76 +811,76 @@
             <div class="acc-item">
                 <div class="acc-header"><h3>🍑 SEG — Glúteo</h3><i data-lucide="chevron-down"></i></div>
                 <div class="acc-content">
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><th>Exercício</th><th>Séries x Reps</th></tr>
                         <tr><td>Elevação de Quadril</td><td>5 x 10</td></tr>
                         <tr><td>Agachamento</td><td>4 x 12</td></tr>
                         <tr><td>Levantamento Terra</td><td>3 x 12</td></tr>
                         <tr><td>Afundo</td><td>3 x 12 (cada perna)</td></tr>
                         <tr><td>Abdução</td><td>4 x 20</td></tr>
-                    </table>
+                    </table></div>
                 </div>
             </div>
 
             <div class="acc-item">
                 <div class="acc-header"><h3>🏋️ TER — Costas + Tríceps</h3><i data-lucide="chevron-down"></i></div>
                 <div class="acc-content">
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><th>Exercício</th><th>Séries x Reps</th></tr>
                         <tr><td>Puxada Frente</td><td>4 x 10</td></tr>
                         <tr><td>Remada</td><td>4 x 10</td></tr>
                         <tr><td>Tríceps Polia</td><td>3 x 12</td></tr>
                         <tr><td>Tríceps Testa</td><td>3 x 12</td></tr>
                         <tr><td>Elevação Lateral</td><td>4 x 15</td></tr>
-                    </table>
+                    </table></div>
                 </div>
             </div>
 
             <div class="acc-item">
                 <div class="acc-header"><h3>⚡ QUA — Pernas</h3><i data-lucide="chevron-down"></i></div>
                 <div class="acc-content">
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><th>Exercício</th><th>Séries x Reps</th></tr>
                         <tr><td>Leg Press</td><td>4 x 12</td></tr>
                         <tr><td>Extensora</td><td>4 x 15</td></tr>
                         <tr><td>Passada</td><td>3 x 12 (cada perna)</td></tr>
                         <tr><td>Adutora</td><td>3 x 15</td></tr>
                         <tr><td>Agachamento</td><td>2 x 20</td></tr>
-                    </table>
+                    </table></div>
                 </div>
             </div>
 
             <div class="acc-item">
                 <div class="acc-header"><h3>💪 QUI — Ombro + Abdômen</h3><i data-lucide="chevron-down"></i></div>
                 <div class="acc-content">
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><th>Exercício</th><th>Séries x Reps</th></tr>
                         <tr><td>Desenvolvimento</td><td>4 x 10</td></tr>
                         <tr><td>Elevação Lateral</td><td>4 x 15</td></tr>
                         <tr><td>Elevação Frontal</td><td>3 x 12</td></tr>
                         <tr><td>Abdômen</td><td>3 x 20</td></tr>
                         <tr><td>Prancha</td><td>3 x 60s</td></tr>
-                    </table>
+                    </table></div>
                 </div>
             </div>
 
             <div class="acc-item">
                 <div class="acc-header"><h3>🍑 SEX — Glúteo (2º Estímulo)</h3><i data-lucide="chevron-down"></i></div>
                 <div class="acc-content">
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><th>Exercício</th><th>Séries x Reps</th></tr>
                         <tr><td>Elevação de Quadril</td><td>5 x 12</td></tr>
                         <tr><td>Stiff</td><td>4 x 12</td></tr>
                         <tr><td>Glúteo no Cabo</td><td>4 x 15 (cada perna)</td></tr>
                         <tr><td>Abdução</td><td>4 x 20</td></tr>
-                    </table>
+                    </table></div>
                 </div>
             </div>
 
             <div class="acc-item">
                 <div class="acc-header"><h3>🔥 SAB — Metabólico Final</h3><i data-lucide="chevron-down"></i></div>
                 <div class="acc-content">
-                    <table class="tech-table">
+                    <div class="table-wrapper"><table class="tech-table">
                         <tr><th>Exercício</th><th>Séries x Reps</th></tr>
                         <tr><td>Agachamento</td><td>4 x 20</td></tr>
                         <tr><td>Afundo</td><td>3 x 15 (cada perna)</td></tr>
@@ -887,7 +888,7 @@
                         <tr><td>Remada com Elástico</td><td>3 x 15</td></tr>
                         <tr><td>Abdominal</td><td>4 x 25</td></tr>
                         <tr><td>Prancha</td><td>3 x 60s</td></tr>
-                    </table>
+                    </table></div>
                 </div>
             </div>
         </section>
@@ -904,26 +905,26 @@
             <div class="data-card">
                 <div class="badge">VERSÃO COMPLETA — 30 MIN</div>
                 <div class="card-title"><i data-lucide="plane"></i> Treino de Viagem</div>
-                <table class="tech-table">
+                <div class="table-wrapper"><table class="tech-table">
                     <tr><th>Exercício</th><th>Séries x Reps</th></tr>
                     <tr><td>Agachamento</td><td>4 x 20</td></tr>
                     <tr><td>Afundo</td><td>3 x 15 (cada perna)</td></tr>
                     <tr><td>Elevação de Quadril</td><td>4 x 20</td></tr>
                     <tr><td>Abdução com Elástico</td><td>4 x 20</td></tr>
                     <tr><td>Prancha</td><td>3 x 45-60s</td></tr>
-                </table>
+                </table></div>
             </div>
 
             <div class="data-card">
                 <div class="badge">VERSÃO EXPRESS — 20 MIN</div>
                 <div class="card-title"><i data-lucide="zap"></i> Treino Express</div>
-                <table class="tech-table">
+                <div class="table-wrapper"><table class="tech-table">
                     <tr><th>Exercício</th><th>Séries x Reps</th></tr>
                     <tr><td>Agachamento</td><td>3 x 20</td></tr>
                     <tr><td>Afundo</td><td>3 x 12</td></tr>
                     <tr><td>Flexão</td><td>3 x 10</td></tr>
                     <tr><td>Abdominal</td><td>3 x 20</td></tr>
-                </table>
+                </table></div>
                 <div class="rule-box green" style="margin-top:1.5rem;">
                     Respeita a fisiologia feminina — mantém estímulo mesmo durante a menstruação. Progressão inteligente: estética (glúteo, cintura, definição).
                 </div>
@@ -944,7 +945,7 @@
             <div class="data-card">
                 <div class="badge">JÁ VEM EM CANETA — USE OS CLIQUES PRESCRITOS</div>
                 <div class="card-title">1. Retatrutida — Progressão de Dose</div>
-                <table class="tech-table">
+                <div class="table-wrapper"><table class="tech-table">
                     <tr><th>Semana</th><th>Dose</th><th>Cliques</th></tr>
                     <tr><td>Semana 1</td><td>1 mg</td><td>6 cliques</td></tr>
                     <tr><td>Semana 2</td><td>2 mg</td><td>12 cliques</td></tr>
@@ -952,7 +953,7 @@
                     <tr><td>Semana 4</td><td>4 mg</td><td>24 cliques</td></tr>
                     <tr><td>Semana 5</td><td>5 mg</td><td>30 cliques</td></tr>
                     <tr><td>Semana 6</td><td>6 mg</td><td>36 cliques</td></tr>
-                </table>
+                </table></div>
                 <div class="rule-box blue" style="margin-top:1.5rem;">
                     <strong>Atenção Semana 3:</strong> Só aumentar para 4 mg na sem. 4 caso não tenha resultados. Se estiver tendo resultado, manter a dose.
                 </div>

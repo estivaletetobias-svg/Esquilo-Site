@@ -73,17 +73,27 @@
         .badge-purple { background: rgba(178, 102, 255, 0.15); color: var(--purple); border: 1px solid var(--purple); }
         .badge-orange { background: rgba(255, 153, 51, 0.15); color: var(--orange); border: 1px solid var(--orange); }
 
-        .tech-table { width: 100%; border-collapse: collapse; margin-top: 1rem; color: #FFF; }
-        .tech-table th, .tech-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); }
-        .tech-table th { font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
+        .tech-table { width: 100%; border-collapse: collapse; color: #FFF; }
+        .tech-table th, .tech-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); min-width: 120px; }
+        .tech-table th { font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
         .tech-table td { font-size: 0.9rem; font-weight: 600; }
         .highlight { color: var(--primary); }
+
+        /* Table Container for Mobile Scroll */
+        .table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem; border: 1px solid var(--border); border-radius: 12px; background: rgba(0,0,0,0.1); }
+        .table-wrapper::-webkit-scrollbar { height: 4px; }
+        .table-wrapper::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+
+        /* Table Container for Mobile Scroll */
+        .table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem; border: 1px solid var(--border); border-radius: 12px; background: rgba(0,0,0,0.1); }
+        .table-wrapper::-webkit-scrollbar { height: 4px; }
+        .table-wrapper::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
 
         .workout-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
         .workout-item { padding: 1rem; border-radius: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--border); }
         .workout-item h4 { color: var(--primary); margin-bottom: 0.5rem; font-size: 0.9rem; text-transform: uppercase; border-left: 2px solid var(--primary); padding-left: 0.8rem; }
         .exercise-list { list-style: none; }
-        .exercise-list li { margin-bottom: 0.6rem; font-size: 0.9rem; color: #FFF; display: flex; justify-content: space-between; align-items: baseline; }
+        .exercise-list li { margin-bottom: 0.6rem; font-size: 0.9rem; color: #FFF; display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
         .exercise-list li span { color: var(--text-secondary); font-size: 0.75rem; font-weight: 700; text-align: right; }
 
         .rule-box { background: rgba(0,0,0,0.3); border-left: 3px solid var(--primary); padding: 1.5rem; border-radius: 0 12px 12px 0; margin-top: 1.5rem; font-size: 0.9rem; }
@@ -99,10 +109,13 @@
             .sidebar { transform: translateX(-100%); transition: 0.3s; }
             .sidebar.open { transform: translateX(0); }
             .main-content { margin-left: 0; }
-            .content-section { padding: 6rem 1.5rem 4rem 1.5rem; }
+            .content-section { padding: 6rem 1rem 4rem 1rem; }
             .mob-menu { display: flex; }
             .sec-header h1 { font-size: 2.2rem; }
+            .data-card { padding: 1.5rem; }
+            .tech-table th, .tech-table td { padding: 0.8rem; }
         }
+
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -189,15 +202,17 @@
             
             <div class="data-card">
                 <div class="card-title"><i data-lucide="activity"></i> Peptídeos Utilizados</div>
-                <table class="tech-table">
-                    <thead><tr><th>Cor</th><th>Peptídeo</th><th>Objetivo</th></tr></thead>
-                    <tbody>
-                        <tr><td><span style="color: #4488FF;">🔵</span></td><td>BPC-157 + TB-500</td><td class="highlight">regeneração estrutural</td></tr>
-                        <tr><td><span style="color: #00FF88;">🟢</span></td><td>SS-31</td><td style="color: var(--safe); font-weight:600;">recuperação mitocondrial</td></tr>
-                        <tr><td><span style="color: #B266FF;">🟣</span></td><td>CJC-1295 + Ipamorelin</td><td style="color: var(--purple); font-weight:600;">recuperação profunda</td></tr>
-                        <tr><td><span style="color: #FF9933;">🟠</span></td><td>GHK-CU</td><td style="color: var(--orange); font-weight:600;">regeneração conjuntiva</td></tr>
-                    </tbody>
-                </table>
+                <div class="table-wrapper">
+                    <table class="tech-table">
+                        <thead><tr><th>Cor</th><th>Peptídeo</th><th>Objetivo</th></tr></thead>
+                        <tbody>
+                            <tr><td><span style="color: #4488FF;">🔵</span></td><td>BPC-157 + TB-500</td><td class="highlight">regeneração estrutural</td></tr>
+                            <tr><td><span style="color: #00FF88;">🟢</span></td><td>SS-31</td><td style="color: var(--safe); font-weight:600;">recuperação mitocondrial</td></tr>
+                            <tr><td><span style="color: #B266FF;">🟣</span></td><td>CJC-1295 + Ipamorelin</td><td style="color: var(--purple); font-weight:600;">recuperação profunda</td></tr>
+                            <tr><td><span style="color: #FF9933;">🟠</span></td><td>GHK-CU</td><td style="color: var(--orange); font-weight:600;">regeneração conjuntiva</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
 
@@ -209,7 +224,7 @@
 
             <div class="data-card">
                 <div class="card-title"><i data-lucide="calendar-clock"></i> Introdução e Retirada</div>
-                <div style="overflow-x:auto;">
+                <div class="table-wrapper">
                     <table class="tech-table" style="font-size: 0.8rem;">
                         <thead>
                             <tr><th>Semana</th><th>🔵 BPC/TB500</th><th>🟢 SS-31</th><th>🟣 CJC + IPA</th><th>🟠 GHK-CU</th></tr>
@@ -238,18 +253,20 @@
 
             <div class="data-card">
                 <div class="card-title"><i data-lucide="calculator"></i> Tabela Master de Conversão</div>
-                <table class="tech-table">
-                    <thead><tr><th>UI</th><th>mL</th><th>mg</th><th>mcg</th></tr></thead>
-                    <tbody>
-                        <tr><td>1 UI</td><td>0.01 mL</td><td>0.133 mg</td><td>133 mcg</td></tr>
-                        <tr><td>5 UI</td><td>0.05 mL</td><td>0.665 mg</td><td>665 mcg</td></tr>
-                        <tr><td>10 UI</td><td>0.1 mL</td><td>1.33 mg</td><td>1330 mcg</td></tr>
-                        <tr><td>12 UI</td><td>0.12 mL</td><td>1.56 mg</td><td>1560 mcg</td></tr>
-                        <tr><td>18 UI</td><td>0.18 mL</td><td>2.34 mg</td><td>2340 mcg</td></tr>
-                        <tr><td>24 UI</td><td>0.24 mL</td><td>3.19 mg</td><td>3190 mcg</td></tr>
-                        <tr><td>48 UI</td><td>0.48 mL</td><td>6.38 mg</td><td>6380 mcg</td></tr>
-                    </tbody>
-                </table>
+                <div class="table-wrapper">
+                    <table class="tech-table">
+                        <thead><tr><th>UI</th><th>mL</th><th>mg</th><th>mcg</th></tr></thead>
+                        <tbody>
+                            <tr><td>1 UI</td><td>0.01 mL</td><td>0.133 mg</td><td>133 mcg</td></tr>
+                            <tr><td>5 UI</td><td>0.05 mL</td><td>0.665 mg</td><td>665 mcg</td></tr>
+                            <tr><td>10 UI</td><td>0.1 mL</td><td>1.33 mg</td><td>1330 mcg</td></tr>
+                            <tr><td>12 UI</td><td>0.12 mL</td><td>1.56 mg</td><td>1560 mcg</td></tr>
+                            <tr><td>18 UI</td><td>0.18 mL</td><td>2.34 mg</td><td>2340 mcg</td></tr>
+                            <tr><td>24 UI</td><td>0.24 mL</td><td>3.19 mg</td><td>3190 mcg</td></tr>
+                            <tr><td>48 UI</td><td>0.48 mL</td><td>6.38 mg</td><td>6380 mcg</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
         <!-- SECTION_1_END -->
@@ -264,15 +281,17 @@
 
             <div class="data-card">
                 <div class="card-title">💊 Suporte Nutricional Estratégico</div>
-                <table class="tech-table">
-                    <thead><tr><th>Nutriente</th><th>Dose</th><th>Horário</th><th>Função</th></tr></thead>
-                    <tbody>
-                        <tr><td>Vitamina C</td><td>500–1000 mg</td><td>Almoço</td><td>Suporte regenerativo e colágeno</td></tr>
-                        <tr><td>Zinco</td><td>15–30 mg</td><td>Noite</td><td>Reparo tecidual e estrutural</td></tr>
-                        <tr><td>Ômega-3</td><td>2–3 g</td><td>Almoço</td><td>Modulação inflamatória</td></tr>
-                        <tr><td>Magnésio Glicina</td><td>300–400 mg</td><td>Noite</td><td>Recuperação muscular e neural</td></tr>
-                    </tbody>
-                </table>
+                <div class="table-wrapper">
+                    <table class="tech-table">
+                        <thead><tr><th>Nutriente</th><th>Dose</th><th>Horário</th><th>Função</th></tr></thead>
+                        <tbody>
+                            <tr><td>Vitamina C</td><td>500–1000 mg</td><td>Almoço</td><td>Suporte regenerativo e colágeno</td></tr>
+                            <tr><td>Zinco</td><td>15–30 mg</td><td>Noite</td><td>Reparo tecidual e estrutural</td></tr>
+                            <tr><td>Ômega-3</td><td>2–3 g</td><td>Almoço</td><td>Modulação inflamatória</td></tr>
+                            <tr><td>Magnésio Glicina</td><td>300–400 mg</td><td>Noite</td><td>Recuperação muscular e neural</td></tr>
+                        </tbody>
+                    </table>
+                </div>
                 <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 1rem;">⚠️ <strong>Estratégia clínica:</strong> Foco em regeneração muscular, tendínea e estrutural.</p>
             </div>
 
@@ -333,15 +352,17 @@
 
             <div class="data-card">
                 <div class="card-title">💊 Suporte Nutricional Estratégico</div>
-                <table class="tech-table">
-                    <thead><tr><th>Nutriente</th><th>Dose</th><th>Horário</th><th>Função</th></tr></thead>
-                    <tbody>
-                        <tr><td>Coenzima Q10</td><td>200 mg</td><td>Manhã</td><td>Suporte mitocondrial</td></tr>
-                        <tr><td>Complexo B</td><td>1 cápsula</td><td>Café da Manhã</td><td>Metabolismo energético</td></tr>
-                        <tr><td>Creatina</td><td>5 g</td><td>Pós Treino</td><td>Suporte ATP muscular</td></tr>
-                        <tr><td>Selênio</td><td>100–200 mcg</td><td>Almoço</td><td>Proteção antioxidante celular</td></tr>
-                    </tbody>
-                </table>
+                <div class="table-wrapper">
+                    <table class="tech-table">
+                        <thead><tr><th>Nutriente</th><th>Dose</th><th>Horário</th><th>Função</th></tr></thead>
+                        <tbody>
+                            <tr><td>Coenzima Q10</td><td>200 mg</td><td>Manhã</td><td>Suporte mitocondrial</td></tr>
+                            <tr><td>Complexo B</td><td>1 cápsula</td><td>Café da Manhã</td><td>Metabolismo energético</td></tr>
+                            <tr><td>Creatina</td><td>5 g</td><td>Pós Treino</td><td>Suporte ATP muscular</td></tr>
+                            <tr><td>Selênio</td><td>100–200 mcg</td><td>Almoço</td><td>Proteção antioxidante celular</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <div class="workout-grid">
@@ -397,15 +418,17 @@
 
             <div class="data-card">
                 <div class="card-title">💊 Suporte Nutricional Estratégico</div>
-                <table class="tech-table">
-                    <thead><tr><th>Nutriente</th><th>Dose</th><th>Horário</th><th>Função</th></tr></thead>
-                    <tbody>
-                        <tr><td>Magnésio Glicina</td><td>300–400 mg</td><td>Noite</td><td>Relaxamento muscular e sono</td></tr>
-                        <tr><td>Glicina</td><td>3–5 g</td><td>Pré sono</td><td>Melhora recuperação neural</td></tr>
-                        <tr><td>Zinco</td><td>15–30 mg</td><td>Noite</td><td>Suporte hormonal</td></tr>
-                        <tr><td>Triptofano</td><td>500–1000 mg</td><td>Pré sono</td><td>Melhora do sono profundo</td></tr>
-                    </tbody>
-                </table>
+                <div class="table-wrapper">
+                    <table class="tech-table">
+                        <thead><tr><th>Nutriente</th><th>Dose</th><th>Horário</th><th>Função</th></tr></thead>
+                        <tbody>
+                            <tr><td>Magnésio Glicina</td><td>300–400 mg</td><td>Noite</td><td>Relaxamento muscular e sono</td></tr>
+                            <tr><td>Glicina</td><td>3–5 g</td><td>Pré sono</td><td>Melhora recuperação neural</td></tr>
+                            <tr><td>Zinco</td><td>15–30 mg</td><td>Noite</td><td>Suporte hormonal</td></tr>
+                            <tr><td>Triptofano</td><td>500–1000 mg</td><td>Pré sono</td><td>Melhora do sono profundo</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <div class="workout-grid">
@@ -463,15 +486,17 @@
 
             <div class="data-card">
                 <div class="card-title">💊 Suporte Nutricional Estratégico</div>
-                <table class="tech-table">
-                    <thead><tr><th>Nutriente</th><th>Dose</th><th>Horário</th><th>Função</th></tr></thead>
-                    <tbody>
-                        <tr><td>Vitamina C</td><td>1000 mg</td><td>Manhã/Almoço</td><td>Cofator para síntese de colágeno</td></tr>
-                        <tr><td>Peptídeos Colágeno</td><td>10–15 g</td><td>Qualquer</td><td>Matéria prima estrutural</td></tr>
-                        <tr><td>Ácido Hialurônico</td><td>100–200 mg</td><td>Manhã</td><td>Hidratação articular</td></tr>
-                        <tr><td>Zinco</td><td>15–30 mg</td><td>Noite</td><td>Reparo tecidual e pele</td></tr>
-                    </tbody>
-                </table>
+                <div class="table-wrapper">
+                    <table class="tech-table">
+                        <thead><tr><th>Nutriente</th><th>Dose</th><th>Horário</th><th>Função</th></tr></thead>
+                        <tbody>
+                            <tr><td>Vitamina C</td><td>1000 mg</td><td>Manhã/Almoço</td><td>Cofator para síntese de colágeno</td></tr>
+                            <tr><td>Peptídeos Colágeno</td><td>10–15 g</td><td>Qualquer</td><td>Matéria prima estrutural</td></tr>
+                            <tr><td>Ácido Hialurônico</td><td>100–200 mg</td><td>Manhã</td><td>Hidratação articular</td></tr>
+                            <tr><td>Zinco</td><td>15–30 mg</td><td>Noite</td><td>Reparo tecidual e pele</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <div class="workout-grid">
@@ -581,7 +606,8 @@
 
             <div class="workout-grid">
                 <div class="data-card">
-                    <div class="card-title"><i data-lucide="bar-chart"></i> Distribuição Base</div>
+                <div class="card-title"><i data-lucide="bar-chart"></i> Distribuição Base</div>
+                <div class="table-wrapper">
                     <table class="tech-table">
                         <tbody>
                             <tr><td>Proteína</td><td class="highlight">1.8–2.2 g/kg</td></tr>
@@ -591,6 +617,7 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
                 <div class="data-card">
                     <div class="card-title"><i data-lucide="clock"></i> Horários Estratégicos</div>
                     <ul class="exercise-list">
