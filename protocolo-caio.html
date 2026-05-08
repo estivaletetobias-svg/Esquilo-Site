@@ -110,9 +110,15 @@
         .ref-info h5 { color: #FFF; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 0.4rem; font-weight: 800; letter-spacing: 0.5px; }
         .ref-info p { color: var(--text-secondary); font-size: 0.8rem; line-height: 1.5; }
         
-        .top-status { position: fixed; top: 0; left: 0; width: 100%; background: var(--primary); color: #000; text-align: center; padding: 12px; font-size: 0.7rem; font-weight: 950; z-index: 3000; letter-spacing: 1px; text-transform: uppercase; }
-        .mob-menu { display: none; position: fixed; top: 12px; left: 12px; background: #FFF; border: none; padding: 8px; border-radius: 6px; z-index: 4000; cursor: pointer; align-items: center; justify-content: center; width: 36px; height: 36px; }
-        .mob-menu i { width: 20px; color: #000; }
+        .top-status { position: fixed; top: 0; left: 0; width: 100%; background: var(--primary); color: #000; text-align: center; padding: 12px 20px; font-size: 0.7rem; font-weight: 950; z-index: 3000; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center; justify-content: center; min-height: 44px; }
+        .mob-menu { display: none; position: fixed; top: 0; left: 0; background: var(--primary); border: none; padding: 0 15px; z-index: 4000; cursor: pointer; align-items: center; justify-content: center; height: 44px; }
+        .mob-menu i { width: 22px; height: 22px; color: #000; stroke-width: 3px; }
+
+        /* Table Scroll Mobile */
+        .table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.5rem 0; border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; background: rgba(0,0,0,0.2); }
+        .table-wrapper table { min-width: 700px; }
+        .table-wrapper::-webkit-scrollbar { height: 4px; }
+        .table-wrapper::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
 
         @media (max-width: 1024px) {
             .sidebar { transform: translateX(-100%); transition: 0.3s; }
