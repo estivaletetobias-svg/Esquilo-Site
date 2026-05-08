@@ -79,13 +79,18 @@
         .table-wrapper::-webkit-scrollbar { height: 4px; }
         .table-wrapper::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
 
+        /* Table Container for Mobile Scroll */
+        .table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem; border: 1px solid var(--border); border-radius: 12px; background: rgba(0,0,0,0.1); }
+        .table-wrapper::-webkit-scrollbar { height: 4px; }
+        .table-wrapper::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+
         .workout-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
         .workout-item { padding: 1rem; border-radius: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--border); }
         .workout-item h4 { color: var(--primary); margin-bottom: 0.5rem; font-size: 0.9rem; text-transform: uppercase; border-left: 2px solid var(--primary); padding-left: 0.8rem; }
         
         .exercise-list { list-style: none; }
-        .exercise-list li { margin-bottom: 0.6rem; font-size: 0.9rem; color: #FFF; display: flex; justify-content: space-between; align-items: baseline; }
-        .exercise-list li span { color: var(--text-secondary); font-size: 0.75rem; font-weight: 700; text-align: right; }
+        .exercise-list li { margin-bottom: 0.6rem; font-size: 0.9rem; color: #FFF; display: flex; align-items: flex-start; gap: 0.8rem; }
+        .exercise-list li span { color: var(--text-secondary); font-size: 0.75rem; font-weight: 700; text-align: right; margin-left: auto; }
 
         .rule-box { background: rgba(0,0,0,0.3); border-left: 3px solid var(--primary); padding: 1.5rem; border-radius: 0 12px 12px 0; margin-top: 1.5rem; font-size: 0.9rem; }
         .rule-box.red { border-left-color: var(--accent); background: rgba(255,68,68,0.05); }
@@ -104,6 +109,7 @@
             .data-card { padding: 1.5rem; }
             .tech-table th, .tech-table td { padding: 0.8rem; }
         }
+
 
 
         @media (max-width: 480px) {

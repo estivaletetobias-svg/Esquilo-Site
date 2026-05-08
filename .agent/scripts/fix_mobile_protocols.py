@@ -22,6 +22,14 @@ def fix_html(file_path):
     # Replace old tech-table CSS
     content = re.sub(r'\.tech-table\s*\{[^}]+\}.*?\.highlight\s*\{[^}]+\}', css_updates.strip(), content, flags=re.DOTALL)
 
+    # Update Exercise List Alignment
+    list_fix = """
+        .exercise-list { list-style: none; }
+        .exercise-list li { margin-bottom: 0.6rem; font-size: 0.9rem; color: #FFF; display: flex; align-items: flex-start; gap: 0.8rem; }
+        .exercise-list li span { color: var(--text-secondary); font-size: 0.75rem; font-weight: 700; text-align: right; margin-left: auto; }
+    """
+    content = re.sub(r'\.exercise-list\s*\{[^}]+\}.*?\.exercise-list\s*li\s*span\s*\{[^}]+\}', list_fix.strip(), content, flags=re.DOTALL)
+
     # Update Media Query
     media_query_fix = """
         @media (max-width: 1024px) {

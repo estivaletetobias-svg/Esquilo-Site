@@ -125,6 +125,11 @@
         .table-wrapper::-webkit-scrollbar { height: 4px; }
         .table-wrapper::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
 
+        /* Table Container for Mobile Scroll */
+        .table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem; border: 1px solid var(--border); border-radius: 12px; background: rgba(0,0,0,0.1); }
+        .table-wrapper::-webkit-scrollbar { height: 4px; }
+        .table-wrapper::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+
         .item-list { list-style: none; padding: 0; margin: 0; }
         .item-list li { display: flex; align-items: flex-start; gap: 0.8rem; margin-bottom: 0.8rem; font-size: 1rem; color: #FFF; }
         .item-list li i { color: var(--primary); margin-top: 4px; flex-shrink: 0; width: 18px; }
@@ -191,6 +196,7 @@
             .data-card { padding: 1.5rem; }
             .tech-table th, .tech-table td { padding: 0.8rem; }
         }
+
 
     </style>
 </head>
