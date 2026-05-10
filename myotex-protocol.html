@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYOTEX PROTOCOL | Human Performance & Longevity System</title>
+    <meta name="description" content="O MYOTEX é uma intervenção biológica de precisão desenvolvida pelo fisiologista Luciano Ghilardi Nacco (Esquilo). Programas premium de emagrecimento, performance e longevidade.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="/style.css">
+    
+    <style>
+        :root {
+            --myotex-gold: #C5A059;
+            --myotex-black: #000000;
+            --myotex-glow: rgba(197, 160, 89, 0.2);
+        }
+
+        .myotex-hero {
+            position: relative;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding-top: 8rem;
+        }
+
+        .myotex-hero-banner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .myotex-hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.4) contrast(1.1);
+        }
+
+        .myotex-hero-content {
+            text-align: center;
+            max-width: 1000px;
+            z-index: 1;
+        }
+
+        .myotex-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(197, 160, 89, 0.1);
+            border: 1px solid var(--myotex-gold);
+            color: var(--myotex-gold);
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .myotex-title {
+            font-size: clamp(3rem, 10vw, 8rem);
+            line-height: 0.85;
+            margin-bottom: 2rem;
+        }
+
+        .myotex-intro {
+            font-size: 1.5rem;
+            color: var(--text-dim);
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            line-height: 1.4;
+        }
+
+        /* Tiers Grid */
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .tier-card {
+            position: relative;
+            padding: 3rem 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .tier-card:hover {
+            border-color: var(--myotex-gold);
+            transform: translateY(-10px);
+            background: rgba(197, 160, 89, 0.03);
+        }
+
+        .tier-card.featured {
+            background: rgba(197, 160, 89, 0.05);
+            border-color: var(--myotex-gold);
+            box-shadow: 0 0 40px rgba(197, 160, 89, 0.1);
+        }
+
+        .tier-card.black {
+            background: linear-gradient(135deg, #0a0a0a 0%, #000 100%);
+            border-color: #333;
+        }
+        
+        .tier-card.black:hover {
+            border-color: #fff;
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.05);
+        }
+
+        .tier-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .tier-name {
+            font-size: 2.5rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .tier-subtitle {
+            font-size: 0.8rem;
+            color: var(--myotex-gold);
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .tier-price {
+            font-size: 2rem;
+            font-weight: 800;
+            font-family: var(--font-display);
+            margin-bottom: 0.5rem;
+        }
+
+        .tier-duration {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
+        .tier-features {
+            flex-grow: 1;
+            margin-bottom: 3rem;
+        }
+
+        .tier-features li {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            color: var(--text-dim);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .tier-features li i {
+            color: var(--myotex-gold);
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        /* Phases Horizontal */
+        .phases-container {
+            margin: 8rem 0;
+            padding: 4rem;
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid var(--border);
+        }
+
+        .phases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .phase-item {
+            text-align: center;
+        }
+
+        .phase-num {
+            font-size: 4rem;
+            font-family: var(--font-display);
+            color: rgba(197, 160, 89, 0.2);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .phase-name {
+            font-size: 1.1rem;
+            color: var(--myotex-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-desc {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        /* Objectives Grid */
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .objective-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+        }
+
+        .objective-item i {
+            color: var(--myotex-gold);
+        }
+
+        /* Diagnostic List */
+        .diagnostic-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .diagnostic-image {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+        }
+
+        .diagnostic-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+        }
+
+        .diagnostic-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .diagnostic-list li {
+            padding: 1.2rem;
+            border-left: 3px solid var(--myotex-gold);
+            background: rgba(197, 160, 89, 0.05);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .diagnostic-grid {
+                grid-template-columns: 1fr;
+            }
+            .myotex-title {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-layers">
+        <div class="bg-mesh"></div>
+        <div class="bg-grid"></div>
+        <div class="bg-noise"></div>
+    </div>
+    
+    <header>
+        <nav class="container">
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <i data-lucide="menu"></i>
+            </button>
+            <a href="/" class="logo header-logo">
+                <img src="/assets/images/logo-transparent.png" alt="Luciano Ghilardi Nacco Logo" class="header-logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/metodo.html">O Método</a>
+                <a href="/emagrecimento.html">Emagrecer</a>
+                <a href="/servicos.html">Serviços</a>
+                <a href="/myotex-protocol.html">Myotex Protocol</a>
+                <a href="/personal-trainer-florianopolis/index.html">Personal</a>
+                <a href="/conteudos.html">Conteúdo</a>
+                <a href="/ebooks.html">E-books</a>
+                <a href="/contato.html">Contato</a>
+            </div>
+            <div class="header-actions desktop-only">
+                <a href="https://wa.me/5548999229071" target="_blank" class="btn btn-primary btn-sm">Agendar Avaliação</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="myotex-hero">
+            <div class="myotex-hero-banner">
+                <img src="/assets/images/LOGO BANNER PROTOCOLOS ESQUILO.jpeg" alt="MYOTEX BANNER">
+            </div>
+            <div class="container myotex-hero-content">
+                <span class="myotex-badge reveal">Advanced Regenerative Performance System</span>
+                <h1 class="myotex-title text-gradient reveal">MYOTEX PEPTIDES</h1>
+                <p class="myotex-intro reveal">HUMAN PERFORMANCE & LONGEVITY SYSTEM</p>
+                <a href="#modalidades" class="btn btn-primary reveal">CONHECER SISTEMA</a>
+            </div>
+        </section>
+
+        <!-- CONCEPT SECTION -->
+        <section class="section reveal">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 6rem; align-items: center;">
+                    <div class="glass-card" style="padding: 5rem; border-left: 4px solid var(--myotex-gold);">
+                        <h2 style="margin-bottom: 2rem;">Intervenção Biológica de <span class="highlight">Precisão</span></h2>
+                        <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--text-dim);">Desenvolvido pelo renomado fisiologista Luciano Ghilardi Nacco (Esquilo), o MYOTEX é mais do que um sistema de otimização; é a ciência de elite aplicada à sua biologia única.</p>
+                        <p style="font-size: 1.2rem; color: var(--text-dim);">Unimos a fisiologia de ponta às estratégias metabólicas mais modernas do mundo, utilizando protocolos de peptídeos exclusivos para quem busca o ápice da performance, recuperação acelerada e longevidade celular.</p>
+                    </div>
+                    <div class="text-center">
+                        <div style="position: relative; display: inline-block;">
+                            <div style="position: absolute; inset: -20px; border: 1px solid var(--myotex-gold); opacity: 0.2;"></div>
+                            <img src="/assets/images/apple-touch-icon.png" alt="Selo Myotex" style="width: 200px; filter: grayscale(1) brightness(2);">
+                            <p style="margin-top: 2rem; font-family: var(--font-display); letter-spacing: 0.3em; color: var(--myotex-gold);">SELO DE QUALIDADE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES LIST -->
+        <section class="section reveal" style="background: rgba(255,255,255,0.02);">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="text-gradient">O QUE VOCÊ RECEBE NO SISTEMA MYOTEX</h2>
+                    <p>Um ecossistema completo de evolução física, metabólica e performance humana.</p>
+                </div>
+                
+                <div class="objectives-grid">
+                    <div class="objective-item">
+                        <i data-lucide="shield-check"></i>
+                        <span>Protocolos Exclusivos e Individualizados</span>
+                    </div>
+                    <div class="objective-item">
+                        <i data-lucide="activity"></i>
+                        <span>Gestão de Dosagens de Precisão</span>
+                    </div>
+                    <div class="objective-item">
+                        <i data-lucide="book-open"></i>
+                        <span>Guia Técnico de Administração</span>
+                    </div>
+                    <div class="objective-item">
+                        <i data-lucide="utensils"></i>
+                        <span>Suporte Nutricional e Metabólico</span>
+                    </div>
+                    <div class="objective-item">
+                        <i data-lucide="zap"></i>
+                        <span>Bio-Hacking de Recuperação</span>
+                    </div>
+                    <div class="objective-item">
+                        <i data-lucide="trending-up"></i>
+                        <span>Periodização de Elite (Muscular e Aeróbio)</span>
+                    </div>
+                    <div class="objective-item">
+                        <i data-lucide="message-square"></i>
+                        <span>Acompanhamento Premium via WhatsApp</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHASES SECTION -->
+        <section class="section reveal">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="text-gradient">ORGANIZAÇÃO DO SISTEMA</h2>
+                    <p>O fluxo científico da transformação metabólica.</p>
+                </div>
+                
+                <div class="phases-container glass-card">
+                    <div class="phases-grid">
+                        <div class="phase-item">
+                            <div class="phase-num">01</div>
+                            <div class="phase-name">Introdução</div>
+                            <div class="phase-desc">Adaptação fisiológica e metabólica.</div>
+                        </div>
+                        <div class="phase-item">
+                            <div class="phase-num">02</div>
+                            <div class="phase-name">Recuperação</div>
+                            <div class="phase-desc">Melhora energética e sistêmica.</div>
+                        </div>
+                        <div class="phase-item">
+                            <div class="phase-num">03</div>
+                            <div class="phase-name">Performance</div>
+                            <div class="phase-desc">Recuperação muscular e evolução física.</div>
+                        </div>
+                        <div class="phase-item">
+                            <div class="phase-num">04</div>
+                            <div class="phase-name">Consolidação</div>
+                            <div class="phase-desc">Estabilização e melhora funcional.</div>
+                        </div>
+                        <div class="phase-item">
+                            <div class="phase-num">05</div>
+                            <div class="phase-name">Manutenção</div>
+                            <div class="phase-desc">Manutenção estratégica dos resultados.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIERS / MODALIDADES -->
+        <section id="modalidades" class="section reveal">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="text-gradient">MODALIDADES DE ACESSO</h2>
+                    <p>Escolha o nível de otimização que sua biologia exige.</p>
+                </div>
+
+                <div class="tiers-grid">
+                    <!-- CORE -->
+                    <div class="tier-card">
+                        <div class="tier-header">
+                            <h3 class="tier-name">MYOTEX CORE</h3>
+                            <p class="tier-subtitle">EMAGRECIMENTO • PERFORMANCE</p>
+                            <p class="tier-price">R$ 2.500</p>
+                            <p class="tier-duration">10 SEMANAS</p>
+                        </div>
+                        <ul class="tier-features">
+                            <li><i data-lucide="check"></i> Estratégias avançadas com peptídeos</li>
+                            <li><i data-lucide="check"></i> Organização individualizada</li>
+                            <li><i data-lucide="check"></i> Planejamento alimentar estratégico</li>
+                            <li><i data-lucide="check"></i> Modelo de treinamento personalizado</li>
+                            <li><i data-lucide="check"></i> Suporte online estratégico</li>
+                        </ul>
+                        <a href="https://wa.me/5548999229071?text=Quero+saber+mais+sobre+o+Myotex+Core" target="_blank" class="btn btn-outline">APLICAR PARA CORE</a>
+                    </div>
+
+                    <!-- ELITE -->
+                    <div class="tier-card featured">
+                        <div style="position: absolute; top: 1rem; right: 1rem; background: var(--myotex-gold); color: #000; font-size: 0.6rem; padding: 0.2rem 0.5rem; font-weight: 900;">MAIS BUSCADO</div>
+                        <div class="tier-header">
+                            <h3 class="tier-name">MYOTEX ELITE</h3>
+                            <p class="tier-subtitle">PERFORMANCE • LONGEVITY</p>
+                            <p class="tier-price">R$ 4.000</p>
+                            <p class="tier-duration">16 SEMANAS</p>
+                        </div>
+                        <ul class="tier-features">
+                            <li><i data-lucide="check"></i> Tudo do Myotex Core</li>
+                            <li><i data-lucide="check"></i> Recuperação sistêmica integrada</li>
+                            <li><i data-lucide="check"></i> Performance Recovery Avançado</li>
+                            <li><i data-lucide="check"></i> Recuperação muscular profunda</li>
+                            <li><i data-lucide="check"></i> Reavaliações estratégicas</li>
+                        </ul>
+                        <a href="https://wa.me/5548999229071?text=Quero+saber+mais+sobre+o+Myotex+Elite" target="_blank" class="btn btn-primary">APLICAR PARA ELITE</a>
+                    </div>
+
+                    <!-- SIGNATURE -->
+                    <div class="tier-card">
+                        <div class="tier-header">
+                            <h3 class="tier-name">SIGNATURE</h3>
+                            <p class="tier-subtitle">HUMAN OPTIMIZATION</p>
+                            <p class="tier-price">R$ 6.500</p>
+                            <p class="tier-duration">24 SEMANAS</p>
+                        </div>
+                        <ul class="tier-features">
+                            <li><i data-lucide="check"></i> Tudo dos programas anteriores</li>
+                            <li><i data-lucide="check"></i> Regenerative Performance System</li>
+                            <li><i data-lucide="check"></i> Recuperação mitocondrial avançada</li>
+                            <li><i data-lucide="check"></i> Melhora cognitiva e física</li>
+                            <li><i data-lucide="check"></i> Suporte prioritário premium</li>
+                        </ul>
+                        <a href="https://wa.me/5548999229071?text=Quero+saber+mais+sobre+o+Myotex+Signature" target="_blank" class="btn btn-outline">APLICAR PARA SIGNATURE</a>
+                    </div>
+
+                    <!-- BLACK -->
+                    <div class="tier-card black">
+                        <div class="tier-header">
+                            <h3 class="tier-name" style="color: #fff;">MYOTEX BLACK</h3>
+                            <p class="tier-subtitle" style="color: #fff; opacity: 0.5;">ANNUAL OPTIMIZATION</p>
+                            <p class="tier-price" style="color: #fff;">R$ 1.500 <span style="font-size: 1rem; opacity: 0.5;">/mês</span></p>
+                            <p class="tier-duration">12 MESES (MÍNIMO)</p>
+                        </div>
+                        <ul class="tier-features">
+                            <li><i data-lucide="check" style="color: #fff;"></i> Acompanhamento anual contínuo</li>
+                            <li><i data-lucide="check" style="color: #fff;"></i> Ciclos regenerativos recorrentes</li>
+                            <li><i data-lucide="check" style="color: #fff;"></i> Monitoramento evolutivo avançado</li>
+                            <li><i data-lucide="check" style="color: #fff;"></i> Gestão vitalícia de performance</li>
+                        </ul>
+                        <a href="https://wa.me/5548999229071?text=Quero+saber+mais+sobre+o+Myotex+Black" target="_blank" class="btn btn-outline" style="border-color: #fff; color: #fff;">APLICAR PARA BLACK</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIAGNOSTIC LAYER -->
+        <section class="section reveal">
+            <div class="container">
+                <div class="diagnostic-grid">
+                    <div>
+                        <h2 class="text-gradient" style="margin-bottom: 2rem;">AUTORIDADE CLÍNICA E DIAGNÓSTICA</h2>
+                        <p style="margin-bottom: 3rem; color: var(--text-dim);">A MYOTEX não se baseia em achismos. Nosso ecossistema mobiliza as ferramentas mais precisas da medicina e fisiologia moderna para garantir que seu protocolo seja fundamentado em dados reais.</p>
+                        <ul class="diagnostic-list">
+                            <li>Exames Laboratoriais, Hormonais e Metabólicos</li>
+                            <li>DEXA Scan e Exames de Imagem</li>
+                            <li>Avaliação Biomecânica e Ortopédica Funcional</li>
+                            <li>Organização Multidisciplinar Premium</li>
+                        </ul>
+                    </div>
+                    <div class="diagnostic-image glass-card">
+                        <img src="/assets/images/Metodo.webp" alt="Análise Clínica">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTITUTIONAL QUOTE -->
+        <section class="section reveal text-center" style="padding: 10rem 0;">
+            <div class="container">
+                <blockquote style="font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 3rem); line-height: 1.2; color: var(--myotex-gold);">
+                    "Emagrecimento duradouro, recuperação avançada, performance física e longevidade funcional acontecem quando ciência, estratégia e fisiologia trabalham juntas para otimizar o corpo humano em todos os níveis."
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS PLACEHOLDER (Wait for user) -->
+        <!-- 
+        <section class="section reveal">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="text-gradient">PROVAS DE TRANSFORMAÇÃO</h2>
+                    <p>O que dizem os alunos que passaram pelo ecossistema MYOTEX.</p>
+                </div>
+                <div class="results-grid">
+                </div>
+            </div>
+        </section>
+        -->
+
+        <!-- FAQ SECTION -->
+        <section class="section reveal" style="background: rgba(255, 255, 255, 0.02);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="text-gradient">PERGUNTAS FREQUENTES</h2>
+                    <p>Esclareça suas dúvidas sobre o ecossistema MYOTEX.</p>
+                </div>
+                
+                <div style="display: grid; gap: 1.5rem; max-width: 900px; margin: 0 auto;">
+                    <div class="glass-card" style="padding: 2.5rem;">
+                        <h3 style="color: var(--myotex-gold); margin-bottom: 1rem; font-size: 1.5rem;">Quanto tempo dura um ciclo do sistema MYOTEX?</h3>
+                        <p style="color: var(--text-dim); line-height: 1.6;">A duração varia de acordo com o nível de otimização escolhido: o CORE tem duração de 10 semanas, o ELITE de 16 semanas e o SIGNATURE de 24 semanas. Para quem busca manutenção vitalícia, oferecemos o programa anual BLACK.</p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 2.5rem;">
+                        <h3 style="color: var(--myotex-gold); margin-bottom: 1rem; font-size: 1.5rem;">Como o MYOTEX organiza o uso de peptídeos?</h3>
+                        <p style="color: var(--text-dim); line-height: 1.6;">O sistema entrega uma organização técnica rigorosa, incluindo a definição de dosagens baseada na sua biologia, uma tabela de conversão precisa para as aplicações e um guia de horários estratégicos para garantir a máxima biodisponibilidade e segurança.</p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 2.5rem;">
+                        <h3 style="color: var(--myotex-gold); margin-bottom: 1rem; font-size: 1.5rem;">O sistema inclui acompanhamento nutricional e de treino?</h3>
+                        <p style="color: var(--text-dim); line-height: 1.6;">Sim. Todos os níveis do MYOTEX são sistemas integrados. Entendemos que os peptídeos são potencializadores, mas a base do resultado sólido vem da periodização de treino de elite e do planejamento nutricional estratégico que acompanham o protocolo.</p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 2.5rem;">
+                        <h3 style="color: var(--myotex-gold); margin-bottom: 1rem; font-size: 1.5rem;">Como são feitos os ajustes fisiológicos durante o programa?</h3>
+                        <p style="color: var(--text-dim); line-height: 1.6;">Através de monitoramento contínuo via WhatsApp e reavaliações estratégicas. No nível ELITE e superiores, os ajustes são ainda mais finos, baseados na evolução real dos seus biomarcadores e composição corporal ao longo das semanas.</p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 2.5rem;">
+                        <h3 style="color: var(--myotex-gold); margin-bottom: 1rem; font-size: 1.5rem;">Qual o diferencial do Advanced Regenerative Performance System?</h3>
+                        <p style="color: var(--text-dim); line-height: 1.6;">Diferente de fórmulas genéricas, este é um ecossistema desenvolvido pelo Luciano Esquilo que une tecnologias regenerativas à fisiologia clínica. O foco não é apenas estética, mas a otimização mitocondrial, recuperação sistêmica e longevidade funcional.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="section reveal">
+            <div class="container">
+                <div class="glass-card text-center" style="padding: 6rem; background: radial-gradient(circle at center, rgba(197, 160, 89, 0.1), transparent); border: 1px solid var(--myotex-gold);">
+                    <h2 class="text-gradient" style="font-size: 3.5rem; margin-bottom: 2.5rem;">REPROGRAME SUA BIOLOGIA</h2>
+                    <p style="font-size: 1.4rem; color: var(--text-dim); margin-bottom: 4rem; max-width: 800px; margin: 0 auto 4rem;">O próximo nível da sua performance humana e longevidade começa agora.</p>
+                    <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://wa.me/5548999229071?text=Olá!+Gostaria+de+uma+avaliação+para+o+sistema+Myotex" class="btn btn-primary btn-lg">FALAR COM O ESQUILO NO WHATSAPP</a>
+                        <a href="/contato.html" class="btn btn-outline btn-lg">SOLICITAR CONSULTA</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato">
+        <div class="giant-watermark">MYOTEX</div>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="/" class="footer-logo">
+                        <img src="/assets/images/logo-transparent.png" alt="Logo" class="footer-logo-img">
+                    </a>
+                    <blockquote class="footer-quote">
+                        "Mais do que um acompanhamento, entregamos um sistema completo de evolução física, metabólica e performance humana."
+                    </blockquote>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="/metodo.html">O Método</a></li>
+                        <li><a href="/myotex-protocol.html">Myotex Protocol</a></li>
+                        <li><a href="/servicos.html">Serviços</a></li>
+                        <li><a href="/contato.html">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Conexões Diretas</h4>
+                    <div class="social-reveal-grid">
+                        <a href="https://wa.me/5548999229071" class="reveal-item">
+                            <i data-lucide="message-circle"></i>
+                            <span class="reveal-label">WhatsApp</span>
+                            <span class="reveal-content">48 99922-9071</span>
+                        </a>
+                        <a href="https://www.instagram.com/esquilo.personal" target="_blank" class="reveal-item">
+                            <i data-lucide="instagram"></i>
+                            <span class="reveal-label">Instagram</span>
+                            <span class="reveal-content">@esquilo.personal</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="developer-credit" style="margin-top: 6rem; padding-bottom: 6rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim);">
+                <p style="font-size: 0.8rem; line-height: 1.6;">
+                    &copy; 2026 MYOTEX SYSTEM<br>WELLNESS & HEALTH
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+    <script>
+        // Initialize Lucide icons (already done in main.js, but safe to keep or remove)
+        lucide.createIcons();
+    </script>
+</body>
+</html>
