@@ -143,37 +143,41 @@
             z-index: 1;
         }
 
-        .myotex-cta-block {
-            background: linear-gradient(135deg, var(--myotex-gold) 0%, #a68444 100%);
-            padding: 4rem 2rem;
-            text-align: center;
-            margin: 6rem auto;
-            max-width: 900px;
-            color: #000;
+        .myotex-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .glass-card {
+            padding: 5rem;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
         }
 
         /* --- MOBILE OVERRIDES --- */
         @media (max-width: 768px) {
+            .myotex-grid { 
+                grid-template-columns: 1fr !important; 
+                gap: 3rem !important; 
+            }
+            .glass-card { 
+                padding: 2.5rem 1.5rem !important; 
+            }
             .article-title { font-size: clamp(2rem, 8vw, 3rem) !important; }
             .myotex-title { font-size: clamp(3rem, 12vw, 5rem) !important; }
-            .glass-card { 
-                grid-template-columns: 1fr !important; 
-                padding: 2.5rem 1.5rem !important; 
-                gap: 2rem !important;
-            }
             .section { padding: 4rem 1.5rem !important; }
             .hero-content h1 { font-size: clamp(2.5rem, 10vw, 4rem) !important; }
             .myotex-cta-block h3 { font-size: 1.8rem !important; }
             .author-box { flex-direction: column !important; text-align: center !important; }
             .social-reveal-grid { padding: 0 1rem; }
-            
-            /* Fix for the giant gold button clipping issues */
             .btn-primary, .btn-outline { 
                 width: 100% !important; 
                 padding: 1.5rem !important; 
                 font-size: 0.9rem !important;
             }
-            
             .container { padding: 0 1.5rem !important; }
             h2 { font-size: clamp(1.8rem, 8vw, 2.5rem) !important; line-height: 1.1 !important; }
             p { font-size: 1rem !important; }
@@ -510,11 +514,11 @@
         <!-- CONCEPT SECTION -->
         <section class="section reveal">
             <div class="container">
-                <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 6rem; align-items: center;">
-                    <div class="glass-card" style="padding: 5rem; border-left: 4px solid var(--myotex-gold);">
+                <div class="myotex-grid">
+                    <div class="glass-card" style="border-left: 4px solid var(--myotex-gold);">
                         <h2 style="margin-bottom: 2rem;">Intervenção Biológica de <span class="highlight">Precisão</span></h2>
-                        <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--text-dim);">Desenvolvido pelo renomado fisiologista Luciano Ghilardi Nacco (Esquilo), o MYOTEX é mais do que um sistema de otimização; é a ciência de elite aplicada à sua biologia única.</p>
-                        <p style="font-size: 1.2rem; color: var(--text-dim);">Unimos a fisiologia de ponta às estratégias metabólicas mais modernas do mundo, utilizando protocolos de peptídeos exclusivos para quem busca o ápice da performance, recuperação acelerada e longevidade celular.</p>
+                        <p style="font-size: 1.1rem; margin-bottom: 2rem; color: var(--text-dim);">Desenvolvido pelo renomado fisiologista Luciano Ghilardi Nacco (Esquilo), o MYOTEX é mais do que um sistema de otimização; é a ciência de elite aplicada à sua biologia única.</p>
+                        <p style="font-size: 1.1rem; color: var(--text-dim);">Unimos a fisiologia de ponta às estratégias metabólicas mais modernas do mundo, utilizando protocolos de peptídeos exclusivos para quem busca o ápice da performance, recuperação acelerada e longevidade celular.</p>
                     </div>
                     <div class="text-center">
                         <div style="position: relative; display: inline-block;">
@@ -725,16 +729,18 @@
         <!-- CATCHY ARTICLE CTA -->
         <section class="section reveal">
             <div class="container">
-                <div class="glass-card catchy-article-cta" style="padding: 4rem; display: grid; grid-template-columns: 1fr 350px; gap: 4rem; align-items: center; border: 1px solid rgba(197, 160, 89, 0.3); background: linear-gradient(90deg, rgba(197, 160, 89, 0.05) 0%, transparent 100%);">
-                    <div>
-                        <h2 style="font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 1.5rem;">QUER SE APROFUNDAR NA CIÊNCIA?</h2>
-                        <p style="font-size: 1.1rem; color: var(--text-dim); line-height: 1.6;">Preparamos um material técnico exclusivo sobre a <strong>Revolução dos Peptídeos na Fisiologia do Exercício</strong>. Entenda como mTORC1, BPC-157 e sinalização celular estão mudando o jogo da performance humana.</p>
-                    </div>
-                    <div>
-                        <a href="/artigo-peptideos.html" class="btn btn-primary" style="width: 100%; min-height: 120px; display: flex; flex-direction: column; gap: 0.5rem; align-items: center; justify-content: center; text-align: center;">
-                            <span style="font-size: 0.7rem; letter-spacing: 0.1em; opacity: 0.8; text-transform: uppercase;">LEIA O ARTIGO NA ÍNTEGRA</span>
-                            <span style="font-size: 1.1rem; font-weight: 800;">CIÊNCIA DOS PEPTÍDEOS</span>
-                        </a>
+                <div class="glass-card catchy-article-cta" style="border: 1px solid rgba(197, 160, 89, 0.3); background: linear-gradient(90deg, rgba(197, 160, 89, 0.05) 0%, transparent 100%);">
+                    <div class="myotex-grid" style="grid-template-columns: 1fr 350px; gap: 4rem;">
+                        <div>
+                            <h2 style="font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 1.5rem;">QUER SE APROFUNDAR NA CIÊNCIA?</h2>
+                            <p style="font-size: 1.1rem; color: var(--text-dim); line-height: 1.6;">Preparamos um material técnico exclusivo sobre a <strong>Revolução dos Peptídeos na Fisiologia do Exercício</strong>. Entenda como mTORC1, BPC-157 e sinalização celular estão mudando o jogo da performance humana.</p>
+                        </div>
+                        <div>
+                            <a href="/artigo-peptideos.html" class="btn btn-primary" style="width: 100%; min-height: 120px; display: flex; flex-direction: column; gap: 0.5rem; align-items: center; justify-content: center; text-align: center;">
+                                <span style="font-size: 0.7rem; letter-spacing: 0.1em; opacity: 0.8; text-transform: uppercase;">LEIA O ARTIGO NA ÍNTEGRA</span>
+                                <span style="font-size: 1.1rem; font-weight: 800;">CIÊNCIA DOS PEPTÍDEOS</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
