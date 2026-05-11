@@ -3,8 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MYOTEX PROTOCOL | Human Performance & Longevity System</title>
-    <meta name="description" content="O MYOTEX é uma intervenção biológica de precisão desenvolvida pelo fisiologista Luciano Ghilardi Nacco (Esquilo). Programas premium de emagrecimento, performance e longevidade.">
+    <title>MYOTEX PROTOCOL | Protocolos de Peptídeos e Performance Humana</title>
+    <meta name="description" content="O MYOTEX PROTOCOL é um sistema exclusivo de emagrecimento estratégico e performance humana baseado em peptídeos e fisiologia de elite. Desenvolvido por Luciano Esquilo.">
+    
+    <!-- SEO Keywords -->
+    <meta name="keywords" content="protocolos de peptídeos, emagrecimento estratégico, performance humana, longevidade funcional, luciano esquilo, fisiologia do exercício, biohacking brasil">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.esquilopersonal.com/myotex-protocol.html">
+    <meta property="og:title" content="MYOTEX PROTOCOL | Ciência e Performance Humana">
+    <meta property="og:description" content="Intervenção biológica de precisão para emagrecimento e longevidade. O padrão ouro em protocolos de performance.">
+    <meta property="og:image" content="https://www.esquilopersonal.com/assets/images/apple-touch-icon.png">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "MYOTEX PROTOCOL",
+      "provider": {
+        "@type": "Person",
+        "name": "Luciano Ghilardi Nacco (Esquilo)"
+      },
+      "description": "Sistema de otimização metabólica e performance humana baseado em protocolos de peptídeos e fisiologia avançada.",
+      "serviceType": "Performance Humana & Emagrecimento Estratégico",
+      "areaServed": "Brazil",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "2500",
+        "highPrice": "6500",
+        "priceCurrency": "BRL"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Níveis Myotex",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "MYOTEX CORE"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "MYOTEX ELITE"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "MYOTEX SIGNATURE"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quanto tempo dura um ciclo do sistema MYOTEX?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A duração varia entre 10 (Core), 16 (Elite) e 24 semanas (Signature)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que diferencia o Myotex de outros protocolos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O diferencial é o Advanced Regenerative Performance System, que une tecnologia de peptídeos à fisiologia clínica e monitoramento de biomarcadores."
+          }
+        }
+      ]
+    }
+    </script>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/assets/images/apple-touch-icon.png">
@@ -188,8 +272,64 @@
 
         .phases-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(5, 1fr);
             gap: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .phases-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .phases-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-question {
+            border-bottom: none;
+            background: rgba(197, 160, 89, 0.05);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            background: rgba(197, 160, 89, 0.03);
+            border: 1px solid var(--border);
+            border-top: none;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            padding: 0 2.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 2.5rem 2.5rem 2.5rem;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+            color: var(--myotex-gold);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
         }
 
         .phase-item {
@@ -338,7 +478,7 @@
                     <div class="text-center">
                         <div style="position: relative; display: inline-block;">
                             <div style="position: absolute; inset: -20px; border: 1px solid var(--myotex-gold); opacity: 0.2;"></div>
-                            <img src="/assets/images/apple-touch-icon.png" alt="Selo Myotex" style="width: 200px; filter: grayscale(1) brightness(2);">
+                            <img src="/assets/images/apple-touch-icon.png" alt="Selo Myotex" style="width: 200px; filter: invert(89%) sepia(85%) saturate(1067%) hue-rotate(18deg) brightness(105%) contrast(104%) drop-shadow(0 0 15px var(--primary));">
                             <p style="margin-top: 2rem; font-family: var(--font-display); letter-spacing: 0.3em; color: var(--myotex-gold);">SELO DE QUALIDADE</p>
                         </div>
                     </div>
@@ -563,30 +703,60 @@
                     <p>Esclareça suas dúvidas sobre o ecossistema MYOTEX.</p>
                 </div>
                 
-                <div style="display: grid; gap: 1.5rem; max-width: 900px; margin: 0 auto;">
-                    <div class="glass-card" style="padding: 2.5rem;">
-                        <h3 style="color: var(--myotex-gold); margin-bottom: 1rem; font-size: 1.5rem;">Quanto tempo dura um ciclo do sistema MYOTEX?</h3>
-                        <p style="color: var(--text-dim); line-height: 1.6;">A duração varia de acordo com o nível de otimização escolhido: o CORE tem duração de 10 semanas, o ELITE de 16 semanas e o SIGNATURE de 24 semanas. Para quem busca manutenção vitalícia, oferecemos o programa anual BLACK.</p>
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3 style="color: var(--myotex-gold); font-size: 1.3rem; margin: 0;">Quanto tempo dura um ciclo do sistema MYOTEX?</h3>
+                            <i data-lucide="chevron-down" class="faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p style="color: var(--text-dim); line-height: 1.6; margin-top: 1rem;">A duração varia de acordo com o nível de otimização escolhido: o CORE tem duração de 10 semanas, o ELITE de 16 semanas e o SIGNATURE de 24 semanas. Para quem busca manutenção vitalícia, oferecemos o programa anual BLACK.</p>
+                        </div>
                     </div>
 
-                    <div class="glass-card" style="padding: 2.5rem;">
-                        <h3 style="color: var(--myotex-gold); margin-bottom: 1rem; font-size: 1.5rem;">Como o MYOTEX organiza o uso de peptídeos?</h3>
-                        <p style="color: var(--text-dim); line-height: 1.6;">O sistema entrega uma organização técnica rigorosa, incluindo a definição de dosagens baseada na sua biologia, uma tabela de conversão precisa para as aplicações e um guia de horários estratégicos para garantir a máxima biodisponibilidade e segurança.</p>
+                    <!-- FAQ 2 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3 style="color: var(--myotex-gold); font-size: 1.3rem; margin: 0;">Como o MYOTEX organiza o uso de peptídeos?</h3>
+                            <i data-lucide="chevron-down" class="faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p style="color: var(--text-dim); line-height: 1.6; margin-top: 1rem;">O sistema entrega uma organização técnica rigorosa, incluindo a definição de dosagens baseada na sua biologia, uma tabela de conversão precisa para as aplicações e um guia de horários estratégicos para garantir a máxima biodisponibilidade e segurança.</p>
+                        </div>
                     </div>
 
-                    <div class="glass-card" style="padding: 2.5rem;">
-                        <h3 style="color: var(--myotex-gold); margin-bottom: 1rem; font-size: 1.5rem;">O sistema inclui acompanhamento nutricional e de treino?</h3>
-                        <p style="color: var(--text-dim); line-height: 1.6;">Sim. Todos os níveis do MYOTEX são sistemas integrados. Entendemos que os peptídeos são potencializadores, mas a base do resultado sólido vem da periodização de treino de elite e do planejamento nutricional estratégico que acompanham o protocolo.</p>
+                    <!-- FAQ 3 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3 style="color: var(--myotex-gold); font-size: 1.3rem; margin: 0;">O sistema inclui acompanhamento nutricional e de treino?</h3>
+                            <i data-lucide="chevron-down" class="faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p style="color: var(--text-dim); line-height: 1.6; margin-top: 1rem;">Sim. Todos os níveis do MYOTEX são sistemas integrados. Entendemos que os peptídeos são potencializadores, mas a base do resultado sólido vem da periodização de treino de elite e do planejamento nutricional estratégico que acompanham o protocolo.</p>
+                        </div>
                     </div>
 
-                    <div class="glass-card" style="padding: 2.5rem;">
-                        <h3 style="color: var(--myotex-gold); margin-bottom: 1rem; font-size: 1.5rem;">Como são feitos os ajustes fisiológicos durante o programa?</h3>
-                        <p style="color: var(--text-dim); line-height: 1.6;">Através de monitoramento contínuo via WhatsApp e reavaliações estratégicas. No nível ELITE e superiores, os ajustes são ainda mais finos, baseados na evolução real dos seus biomarcadores e composição corporal ao longo das semanas.</p>
+                    <!-- FAQ 4 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3 style="color: var(--myotex-gold); font-size: 1.3rem; margin: 0;">Como são feitos os ajustes fisiológicos durante o programa?</h3>
+                            <i data-lucide="chevron-down" class="faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p style="color: var(--text-dim); line-height: 1.6; margin-top: 1rem;">Através de monitoramento contínuo via WhatsApp e reavaliações estratégicas. No nível ELITE e superiores, os ajustes são ainda mais finos, baseados na evolução real dos seus biomarcadores e composição corporal ao longo das semanas.</p>
+                        </div>
                     </div>
 
-                    <div class="glass-card" style="padding: 2.5rem;">
-                        <h3 style="color: var(--myotex-gold); margin-bottom: 1rem; font-size: 1.5rem;">Qual o diferencial do Advanced Regenerative Performance System?</h3>
-                        <p style="color: var(--text-dim); line-height: 1.6;">Diferente de fórmulas genéricas, este é um ecossistema desenvolvido pelo Luciano Esquilo que une tecnologias regenerativas à fisiologia clínica. O foco não é apenas estética, mas a otimização mitocondrial, recuperação sistêmica e longevidade funcional.</p>
+                    <!-- FAQ 5 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3 style="color: var(--myotex-gold); font-size: 1.3rem; margin: 0;">Qual o diferencial do Advanced Regenerative Performance System?</h3>
+                            <i data-lucide="chevron-down" class="faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p style="color: var(--text-dim); line-height: 1.6; margin-top: 1rem;">Diferente de fórmulas genéricas, este é um ecossistema desenvolvido pelo Luciano Esquilo que une tecnologias regenerativas à fisiologia clínica. O foco não é apenas estética, mas a otimização mitocondrial, recuperação sistêmica e longevidade funcional.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -657,8 +827,24 @@
 
     <script type="module" src="/main.js"></script>
     <script>
-        // Initialize Lucide icons (already done in main.js, but safe to keep or remove)
+        // Initialize Lucide icons
         lucide.createIcons();
+
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(other => {
+                    other.classList.remove('active');
+                });
+                
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
     </script>
 </body>
 </html>
