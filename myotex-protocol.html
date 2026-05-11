@@ -143,6 +143,42 @@
             z-index: 1;
         }
 
+        .myotex-cta-block {
+            background: linear-gradient(135deg, var(--myotex-gold) 0%, #a68444 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 6rem auto;
+            max-width: 900px;
+            color: #000;
+        }
+
+        /* --- MOBILE OVERRIDES --- */
+        @media (max-width: 768px) {
+            .article-title { font-size: clamp(2rem, 8vw, 3rem) !important; }
+            .myotex-title { font-size: clamp(3rem, 12vw, 5rem) !important; }
+            .glass-card { 
+                grid-template-columns: 1fr !important; 
+                padding: 2.5rem 1.5rem !important; 
+                gap: 2rem !important;
+            }
+            .section { padding: 4rem 1.5rem !important; }
+            .hero-content h1 { font-size: clamp(2.5rem, 10vw, 4rem) !important; }
+            .myotex-cta-block h3 { font-size: 1.8rem !important; }
+            .author-box { flex-direction: column !important; text-align: center !important; }
+            .social-reveal-grid { padding: 0 1rem; }
+            
+            /* Fix for the giant gold button clipping issues */
+            .btn-primary, .btn-outline { 
+                width: 100% !important; 
+                padding: 1.5rem !important; 
+                font-size: 0.9rem !important;
+            }
+            
+            .container { padding: 0 1.5rem !important; }
+            h2 { font-size: clamp(1.8rem, 8vw, 2.5rem) !important; line-height: 1.1 !important; }
+            p { font-size: 1rem !important; }
+        }
+
         .myotex-badge {
             display: inline-block;
             padding: 0.5rem 1.5rem;
@@ -155,15 +191,6 @@
             font-size: 0.9rem;
             margin-bottom: 2rem;
             backdrop-filter: blur(10px);
-        }
-
-        .myotex-cta-block {
-            background: linear-gradient(135deg, var(--myotex-gold) 0%, #a68444 100%);
-            padding: 4rem;
-            text-align: center;
-            margin: 6rem auto;
-            max-width: 900px;
-            color: #000;
         }
 
         .myotex-cta-block h3 {
@@ -698,16 +725,15 @@
         <!-- CATCHY ARTICLE CTA -->
         <section class="section reveal">
             <div class="container">
-                <div class="glass-card" style="padding: 4rem; display: grid; grid-template-columns: 1fr 350px; gap: 4rem; align-items: center; border: 1px solid rgba(197, 160, 89, 0.3); background: linear-gradient(90deg, rgba(197, 160, 89, 0.05) 0%, transparent 100%);">
+                <div class="glass-card catchy-article-cta" style="padding: 4rem; display: grid; grid-template-columns: 1fr 350px; gap: 4rem; align-items: center; border: 1px solid rgba(197, 160, 89, 0.3); background: linear-gradient(90deg, rgba(197, 160, 89, 0.05) 0%, transparent 100%);">
                     <div>
-                        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">QUER SE APROFUNDAR NA CIÊNCIA?</h2>
+                        <h2 style="font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 1.5rem;">QUER SE APROFUNDAR NA CIÊNCIA?</h2>
                         <p style="font-size: 1.1rem; color: var(--text-dim); line-height: 1.6;">Preparamos um material técnico exclusivo sobre a <strong>Revolução dos Peptídeos na Fisiologia do Exercício</strong>. Entenda como mTORC1, BPC-157 e sinalização celular estão mudando o jogo da performance humana.</p>
                     </div>
                     <div>
-                        <a href="/artigo-peptideos.html" class="btn btn-primary" style="width: 100%; padding: 2rem; display: flex; flex-direction: column; gap: 0.5rem; align-items: center; text-align: center;">
-                            <span style="font-size: 0.8rem; letter-spacing: 0.1em; opacity: 0.8;">LEIA O ARTIGO NA ÍNTEGRA</span>
-                            <span style="font-size: 1.2rem;">CIÊNCIA DOS PEPTÍDEOS</span>
-                            <i data-lucide="arrow-right"></i>
+                        <a href="/artigo-peptideos.html" class="btn btn-primary" style="width: 100%; min-height: 120px; display: flex; flex-direction: column; gap: 0.5rem; align-items: center; justify-content: center; text-align: center;">
+                            <span style="font-size: 0.7rem; letter-spacing: 0.1em; opacity: 0.8; text-transform: uppercase;">LEIA O ARTIGO NA ÍNTEGRA</span>
+                            <span style="font-size: 1.1rem; font-weight: 800;">CIÊNCIA DOS PEPTÍDEOS</span>
                         </a>
                     </div>
                 </div>
@@ -799,11 +825,11 @@
         <section class="section reveal">
             <div class="container">
                 <div class="glass-card text-center" style="padding: 6rem; background: radial-gradient(circle at center, rgba(197, 160, 89, 0.1), transparent); border: 1px solid var(--myotex-gold);">
-                    <h2 class="text-gradient" style="font-size: 3.5rem; margin-bottom: 2.5rem;">REPROGRAME SUA BIOLOGIA</h2>
-                    <p style="font-size: 1.4rem; color: var(--text-dim); margin-bottom: 4rem; max-width: 800px; margin: 0 auto 4rem;">O próximo nível da sua performance humana e longevidade começa agora.</p>
-                    <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
-                        <a href="https://wa.me/5548999229071?text=Olá!+Gostaria+de+uma+avaliação+para+o+sistema+Myotex" class="btn btn-primary btn-lg">FALAR COM O ESQUILO NO WHATSAPP</a>
-                        <a href="/contato.html" class="btn btn-outline btn-lg">SOLICITAR CONSULTA</a>
+                    <h2 class="text-gradient" style="font-size: clamp(2rem, 8vw, 3.5rem); margin-bottom: 2.5rem;">REPROGRAME SUA BIOLOGIA</h2>
+                    <p style="font-size: clamp(1rem, 4vw, 1.4rem); color: var(--text-dim); margin-bottom: 4rem; max-width: 800px; margin: 0 auto 4rem;">O próximo nível da sua performance humana e longevidade começa agora.</p>
+                    <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://wa.me/5548999229071?text=Olá!+Gostaria+de+uma+avaliação+para+o+sistema+Myotex" class="btn btn-primary btn-lg" style="flex: 1; min-width: 280px;">FALAR COM O ESQUILO NO WHATSAPP</a>
+                        <a href="/contato.html" class="btn btn-outline btn-lg" style="flex: 1; min-width: 280px;">SOLICITAR CONSULTA</a>
                     </div>
                 </div>
             </div>

@@ -53,16 +53,44 @@
             border: 1px solid var(--primary);
         }
 
-        .article-body h2 {
-            color: #fff;
-            font-size: 2.2rem;
-            margin: 4rem 0 2rem;
-            border-left: 4px solid var(--primary);
-            padding-left: 1.5rem;
+        .article-body h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary);
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .article-content { padding: 8rem 1.5rem 4rem; }
+            .article-title { font-size: clamp(1.8rem, 8vw, 3rem) !important; margin: 1rem 0; line-height: 1.1; }
+            .article-header { margin-bottom: 3rem; }
+            .author-box { 
+                flex-direction: column !important; 
+                text-align: center !important; 
+                padding: 2rem 1.5rem !important;
+                margin-top: 4rem !important;
+            }
+            .author-img { margin-bottom: 1.5rem; margin-right: 0 !important; }
+            .article-body h2 { font-size: clamp(1.4rem, 6vw, 1.8rem) !important; padding-left: 1rem; }
+            .social-reveal-grid { padding: 0 1rem; }
+            .btn-sm { width: 100%; margin-bottom: 1rem; }
+            footer#contato { padding: 4rem 1rem !important; }
         }
 
         .article-body p {
             margin-bottom: 2rem;
+        }
+
+        .article-body h2 {
+            position: relative;
+            color: #fff;
+            font-size: 2.2rem;
+            margin: 4rem 0 2rem;
+            padding-left: 1.5rem;
         }
 
         .article-body strong {
@@ -183,14 +211,11 @@
                     <p style="margin-bottom: 2.5rem; font-size: 1.2rem;">O acompanhamento bioquímico rigoroso e o respeito às normativas éticas são a bússola de qualquer prescrição de alta performance.</p>
                     <a href="/myotex-protocol.html" class="btn btn-primary btn-lg">CONHECER O ECOSSISTEMA MYOTEX</a>
                 </div>
-            </div>
-
-            <footer class="article-footer">
-                <div class="author-box">
+                <div class="author-box" style="display: flex; align-items: center; gap: 2rem; padding: 3rem; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); margin-top: 6rem;">
                     <img src="/assets/images/esquilo-profile.jpg" alt="Luciano Esquilo" class="author-img">
                     <div>
                         <h4 style="color: #fff; margin-bottom: 0.5rem;">Luciano Ghilardi Nacco (Esquilo)</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-dim); margin: 0;">Fisiologista do Exercício com especialização em Performance Humana e Biologia Molecular Aplicada. Arquiteto do Myotex System.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-dim); margin: 0; line-height: 1.5;">Fisiologista do Exercício com especialização em Performance Humana e Biologia Molecular Aplicada. Arquiteto do Myotex System.</p>
                     </div>
                 </div>
                 <div style="display: flex; gap: 2rem; justify-content: center; margin-top: 4rem;">
