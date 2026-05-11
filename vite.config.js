@@ -23,6 +23,7 @@ export default defineConfig({
         protocolo_claudevanir: resolve(__dirname, 'protocolo-claudevanir.html'),
         protocolo_caio: resolve(__dirname, 'protocolo-caio.html'),
         myotex_protocol: resolve(__dirname, 'myotex-protocol.html'),
+        artigo_peptideos: resolve(__dirname, 'artigo-peptideos.html'),
       },
     },
   },
