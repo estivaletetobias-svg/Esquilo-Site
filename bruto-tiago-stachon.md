@@ -57,7 +57,20 @@ O objetivo **NÃO** é subir a dose rapidamente, mas sim manter o máximo de res
 | **Fase 3 (Otimização)** | 4 mg | 12 | 4 | 16 mg |
 | **Fase 4 (Estabilização)**| 0,5 mg | 1–2 | 4 | 2 mg |
 
-> **Nota:** Se optar por manter 3 mg na Fase 3, utilize 1 mg na Fase 4. Mesmo sem desmame formal, a redução leve final melhora a estabilidade metabólica, reduz o rebote de apetite e melhora a transição pós-protocolo.
+### Detalhamento das Fases:
+
+#### FASE 1: ADAPTAÇÃO METABÓLICA
+**Objetivos:** Adaptação gastrointestinal, melhora gradual da saciedade, controle inicial da fome, estabilização glicêmica e melhora da tolerabilidade metabólica.
+**Benefícios da Adaptação Lenta:** Redução de náuseas, melhora da adesão, redução de desconfortos gastrointestinais, garantia de continuidade do protocolo e preservação da sensibilidade incretínica.
+
+#### FASE 2: CONSOLIDAÇÃO METABÓLICA
+**Objetivos:** Intensificar a redução de gordura, melhorar o controle do apetite, aumentar a eficiência metabólica, melhorar a sensibilidade à insulina e preservar a massa muscular.
+
+#### FASE 3: OTIMIZAÇÃO METABÓLICA
+**Objetivos:** Maximizar a mobilização de gordura, melhorar a estabilidade metabólica, aumentar o controle da fome, consolidar a composição corporal e melhorar a resposta metabólica final.
+
+#### FASE 4: ESTABILIZAÇÃO (FIM DA CANETA)
+**Objetivos:** Mesmo sem desmame formal, a redução leve final melhora a estabilidade metabólica, reduz o rebote de apetite e garante uma transição suave pós-protocolo.
 
 ---
 
@@ -116,7 +129,7 @@ O objetivo **NÃO** é subir a dose rapidamente, mas sim manter o máximo de res
 - **Opção 2:** Patinho moído + purê de batata + salada.
 - **Opção 3:** Peixe + arroz integral + legumes.
 
-### REFEIÇÃO 4: Lanche / Pós-Treino
+### REFEIÇÃO 3: Lanche / Pós-Treino
 - **Opção 1:** Whey + banana + aveia.
 - **Opção 2:** Iogurte grego + frutas vermelhas.
 - **Opção 3:** Tapioca + ovos mexidos.
