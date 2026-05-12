@@ -4,6 +4,7 @@
 ---
 
 ## APRESENTAÇÃO
+
 Protocolo estruturado para **TIAGO STACHON**, previamente adaptado ao uso de agonistas incretínicos, especialmente após utilização prévia de Mounjaro.
 
 A estratégia foi desenvolvida para:
@@ -20,19 +21,19 @@ A estratégia foi desenvolvida para:
 
 ## ANÁLISE DA CANETA
 
+Informações identificadas:
 - **Volume total:** 3 ml
 - **Conteúdo total:** 40 mg
 - **Informação da embalagem:** "4 doses de 10 mg"
 
 ---
 
-## CONVERSÃO ESTRATÉGICA (CLIQUES)
+## CONVERSÃO ESTRATÉGICA DA CANETA
 
-- **Referência:** 1 mg ≈ 3 cliques (estimado)
+Conversão prática estimada:
+> **1 mg ≈ 3 cliques**
 
-> *Os cliques podem variar conforme o mecanismo específico da caneta. Esta é uma referência prática para organização do protocolo.*
-
-### Tabela de Referência de Cliques:
+### Referência de Cliques:
 
 | Dose | Cliques Aproximados |
 | :--- | :--- |
@@ -43,46 +44,34 @@ A estratégia foi desenvolvida para:
 | 4 mg | 12 cliques |
 | 5 mg | 15 cliques |
 
+> *Os cliques podem variar conforme o mecanismo específico da caneta. A conversão acima foi estruturada como referência prática para facilitar entendimento e organização do protocolo.*
+
 ---
 
-## PRINCÍPIO FUNDAMENTAL: MENOR DOSE EFICAZ
+## PRINCÍPIO FUNDAMENTAL — MENOR DOSE EFICAZ
 
-O objetivo **NÃO** é subir a dose rapidamente, mas sim manter o máximo de resultado com a **menor dose necessária**.
+O objetivo **NÃO** é subir dose rapidamente.  
+O objetivo é: **manter o máximo de resultado com a menor dose necessária.**
 
-A estratégia metabólica mais eficiente normalmente não é utilizar doses agressivas rapidamente, mas sim manter evolução consistente utilizando a menor dose necessária para continuar produzindo resultados.
+### Regra Mais Importante (MANDATÓRIA):
 
-### Regra de Ouro (MANDATÓRIA):
 - **SE ESTIVER TENDO RESULTADOS COM 2,5 MG:** NÃO HÁ NECESSIDADE DE SUBIR.
 - **SE 3 MG ESTIVER FUNCIONANDO:** NÃO HÁ NECESSIDADE DE IR PARA 4 MG.
 
 **Subir apenas se:**
-1. Houver estagnação comprovada de peso/composição corporal.
-2. Retorno importante da fome e compulsão.
-3. Redução significativa da saciedade.
-4. Adaptação metabólica evidente (platô prolongado).
+- houver estagnação;
+- retorno importante da fome;
+- redução da saciedade;
+- adaptação metabólica evidente.
 
 ---
 
-## ESTRUTURA DO PROTOCOLO (16 SEMANAS)
-
-### Tabela Master de Utilização Final Ajustada:
-
-| Fase | Dose | Cliques | Semanas | Total Fase |
-| :--- | :--- | :--- | :--- | :--- |
-| **Fase 1 — Adaptação Metabólica** | 2,5 mg | 7–8 | Sem 1–4 | 10 mg |
-| **Fase 2 — Consolidação Metabólica** | 3,0 mg | 9 | Sem 5–8 | 12 mg |
-| **Fase 3 — Otimização Metabólica** | 4,0 mg | 12 | Sem 9–13 | 16 mg* |
-| **Fase 4 — Estabilização Final** | 0,5 mg | 1–2 | Sem 14–16 | 2 mg |
-
-> **Obs.:** Se optar por manter **3mg na Fase 3**, utilizar **1mg na Fase 4** para fechar os 40mg da caneta.  
-> *A Fase 3 de 4mg dura 4 semanas (9-12), com redução para desmame na semana 13. Se mantiver 3mg, ajustar conforme consumo total.*
+## ESTRUTURA DO PROTOCOLO — 16 SEMANAS
 
 ---
 
-### Detalhamento Clínico das Fases:
-
-#### FASE 1 — ADAPTAÇÃO METABÓLICA (Semanas 1–4)
-**Dose:** 2,5 mg/semana | **Cliques:** 7–8 | **Total utilizado:** 10 mg
+### FASE 1 — ADAPTAÇÃO METABÓLICA
+**Semanas 1–4 | Dose: 2,5 mg/semana | Cliques: 7–8 | Total: 10 mg**
 
 **Objetivos:**
 - adaptação gastrointestinal;
@@ -101,8 +90,8 @@ A utilização inicial de 2,5 mg:
 
 ---
 
-#### FASE 2 — CONSOLIDAÇÃO METABÓLICA (Semanas 5–8)
-**Dose:** 3,0 mg/semana | **Cliques:** 9 | **Total:** 12 mg
+### FASE 2 — CONSOLIDAÇÃO METABÓLICA
+**Semanas 5–8 | Dose: 3 mg/semana | Cliques: 9 | Total: 12 mg**
 
 **Objetivos:**
 - intensificar redução de gordura;
@@ -113,21 +102,53 @@ A utilização inicial de 2,5 mg:
 
 ---
 
-#### FASE 3 — OTIMIZAÇÃO METABÓLICA (Semanas 9–13)
-**Dose:** 4,0 mg/semana | **Cliques:** 12 | **Total:** 16 mg
+### FASE 3 — OTIMIZAÇÃO METABÓLICA
+**Semanas 9–13 | Dose: 4 mg/semana | Cliques: 12**
 
 **Objetivos:**
 - maximizar mobilização de gordura;
-- aumentar termogênese endógena;
 - melhorar estabilidade metabólica;
-- intensificar controle da fome e saciedade;
+- aumentar controle da fome;
 - consolidar composição corporal;
 - melhorar resposta metabólica final.
 
+**⚠️ Observação Importante:**  
+A progressão para 4 mg deve ocorrer **SOMENTE se:**
+- houver necessidade clínica;
+- redução da resposta;
+- retorno significativo da fome;
+- estagnação evidente.
+
 ---
 
-#### FASE 4 — ESTABILIZAÇÃO FINAL (Semanas 14–16)
-**Dose:** 0,5 mg/semana | **Cliques:** 1–2 | **Total:** 2 mg
+## AJUSTE FINAL PARA UTILIZAÇÃO DA CANETA
+
+Como a caneta possui **40 mg totais**, para manter:
+- 16 semanas completas;
+- progressão até 4 mg;
+- utilização otimizada.
+
+A estratégia mais eficiente é:
+
+### Ajuste Recomendado:
+
+| Semanas | Dose | Cliques |
+| :--- | :--- | :--- |
+| Semanas 9–12 | 4 mg/semana | 12 cliques |
+| Semanas 13–16 | 3 mg/semana | 9 cliques |
+
+---
+
+### Utilização Final Ajustada:
+
+| Fase | Dose | Cliques | Semanas | Total |
+| :--- | :--- | :--- | :--- | :--- |
+| **Fase 1** | 2,5 mg | 7–8 | 4 | 10 mg |
+| **Fase 2** | 3 mg | 9 | 4 | 12 mg |
+| **Fase 3** | 4 mg | 12 | 4 | 16 mg |
+| **Fase 4** | 0,5 mg | 1–2 | 4 | 2 mg |
+
+> **Obs.:** Se estiver usando 3mg na Fase 3, na Fase 4 usar 1mg.
 
 **Observação Importante:**  
 Mesmo sem desmame formal:
@@ -137,96 +158,111 @@ Mesmo sem desmame formal:
 
 ---
 
-## LOCAL E TÉCNICA DE APLICAÇÃO
+## LOCAL DE APLICAÇÃO
 
-### Região Abdominal (Preferencial)
-- Aplicar a **2–4 dedos** de distância do umbigo.
-- Evitar áreas inflamadas, com cicatrizes ou lipodistrofia prévia.
-- **Rodízio Obrigatório:** Nunca repetir o mesmo ponto consecutivamente.
+### Região Abdominal
 
-### Cronograma de Rodízio Obrigatório:
+Aplicar:
+- 2–4 dedos afastados do umbigo;
+- evitar áreas inflamadas;
+- evitar repetir o mesmo ponto consecutivamente.
+
+### Rodízio Obrigatório:
 
 | Semana | Local |
 | :--- | :--- |
-| Semana 1 | Abdômen superior direito |
-| Semana 2 | Abdômen superior esquerdo |
-| Semana 3 | Abdômen inferior direito |
-| Semana 4 | Abdômen inferior esquerdo |
+| 1 | Abdômen superior direito |
+| 2 | Abdômen superior esquerdo |
+| 3 | Abdômen inferior direito |
+| 4 | Abdômen inferior esquerdo |
 
-*Repetir o ciclo continuamente ao longo das 16 semanas.*
+*Repetir continuamente.*
 
 ---
 
 ## ESTRATÉGIA NUTRICIONAL
 
 ### Proteína
-**Meta:** 2,0 g/kg de peso corporal/dia
+**2,0 g/kg de peso corporal/dia**
 
-**Objetivos:**
+Objetivos:
 - preservar massa muscular;
 - melhorar saciedade;
 - melhorar recuperação muscular;
 - reduzir catabolismo.
 
 ### Carboidratos
-**Priorizar:**
-- arroz, batata, aveia, frutas, legumes, inhame, mandioca.
 
-**Evitar ou reduzir ao máximo:**
-- farinhas refinadas, pão branco, frituras, açúcar, ultraprocessados, refrigerantes.
+Priorizar:
+- arroz;
+- batata;
+- aveia;
+- frutas;
+- legumes;
+- vegetais fibrosos.
 
-### Gorduras
-**Foco em gorduras boas:**
-- azeite de oliva, ovos, peixes gordurosos (salmão, sardinha), castanhas, nozes, sementes, abacate.
+Maior ingestão:
+- pré e pós-treino.
+
+### Gorduras Boas
+
+Priorizar:
+- azeite;
+- ovos;
+- peixes;
+- castanhas;
+- abacate.
 
 ### Hidratação
-- **Meta:** 35–45 ml/kg de peso corporal/dia.
-- *Exemplo (100 kg): 3,5 a 4,5 litros/dia.*
-- Aumentar ingesta hídrica em dias de treino e cardio, especialmente com uso de Psyllium.
+
+**35–45 ml/kg/dia**
+
+Exemplo (100 kg):
+- 3,5–4,5 litros/dia.
 
 ---
 
-## SUPLEMENTAÇÃO (VITAMINAS E MINERAIS)
+## VITAMINAS E MINERAIS
 
 | Nutriente | Dose | Horário | Objetivo |
 | :--- | :--- | :--- | :--- |
-| Vitamina D3 | 5.000 UI | Café da Manhã | Suporte hormonal e imunológico |
-| Magnésio Glicina | 300–400 mg | Antes de dormir | Sono profundo e recuperação muscular |
-| Zinco Quelado | 25 mg | Jantar | Suporte hormonal e imunológico |
-| Ômega-3 | 2–3 g | Almoço/Jantar | Ação anti-inflamatória e cardiovascular |
-| Complexo B | 1 cápsula | Café da Manhã | Metabolismo energético e neurológico |
-| Psyllium | 5 g | Antes das refeições | Saciedade e saúde intestinal |
-| Eletrólitos | Conforme necessidade | Durante treino/cardio | Hidratação e performance |
+| Vitamina D | 5.000 UI | Café da manhã | Suporte hormonal |
+| Magnésio Glicina | 300–400 mg | Antes de dormir | Sono e recuperação |
+| Zinco | 25 mg | Jantar | Suporte hormonal |
+| Ômega-3 | 2–3 g | Almoço/Jantar | Ação anti-inflamatória |
+| Complexo B | 1 cápsula | Manhã | Metabolismo energético |
+| Psyllium | 5 g | Antes das refeições | Saciedade e intestino |
+| Eletrólitos | Conforme necessidade | Treino/Cardio | Hidratação |
 
 ---
 
-## SUGESTÃO ALIMENTAR (4 REFEIÇÕES/DIA)
+## SUGESTÃO ALIMENTAR — 4 REFEIÇÕES
 
 ### REFEIÇÃO 1 — Café da Manhã
-- **Opção 1:** 4 ovos mexidos + 80g aveia + 1 banana.
-- **Opção 2:** Whey Protein + pão integral + pasta de amendoim.
-- **Opção 3:** Omelete + batata-doce + kiwi.
+- **Opção 1:** 4 ovos + 80g aveia + banana
+- **Opção 2:** whey protein + pão integral + pasta de amendoim
+- **Opção 3:** omelete + batata-doce + kiwi
 
 ### REFEIÇÃO 2 — Almoço
-- **Opção 1:** 200g frango grelhado + arroz + legumes + azeite.
-- **Opção 2:** Patinho moído + purê de batata + salada verde.
-- **Opção 3:** Peixe assado + arroz integral + legumes refogados.
+- **Opção 1:** 200g frango + arroz + legumes + azeite
+- **Opção 2:** patinho + purê de batata + salada
+- **Opção 3:** peixe + arroz integral + legumes
 
 ### REFEIÇÃO 3 — Lanche / Pós-Treino
-- **Opção 1:** Whey Protein + banana + aveia.
-- **Opção 2:** Iogurte grego natural + frutas vermelhas.
-- **Opção 3:** Tapioca + ovos mexidos.
+- **Opção 1:** whey + banana + aveia
+- **Opção 2:** iogurte grego + frutas vermelhas
+- **Opção 3:** tapioca + ovos mexidos
 
 ### REFEIÇÃO 4 — Jantar
-- **Opção 1:** Frango grelhado + legumes no vapor + azeite.
-- **Opção 2:** Omelete + vegetais salteados + abacate.
-- **Opção 3:** Peixe + legumes salteados no azeite.
+- **Opção 1:** frango + legumes + azeite
+- **Opção 2:** omelete + vegetais + abacate
+- **Opção 3:** peixe + legumes salteados
 
 ---
 
 ## SONO E RECUPERAÇÃO
 
-**Objetivo:** 7–9 horas por noite.
+**Objetivo:** 7–9 horas/noite
 
 O sono adequado melhora:
 - sensibilidade à insulina;
