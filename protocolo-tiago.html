@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <title>Protocolo Premium — Tiago Stachon</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --primary: #CCFF00;
+            --accent: #FF4444; 
+            --safe: #00FF88;   
+            --flash: #FFEA00;  
+            --bg: #0B0C0E;
+            --surface: #16171B;
+            --border: #2B2C31;
+            --text-main: #FFFFFF;
+            --text-secondary: #949499;
+            --font-main: 'Inter', sans-serif;
+            --font-display: 'Anton', sans-serif;
+            --sidebar-width: 280px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg); color: var(--text-main); font-family: var(--font-main); min-height: 100vh; line-height: 1.6; overflow-x: hidden; }
+
+        .sidebar { width: var(--sidebar-width); background: var(--bg); border-right: 1px solid var(--border); height: 100vh; position: fixed; padding: 2.5rem 1.5rem; display: flex; flex-direction: column; z-index: 1000; overflow-y: auto; transition: 0.3s; }
+        .logo img { height: 45px; filter: brightness(1.8); width: auto; object-fit: contain; }
+        
+        .nav-group { margin-bottom: 2rem; }
+        .nav-label { font-size: 0.6rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 2px; margin-bottom: 1rem; display: block; font-weight: 800; }
+        .nav-item { display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem 1rem; color: var(--text-secondary); text-decoration: none; font-size: 0.82rem; font-weight: 600; border-radius: 8px; margin-bottom: 0.3rem; transition: 0.2s; cursor: pointer; }
+        .nav-item:hover { background: var(--surface); color: var(--text-main); }
+        .nav-item.active { background: var(--primary) !important; color: #000 !important; }
+        .nav-item.active i { color: #000 !important; }
+
+        .main-content { margin-left: var(--sidebar-width); padding-top: 80px; min-height: 100vh; }
+        .content-section { display: none; padding: 4rem; max-width: 1100px; margin: 0 auto; }
+        .content-section.active { display: block; animation: fadeIn 0.4s ease; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+        .sec-header { margin-bottom: 4rem; border-left: 6px solid var(--primary); padding-left: 2.5rem; position: relative; }
+        .sec-header h1 { font-family: var(--font-display); font-size: 4rem; text-transform: uppercase; letter-spacing: -1px; line-height: 0.9; margin: 0; }
+        .sec-header p { color: var(--text-secondary); margin-top: 1.2rem; font-size: 1.2rem; font-weight: 500; }
+
+        .data-card { background: rgba(22, 23, 27, 0.7); backdrop-filter: blur(10px); border: 1px solid var(--border); padding: 2.5rem; border-radius: 24px; margin-bottom: 2rem; transition: 0.3s; position: relative; overflow: hidden; }
+        .card-title { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; color: var(--primary); font-weight: 900; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .tech-table { width: 100%; border-collapse: separate; border-spacing: 0; color: #FFF; }
+        .tech-table th, .tech-table td { padding: 1.2rem 1rem; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .tech-table th { font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; font-weight: 800; letter-spacing: 1.5px; }
+        
+        .highlight-box { background: rgba(204,255,0,0.03); border-left: 4px solid var(--primary); padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+        .highlight-box strong { color: var(--primary); display: block; margin-bottom: 0.5rem; font-size: 0.8rem; text-transform: uppercase; }
+
+        .workout-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .workout-item { padding: 1.5rem; border-radius: 16px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); }
+        .workout-item h4 { color: var(--primary); margin-bottom: 1rem; font-size: 0.85rem; text-transform: uppercase; font-weight: 900; }
+        
+        .exercise-list { list-style: none; }
+        .exercise-list li { margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem; font-size: 0.95rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.03); }
+        .exercise-list li:last-child { border-bottom: none; }
+        .exercise-list li i { color: var(--primary); flex-shrink: 0; width: 16px; }
+
+        .top-status { position: fixed; top: 0; left: 0; width: 100%; background: var(--primary); color: #000; text-align: center; padding: 12px; font-size: 0.7rem; font-weight: 900; z-index: 3000; letter-spacing: 1px; text-transform: uppercase; }
+        .mob-menu { display: none; position: fixed; top: 0; left: 0; background: var(--primary); border: none; padding: 0 15px; z-index: 4000; height: 44px; align-items: center; justify-content: center; }
+
+        .rotation-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 1rem; max-width: 300px; }
+        .rotation-dot { background: var(--surface); border: 1px solid var(--border); padding: 15px; border-radius: 12px; text-align: center; font-size: 0.7rem; font-weight: 700; transition: 0.3s; }
+        .rotation-dot.active { border-color: var(--primary); color: var(--primary); background: rgba(204,255,0,0.05); }
+
+        .table-wrapper { width: 100%; overflow-x: auto; margin: 1rem 0; border-radius: 12px; }
+        .table-wrapper table { min-width: 600px; }
+
+        @media (max-width: 1024px) {
+            .sidebar { transform: translateX(-100%); }
+            .sidebar.open { transform: translateX(0); }
+            .main-content { margin-left: 0; }
+            .content-section { padding: 6rem 1.5rem 4rem 1.5rem; }
+            .mob-menu { display: flex; }
+            .sec-header h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-status">TIAGO STACHON • PROTOCOLO RETATRUTIDE PREMIUM (16 SEMANAS)</div>
+    <button class="mob-menu" id="mobToggle"><i data-lucide="menu"></i></button>
+
+    <aside class="sidebar" id="sidebar">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+            <div class="logo"><img src="/assets/images/logo-transparent.png" alt="Esquilo"></div>
+        </div>
+
+        <nav class="nav-group">
+            <span class="nav-label">Overview</span>
+            <a href="#" class="nav-item active" data-target="visao"><i data-lucide="target"></i> Apresentação</a>
+            <a href="#" class="nav-item" data-target="caneta"><i data-lucide="pen-tool"></i> Análise da Caneta</a>
+        </nav>
+
+        <nav class="nav-group">
+            <span class="nav-label">Protocolo</span>
+            <a href="#" class="nav-item" data-target="fases"><i data-lucide="layers"></i> Estrutura de Fases</a>
+            <a href="#" class="nav-item" data-target="aplicacao"><i data-lucide="syringe"></i> Técnica e Rodízio</a>
+        </nav>
+
+        <nav class="nav-group">
+            <span class="nav-label">Estilo de Vida</span>
+            <a href="#" class="nav-item" data-target="nutricao"><i data-lucide="utensils"></i> Nutrição e Suplementos</a>
+            <a href="#" class="nav-item" data-target="habitos"><i data-lucide="moon"></i> Sono e Recuperação</a>
+        </nav>
+
+        <div style="margin-top: auto; padding-top: 2rem; border-top: 1px solid var(--border);">
+            <a href="https://wa.me/5548999229071" target="_blank" style="background: #25D366; color: #000; text-decoration: none; padding: 0.8rem; border-radius: 8px; font-weight: 800; font-size: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                <i data-lucide="message-circle"></i> SUPORTE VIP
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <!-- APRESENTAÇÃO -->
+        <section id="visao" class="content-section active">
+            <div class="sec-header" style="text-align: center; border: none; padding: 0; display: flex; flex-direction: column; align-items: center;">
+                <img src="/assets/images/LOGO%20BANNER%20PROTOCOLOS%20ESQUILO.jpeg" alt="Banner" style="max-width: 400px; width: 100%; border-radius: 20px; margin-bottom: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+                <h1 style="font-size: clamp(2.5rem, 8vw, 4rem);">TIAGO STACHON</h1>
+                <p style="color: var(--primary); text-transform: uppercase; letter-spacing: 2px;">Protocolo Avançado Retatrutide</p>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.7;">16 SEMANAS • TRANSIÇÃO PÓS-MOUNJARO</p>
+            </div>
+
+            <div class="data-card">
+                <div class="card-title"><i data-lucide="award"></i> Objetivos Estratégicos</div>
+                <div class="workout-grid">
+                    <ul class="exercise-list">
+                        <li><i data-lucide="check-circle"></i> Progressão fisiológica segura</li>
+                        <li><i data-lucide="check-circle"></i> Redução de gordura visceral</li>
+                        <li><i data-lucide="check-circle"></i> Controle total da compulsão</li>
+                        <li><i data-lucide="check-circle"></i> Preservação de massa muscular</li>
+                    </ul>
+                    <ul class="exercise-list">
+                        <li><i data-lucide="check-circle"></i> Melhora da sensibilidade à insulina</li>
+                        <li><i data-lucide="check-circle"></i> Redução de efeitos colaterais</li>
+                        <li><i data-lucide="check-circle"></i> Máxima estabilidade metabólica</li>
+                        <li><i data-lucide="check-circle"></i> Uso eficiente da caneta 40mg</li>
+                    </ul>
+                </div>
+                <div class="highlight-box">
+                    <strong>Pilar Fundamental:</strong> Este protocolo prioriza a <strong>MENOR DOSE EFICAZ</strong>. O objetivo é manter a evolução constante sem saturar receptores precocemente.
+                </div>
+            </div>
+        </section>
+
+        <!-- ANÁLISE DA CANETA -->
+        <section id="caneta" class="content-section">
+            <div class="sec-header">
+                <h1>Análise da<br><span style="color: var(--primary);">Caneta</span></h1>
+                <p>Gestão de dosagens e cliques de precisão.</p>
+            </div>
+
+            <div class="workout-grid" style="margin-bottom: 2rem;">
+                <div class="data-card">
+                    <div class="card-title"><i data-lucide="info"></i> Especificações</div>
+                    <ul class="exercise-list">
+                        <li>Conteúdo Total <span>40 mg</span></li>
+                        <li>Volume Total <span>3 ml</span></li>
+                        <li>Equivalência <span>1 mg ≈ 3 cliques</span></li>
+                    </ul>
+                </div>
+                <div class="data-card" style="padding: 0; background: none; border: none;">
+                    <img src="/assets/images/tiago-retatrutide-kit.jpg" alt="Kit Retatrutide" style="width: 100%; border-radius: 24px; border: 1px solid var(--border);">
+                </div>
+            </div>
+
+            <div class="data-card">
+                <div class="card-title"><i data-lucide="list"></i> Referência de Cliques</div>
+                <div class="table-wrapper">
+                    <table class="tech-table">
+                        <thead><tr><th>Dose Desejada</th><th>Cliques (Ref.)</th><th>Ajuste</th></tr></thead>
+                        <tbody>
+                            <tr><td>1 mg</td><td>3 cliques</td><td>Inicial</td></tr>
+                            <tr><td>2 mg</td><td>6 cliques</td><td>Ajuste</td></tr>
+                            <tr><td>2,5 mg</td><td style="color: var(--primary); font-weight: 800;">7–8 cliques</td><td>Base Fase 1</td></tr>
+                            <tr><td>3 mg</td><td>9 cliques</td><td>Base Fase 2</td></tr>
+                            <tr><td>4 mg</td><td>12 cliques</td><td>Máximo Protocolo</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESTRUTURA DE FASES -->
+        <section id="fases" class="content-section">
+            <div class="sec-header">
+                <h1>Estrutura de<br><span style="color: var(--primary);">Fases</span></h1>
+                <p>Estratégia progressiva de 16 semanas.</p>
+            </div>
+
+            <div class="data-card">
+                <div class="table-wrapper">
+                    <table class="tech-table">
+                        <thead>
+                            <tr><th>Fase</th><th>Dose</th><th>Cliques</th><th>Duração</th><th>Total Fase</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>F1: Adaptação</strong></td><td>2,5 mg</td><td>7–8</td><td>Sem 1–4</td><td>10 mg</td></tr>
+                            <tr><td><strong>F2: Consolidação</strong></td><td>3,0 mg</td><td>9</td><td>Sem 5–8</td><td>12 mg</td></tr>
+                            <tr><td><strong>F3: Otimização</strong></td><td>4,0 mg</td><td>12</td><td>Sem 9–12</td><td>16 mg</td></tr>
+                            <tr><td><strong>F4: Estabilização</strong></td><td>0,5 mg</td><td>1–2</td><td>Sem 13–16</td><td>2 mg</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="highlight-box" style="border-left-color: var(--safe); background: rgba(0,255,136,0.03);">
+                    <strong>Ajuste Dinâmico:</strong> Se optar por manter 3mg na Fase 3 por estar tendo ótimos resultados, use 1mg na Fase 4 para fechar os 40mg da caneta.
+                </div>
+            </div>
+
+            <div class="workout-grid">
+                <div class="workout-item">
+                    <h4>Fase 1 & 2</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Foco em adaptação gastrointestinal e estabilização glicêmica. Início da mobilização de gordura visceral.</p>
+                </div>
+                <div class="workout-item">
+                    <h4>Fase 3 & 4</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Aumento da termogênese e controle sacietógeno. A fase final de 0.5mg serve como uma "aterrissagem suave" para evitar rebote.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TÉCNICA E RODÍZIO -->
+        <section id="aplicacao" class="content-section">
+            <div class="sec-header">
+                <h1>Técnica e<br><span style="color: var(--primary);">Rodízio</span></h1>
+                <p>Segurança e absorção otimizada.</p>
+            </div>
+
+            <div class="workout-grid">
+                <div class="data-card">
+                    <div class="card-title"><i data-lucide="map-pin"></i> Local de Aplicação</div>
+                    <ul class="exercise-list">
+                        <li>Região Abdominal <span>Preferencial</span></li>
+                        <li>Distância Umbigo <span>2–4 dedos</span></li>
+                        <li>Profundidade <span>Subcutânea</span></li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-secondary);">Não massagear o local após a aplicação. Limpar sempre com álcool 70% antes.</p>
+                </div>
+
+                <div class="data-card">
+                    <div class="card-title"><i data-lucide="refresh-cw"></i> Mapa de Rodízio</div>
+                    <div class="rotation-grid">
+                        <div class="rotation-dot active">Sem 1: Sup. Dir</div>
+                        <div class="rotation-dot">Sem 2: Sup. Esq</div>
+                        <div class="rotation-dot">Sem 4: Inf. Esq</div>
+                        <div class="rotation-dot">Sem 3: Inf. Dir</div>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.75rem; color: var(--text-secondary);">O rodízio previne lipodistrofia e garante absorção constante.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NUTRIÇÃO E SUPLEMENTOS -->
+        <section id="nutricao" class="content-section">
+            <div class="sec-header">
+                <h1>Nutrição e<br><span style="color: var(--primary);">Suplementos</span></h1>
+                <p>Combustível para performance e preservação muscular.</p>
+            </div>
+
+            <div class="data-card">
+                <div class="card-title"><i data-lucide="pie-chart"></i> Estratégia de Macronutrientes</div>
+                <div class="workout-grid">
+                    <div class="workout-item">
+                        <h4>Proteínas (2.0g/kg)</h4>
+                        <p style="font-size: 0.85rem;">Essencial para blindar a massa muscular durante o déficit calórico.</p>
+                    </div>
+                    <div class="workout-item">
+                        <h4>Carboidratos</h4>
+                        <p style="font-size: 0.85rem;">Complexos (Arroz, Batata, Aveia). Concentrar no pré e pós-treino.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="data-card">
+                <div class="card-title"><i data-lucide="box"></i> Suporte de Micronutrientes</div>
+                <div class="table-wrapper">
+                    <table class="tech-table">
+                        <thead><tr><th>Suplemento</th><th>Dose</th><th>Horário</th></tr></thead>
+                        <tbody>
+                            <tr><td>Vitamina D3</td><td>5.000 UI</td><td>Café da manhã</td></tr>
+                            <tr><td>Magnésio Glicina</td><td>350 mg</td><td>Antes de dormir</td></tr>
+                            <tr><td>Ômega-3</td><td>2–3 g</td><td>Almoço</td></tr>
+                            <tr><td>Zinco Quelado</td><td>25 mg</td><td>Jantar</td></tr>
+                            <tr><td>Psyllium</td><td>5 g</td><td>Antes das principais refeições</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="data-card">
+                <div class="card-title"><i data-lucide="coffee"></i> Sugestão Alimentar</div>
+                <div class="workout-grid">
+                    <div class="workout-item">
+                        <h4>M1: Desjejum</h4>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary);">4 Ovos + 80g Aveia + Banana</p>
+                    </div>
+                    <div class="workout-item">
+                        <h4>M2: Almoço</h4>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary);">200g Frango/Peixe + Arroz + Legumes</p>
+                    </div>
+                    <div class="workout-item">
+                        <h4>M3: Lanche/Pós</h4>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary);">Whey + Frutas Vermelhas + Aveia</p>
+                    </div>
+                    <div class="workout-item">
+                        <h4>M4: Jantar</h4>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary);">Omelete + Vegetais + Abacate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SONO E RECUPERAÇÃO -->
+        <section id="habitos" class="content-section">
+            <div class="sec-header">
+                <h1>Sono e<br><span style="color: var(--primary);">Recuperação</span></h1>
+                <p>Onde a mágica metabólica acontece.</p>
+            </div>
+
+            <div class="data-card">
+                <div class="card-title"><i data-lucide="moon"></i> Higiene do Sono</div>
+                <ul class="exercise-list">
+                    <li>Meta <span>7 a 9 horas por noite</span></li>
+                    <li>Ambiente <span>Escuro total e temperatura amena</span></li>
+                    <li>Telas <span>Desligar 60 min antes de deitar</span></li>
+                </ul>
+                <div class="highlight-box">
+                    O sono profundo regula o **Cortisol** e a **Grelina** (fome), sendo o fator determinante para o sucesso do protocolo Retatrutide.
+                </div>
+            </div>
+
+            <div class="philosophy-banner" style="background: linear-gradient(135deg, #16171B 0%, #000 100%); border-radius: 32px; padding: 3rem; text-align: center; border: 1px solid var(--border);">
+                <p style="font-size: 1.2rem; font-style: italic; color: #FFF; margin-bottom: 1.5rem;">"A evolução consistente é fruto da menor dose eficaz aplicada com a maior disciplina possível."</p>
+                <p style="color: var(--primary); font-family: var(--font-display); text-transform: uppercase; letter-spacing: 2px;">Luciano Ghilardi Nacco (Esquilo)</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobToggle = document.getElementById('mobToggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        mobToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+            const icon = mobToggle.querySelector('i');
+            if (sidebar.classList.contains('open')) {
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        });
+
+        // Navigation
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('.content-section');
+
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = item.getAttribute('data-target');
+                
+                // Update active states
+                navItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+                
+                sections.forEach(s => s.classList.remove('active'));
+                document.getElementById(target).classList.add('active');
+
+                // Close sidebar on mobile
+                if (window.innerWidth <= 1024) {
+                    sidebar.classList.remove('open');
+                    mobToggle.querySelector('i').setAttribute('data-lucide', 'menu');
+                    lucide.createIcons();
+                }
+
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
