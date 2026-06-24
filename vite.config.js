@@ -25,6 +25,7 @@ export default defineConfig({
         protocolo_tiago: resolve(__dirname, 'protocolo-tiago.html'),
         myotex_protocol: resolve(__dirname, 'myotex-protocol.html'),
         artigo_peptideos: resolve(__dirname, 'artigo-peptideos.html'),
+        protocolo_marcus_vinicius: resolve(__dirname, 'protocolo-marcus-vinicius.html'),
       },
     },
   },
